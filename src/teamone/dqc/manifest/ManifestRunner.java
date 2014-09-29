@@ -10,6 +10,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import teamone.dqc.zip.ZipReader;
+import teamone.dqc.zip.ZipWriter;
+
 public class ManifestRunner
 {
     private JAXBContext context;
@@ -28,35 +31,44 @@ public class ManifestRunner
         }
     }
     
-    public Manifest readManifestFromStream(InputStream in)
+    public Manifest readManifestFromZip(ZipReader reader)
     {
         Unmarshaller unmarsh;
         Manifest manifest = null;
+        InputStream in = null;
         try {
+            in = reader.readFromZip(Manifest.FILE_NAME);
             unmarsh = context.createUnmarshaller();
             manifest = (Manifest) unmarsh.unmarshal(in);
-        } catch(JAXBException e) {
+        } catch(JAXBException | IOException e) {
             e.printStackTrace();
+        } finally {
+            reader.closeStreams();
         }
         
         return manifest;
     }
     
-    public void writeManifestToStream(Manifest man, OutputStream out)
+    public void writeManifestToStream(Manifest man, ZipWriter writer)
     {
         Marshaller marsh;
+        OutputStream out;
         String xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
         try {
             marsh = context.createMarshaller();
             marsh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marsh.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+            out = writer.createZipEntry(Manifest.FILE_NAME);
             out.write(xmlHeader.getBytes());
             marsh.marshal(man, out);
         } catch (JAXBException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } 
+        } finally {
+            writer.closeEntry();
+            writer.closeStreams();
+        }
     }
     
     public ManifestResource createManifestResource(String identifier, String title)

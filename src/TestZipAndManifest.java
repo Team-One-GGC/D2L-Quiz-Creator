@@ -1,43 +1,41 @@
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.List;
 
 import teamone.dqc.manifest.Manifest;
+import teamone.dqc.manifest.ManifestResource;
 import teamone.dqc.manifest.ManifestRunner;
 import teamone.dqc.zip.ZipReader;
+import teamone.dqc.zip.ZipWriter;
 
 
 public class TestZipAndManifest
 {
+    //TODO Change these for your system
+    public static final String EXAMPLE_READ_ZIP = "C:/Users/Derek/Desktop/SoftDev/examples.zip";
+    public static final String EXAMPLE_WRITE_ZIP = "C:/Users/Derek/Desktop/SoftDev/mytest.zip";
+    
     public static void main(String[] args)
     {
         ManifestRunner manRunner = new ManifestRunner();
-        testReadFromZip(manRunner);
+//        testReadFromZip(manRunner);
+        testWriteToZip(manRunner);
     }
     
     public static void testReadFromZip(ManifestRunner manRunner)
     {
-        ZipReader zipReader = new ZipReader(ZipReader.EXAMPLE_ZIP);//EXAMPLE_ZIP must be changed
-        InputStream in = null;
-        Manifest man = null;
-        try {
-            in = zipReader.readFromZip(Manifest.FILE_NAME);
-        } catch (IOException e) {
-            e.printStackTrace();
+        Manifest man = manRunner.readManifestFromZip(new ZipReader(EXAMPLE_READ_ZIP));//EXAMPLE_ZIP must be changed
+        List<ManifestResource> res = man.getResources();
+        for(ManifestResource r : res)
+        {
+            System.out.println("Quiz title: " + r.getTitle());
+            System.out.println("Quiz file: " + r.getHref());
         }
-        
-        if(in != null)
-            man = manRunner.readManifestFromStream(in);
-        else {
-            System.exit(1);
-            zipReader.closeStreams();
-        }
-        
-        String quizTitle = man.getResources().get(1).getTitle();
-        String quizFile = man.getResources().get(1).getHref();
-        
-        System.out.println("Quiz title: " + quizTitle);
-        System.out.println("Quiz file: " + quizFile);
-        
-        zipReader.closeStreams();
+    }
+    
+    public static void testWriteToZip(ManifestRunner manRunner)
+    {
+        ManifestResource res = manRunner.createManifestResource("123", "Example quiz");
+        Manifest man = manRunner.createManifest("D2L_321", res);
+        manRunner.writeManifestToStream(man, new ZipWriter(EXAMPLE_WRITE_ZIP));
+        System.out.println("Done");
     }
 }
