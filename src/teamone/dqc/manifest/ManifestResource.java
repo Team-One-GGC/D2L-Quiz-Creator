@@ -1,4 +1,4 @@
-package teamone.ggc.dqc.manifest;
+package teamone.dqc.manifest;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;

@@ -1,4 +1,4 @@
-package teamone.ggc.dqc.manifest;
+package teamone.dqc.manifest;
 
 import java.io.IOException;
 import java.io.InputStream;

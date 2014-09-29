@@ -1,4 +1,4 @@
-package teamone.ggc.dqc.manifest;
+package teamone.dqc.manifest;
 
 import java.util.List;
 

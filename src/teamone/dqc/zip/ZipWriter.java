@@ -1,4 +1,4 @@
-package teamone.ggc.dqc.zip;
+package teamone.dqc.zip;
 
 public class ZipWriter
 {

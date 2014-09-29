@@ -6,7 +6,7 @@
                         @XmlNs(prefix = "", namespaceURI = "http://www.imsglobal.org/xsd/imscp_v1p1")
                    }
           )
-package teamone.ggc.dqc.manifest;
+package teamone.dqc.manifest;
 import javax.xml.bind.annotation.XmlNs;
 import javax.xml.bind.annotation.XmlNsForm;
 import javax.xml.bind.annotation.XmlSchema;

@@ -1,9 +1,9 @@
 import java.io.IOException;
 import java.io.InputStream;
 
-import teamone.ggc.dqc.manifest.Manifest;
-import teamone.ggc.dqc.manifest.ManifestRunner;
-import teamone.ggc.dqc.zip.ZipReader;
+import teamone.dqc.manifest.Manifest;
+import teamone.dqc.manifest.ManifestRunner;
+import teamone.dqc.zip.ZipReader;
 
 
 public class TestZipAndManifest
