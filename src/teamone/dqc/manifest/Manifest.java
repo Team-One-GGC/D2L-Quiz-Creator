@@ -1,5 +1,6 @@
 package teamone.dqc.manifest;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -7,6 +8,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Class representation of the imsmanifest.xml file included in a D2L quiz export
+ * @author Derek
+ *
+ */
 @XmlRootElement(name = "manifest")
 public class Manifest
 {
@@ -15,6 +21,14 @@ public class Manifest
     private String identifier;
     
     private List<ManifestResource> resources;
+    
+    public Manifest(){}//The no-arg constructor is needed by JAXB
+    
+    public Manifest(String identifier, ManifestResource... res)
+    {
+        this.identifier = identifier;
+        this.resources = Arrays.asList(res);
+    }
     
     @XmlAttribute
     public String getIdentifier()

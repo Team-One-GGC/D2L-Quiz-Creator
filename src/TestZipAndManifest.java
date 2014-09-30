@@ -16,13 +16,15 @@ public class TestZipAndManifest
     public static void main(String[] args)
     {
         ManifestRunner manRunner = new ManifestRunner();
+        
+        
 //        testReadFromZip(manRunner);
         testWriteToZip(manRunner);
     }
     
     public static void testReadFromZip(ManifestRunner manRunner)
     {
-        Manifest man = manRunner.readManifestFromZip(new ZipReader(EXAMPLE_READ_ZIP));//EXAMPLE_ZIP must be changed
+        Manifest man = manRunner.readManifestFromZip(new ZipReader(EXAMPLE_READ_ZIP));//EXAMPLE_READ_ZIP must be changed
         List<ManifestResource> res = man.getResources();
         for(ManifestResource r : res)
         {
@@ -33,9 +35,9 @@ public class TestZipAndManifest
     
     public static void testWriteToZip(ManifestRunner manRunner)
     {
-        ManifestResource res = manRunner.createManifestResource("123", "Example quiz");
-        Manifest man = manRunner.createManifest("D2L_321", res);
-        manRunner.writeManifestToStream(man, new ZipWriter(EXAMPLE_WRITE_ZIP));
+        ManifestResource res = new ManifestResource("123", "Example quiz");
+        Manifest man = new Manifest("D2L_321", res);
+        manRunner.writeManifestToStream(man, new ZipWriter(EXAMPLE_WRITE_ZIP));//EXAMPLE_WRITE_ZIP must be changed
         System.out.println("Done");
     }
 }

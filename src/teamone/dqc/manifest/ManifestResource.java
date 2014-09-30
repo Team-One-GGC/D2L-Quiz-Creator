@@ -3,6 +3,12 @@ package teamone.dqc.manifest;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Class representation of the "resource" element within the imsmanifest.xml file.
+ * In the context of D2L Quiz Creator the only elements unique between instances of this class are identifier and href.
+ * @author Derek
+ *
+ */
 @XmlRootElement(name = "resource")
 public class ManifestResource
 {
@@ -12,6 +18,18 @@ public class ManifestResource
     private String link_target;
     private String href;
     private String title;
+    
+    public ManifestResource(){}//The no-arg constructor is needed by JAXB
+    
+    public ManifestResource(String identifier, String title)
+    {
+        this.identifier = identifier;
+        this.title = title;
+        this.href = title + ".xml";
+        this.type = "webcontent";
+        this.material_type = "d2lquiz";
+        this.link_target = "";
+    }
     
     @XmlAttribute
     public String getIdentifier()
