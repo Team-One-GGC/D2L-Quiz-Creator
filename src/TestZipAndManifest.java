@@ -6,7 +6,11 @@ import teamone.dqc.manifest.ManifestRunner;
 import teamone.dqc.zip.ZipReader;
 import teamone.dqc.zip.ZipWriter;
 
-
+/**
+ * This will be deleted in the final version
+ * @author Derek
+ *
+ */
 public class TestZipAndManifest
 {
     //TODO Change these for your system
