@@ -9,7 +9,7 @@ import teamone.dqc.zip.ZipWriter;
 
 public class TestZipAndManifest
 {
-    //TODO Change these for your system
+    //TODO Change these for your system test comment
     public static final String EXAMPLE_READ_ZIP = "C:/Users/Derek/Desktop/SoftDev/examples.zip";
     public static final String EXAMPLE_WRITE_ZIP = "C:/Users/Derek/Desktop/SoftDev/mytest.zip";
     
