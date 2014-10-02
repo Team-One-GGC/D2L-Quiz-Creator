@@ -38,6 +38,18 @@ DESIGN
 TODO
 -----
 
+ - Complete XML parsing system using JAXB
+	 - Create package structure to allow ease of understanding of quiz XML structure
+	 - Design a Question superclass that the different types of questions can inherit
+	 - Design each of the different questions (True/False, Multiple Choice, Long Answer, etc..)
+ - Create an opening screen using JavaFX
+ - Design a layout to allow the customization of quiz options
+ - Design layouts for each of the individual question types
+ - Link the GUI and XML parsing system
+ - Add functionality to the GUI
+	 - Opening/Editing of existing quizzes
+	 - Creation of new quizzes
+
 LICENSE
 --------
 
