@@ -11,7 +11,26 @@ We had heard from a few professors that the D2L way of creating quizzes is clunk
 FEATURES
 ---------
 
+Creation of D2L style quizzes/tests 
+Offline/desktop application
+Conversion of quizzes to xml/zip file format to later be uploaded onto D2L site
+Editting of previous or downloaded D2L quizzes*
+Viewing/Testing of created/downloaded D2L quizzes*
 
+Support of the following question types:
+True/False
+Multi Choice
+Multi Select
+Long Answer
+Short Answer
+Multi Short Answer
+Fill in the Blanks
+Matching
+Ordering
+
+
+
+Later in scope*
 
 DESIGN
 ------
@@ -24,3 +43,10 @@ LICENSE
 
 CREDITS
 --------
+Created by:
+
+Derek Cofer
+Jason James
+Jared Marquez
+Steven Spohn
+
