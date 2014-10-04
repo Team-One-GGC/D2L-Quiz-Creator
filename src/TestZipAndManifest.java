@@ -1,10 +1,10 @@
 import java.util.List;
 
-import teamone.dqc.manifest.Manifest;
-import teamone.dqc.manifest.ManifestResource;
-import teamone.dqc.manifest.ManifestRunner;
-import teamone.dqc.zip.ZipReader;
-import teamone.dqc.zip.ZipWriter;
+import t1.dqc.xml.manifest.Manifest;
+import t1.dqc.xml.manifest.ManifestResource;
+import t1.dqc.xml.manifest.ManifestRunner;
+import t1.dqc.zip.ZipReader;
+import t1.dqc.zip.ZipWriter;
 
 /**
  * This will be deleted in the final version
