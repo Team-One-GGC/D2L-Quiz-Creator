@@ -12,7 +12,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
-import t1.dqc.xml.manifest.Manifest;
+import t1.dqc.xml.D2LXmlFile;
 
 /**
  * Utility class to help in writing files to a zip.

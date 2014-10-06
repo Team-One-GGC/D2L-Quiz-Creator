@@ -11,6 +11,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+import t1.dqc.xml.D2LXmlFile;
+
 /**
  * Utility class to help in reading files from a zip.
  * This class takes a generic parameter of a class that extend {@link D2LXmlFile}. For each file within a zip a new ZipReader should be created.

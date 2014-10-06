@@ -1,4 +1,4 @@
-package t1.dqc.zip;
+package t1.dqc.xml;
 
 /**
  * This class provides an interface for writing Xml files to a zip.
