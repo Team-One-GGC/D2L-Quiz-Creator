@@ -8,13 +8,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import t1.dqc.zip.D2LXmlFile;
+
 /**
  * Class representation of the imsmanifest.xml file included in a D2L quiz export
  * @author Derek
  *
  */
 @XmlRootElement(name = "manifest")
-public class Manifest
+public class Manifest extends D2LXmlFile
 {
     public static final String FILE_NAME = "imsmanifest.xml";
     
@@ -51,5 +53,11 @@ public class Manifest
     public void setResources(List<ManifestResource> resources)
     {
         this.resources = resources;
+    }
+
+    @Override
+    public String getFileName()
+    {
+        return FILE_NAME;
     }
 }
