@@ -13,8 +13,8 @@ import t1.dqc.zip.ZipWriter;
 public class TestZipAndManifest
 {
     //TODO Change these for your system
-    public static final String EXAMPLE_READ_ZIP = "/home/derek/Downloads/example.zip";
-    public static final String EXAMPLE_WRITE_ZIP = "/home/derek/mytest.zip";
+    public static final String EXAMPLE_READ_ZIP = "C:/Users/Jason/Downloads/Examples.zip";
+    public static final String EXAMPLE_WRITE_ZIP = "C:/Users/Jason/Downloads/Examples(write).zip";
     
     public static void main(String[] args)
     {        
@@ -28,9 +28,10 @@ public class TestZipAndManifest
         Manifest man = reader.getObjectFromXML(Manifest.FILE_NAME);
         List<ManifestResource> res = man.getResources();
         
-        res.forEach(
-                r -> System.out.println(r.getTitle())
-                );
+        for(ManifestResource r: res)
+        {        
+        	System.out.println(r.getTitle());
+        }
         
     }
     
