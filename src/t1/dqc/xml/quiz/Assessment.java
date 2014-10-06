@@ -3,6 +3,12 @@ package t1.dqc.xml.quiz;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * This class represents the contents of the <assessment> element within the D2L quiz Xml.
+ * The <assessment> element is second level element of the Xml a {@link Quiz} contains one Assessment.
+ * @author Derek
+ *
+ */
 @XmlRootElement(name = "assessment")
 public class Assessment
 {
