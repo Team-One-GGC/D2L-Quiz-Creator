@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.util.List;
 
 import t1.dqc.xml.manifest.Manifest;
