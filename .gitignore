@@ -13,3 +13,5 @@ hs_err_pid*
 
 .settings/
 /bin/
+TestZipAndQuiz.java
+TestZipAndManifest.java
