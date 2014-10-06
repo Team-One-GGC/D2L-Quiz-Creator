@@ -71,10 +71,9 @@ public class ZipReader<T extends D2LXmlFile>
             in = readFromZip(fileName);
             unmarsh = context.createUnmarshaller();
             result = clazz.cast(unmarsh.unmarshal(in));
+            result.setFileName(fileName);
         } catch(JAXBException | IOException e) {
             e.printStackTrace();
-        } finally {
-            closeStreams();
         }
         return result;
     }
@@ -103,7 +102,7 @@ public class ZipReader<T extends D2LXmlFile>
     /**
      * Closes the ZipFile
      */
-    private void closeStreams()
+    public void closeStreams()
     {
         try {
             zip.close();

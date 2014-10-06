@@ -8,5 +8,6 @@ package t1.dqc.xml;
  */
 public abstract class D2LXmlFile
 {
+    public abstract void setFileName(String fileName);
     public abstract String getFileName();
 }

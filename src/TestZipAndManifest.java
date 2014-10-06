@@ -31,6 +31,7 @@ public class TestZipAndManifest
         res.forEach(
                 r -> System.out.println(r.getTitle())
                 );
+        reader.closeStreams();
         
     }
     
