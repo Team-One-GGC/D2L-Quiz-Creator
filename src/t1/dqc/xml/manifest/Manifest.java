@@ -56,6 +56,12 @@ public class Manifest extends D2LXmlFile
     }
 
     @Override
+    public void setFileName(String fileName)
+    {
+        //Do nothing
+    }
+    
+    @Override
     public String getFileName()
     {
         return FILE_NAME;
