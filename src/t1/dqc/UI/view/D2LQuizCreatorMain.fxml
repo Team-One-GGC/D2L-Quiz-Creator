@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.D2LQuizCreatorMainController">
    <children>
       <Label layoutX="190.0" layoutY="14.0" text="D2L Quiz Creator">
          <font>
@@ -16,11 +15,11 @@
       </Label>
       <HBox layoutX="131.0" layoutY="100.0" spacing="20.0">
          <children>
-            <Button layoutX="138.0" layoutY="150.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Create Quiz" />
-            <Button layoutX="190.0" layoutY="150.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Edit Quiz" />
-            <Button layoutX="242.0" layoutY="150.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="View/Take Quiz" />
+            <Button fx:id="createQuiz" layoutX="138.0" layoutY="150.0" mnemonicParsing="false" onAction="#createQuizHandler" prefHeight="100.0" prefWidth="100.0" text="Create Quiz" />
+            <Button fx:id="editQuiz" layoutX="190.0" layoutY="150.0" mnemonicParsing="false" onAction="#editQuizHandler" prefHeight="100.0" prefWidth="100.0" text="Edit Quiz" />
+            <Button fx:id="openViewQuiz" layoutX="242.0" layoutY="150.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="View/Take Quiz" />
          </children>
       </HBox>
-      <Label layoutX="277.0" layoutY="234.0" text="Pick One" />
+      <Label fx:id="tester" alignment="CENTER" contentDisplay="CENTER" layoutX="277.0" layoutY="234.0" text="Pick One" textAlignment="CENTER" AnchorPane.bottomAnchor="30.0" />
    </children>
 </AnchorPane>

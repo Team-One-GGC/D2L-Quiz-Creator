@@ -10,14 +10,18 @@ public class RootLayoutController {
 
   //Reference to the main D2LQuizCreation application
     private MainQuizCreator mainQuizCreator;
+    //Root layout stage
     private Stage mainStage;
+    //close menu item ref
     @FXML
     private MenuItem close;
     
+    //Sets main stage
     public void setDialogStage(Stage mainStage) {
         this.mainStage = mainStage;
     }
     
+    //Function to close program
     @FXML
     private void handleFileClose(){
        Platform.exit();

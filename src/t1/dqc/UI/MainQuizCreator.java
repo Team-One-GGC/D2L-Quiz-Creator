@@ -19,7 +19,13 @@ public class MainQuizCreator extends Application {
     public MainQuizCreator() {
 
     }
+    
+    //primaryStage getter
+    public Stage getMainStage(){
+        return primaryStage;
+    }
 
+    //Setting up primary stage
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
