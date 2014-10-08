@@ -1,5 +1,7 @@
 package t1.dqc.xml.quiz;
 
+import t1.dqc.xml.quiz.presentation.PresentationMat;
+
 /**
  * Utility class for getting various objects important to a Quiz object:
  * the different questions in a quiz, the various options associated with that quiz, etc...
@@ -21,4 +23,10 @@ public class QuizFactory
     
     //Other methods go below
     //I can foresee this class getting very big as development goes on
+    
+    public static void getTextType(Quiz quiz)
+    {
+        PresentationMat m = quiz.getAssessment().getPresentationMat();
+        System.out.println(m.getFlow_mat().get(1).getLabel());
+    }
 }
