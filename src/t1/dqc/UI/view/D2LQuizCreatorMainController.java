@@ -1,7 +1,6 @@
 package t1.dqc.UI.view;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 //import javafx.scene.control.TableColumn;
 //import javafx.scene.control.TableView;
@@ -26,7 +25,7 @@ public class D2LQuizCreatorMainController {
     public D2LQuizCreatorMainController(){
     }
     
-    //Init
+    //Initialize
     @FXML
     private void initialize() {
     }
@@ -40,10 +39,5 @@ public class D2LQuizCreatorMainController {
         this.mainQuizCreator = mainQuizCreator;   
     }
     
-    @FXML
-    private void handleFileClose(){
-        
-    }
-    
-    
+  
 }
