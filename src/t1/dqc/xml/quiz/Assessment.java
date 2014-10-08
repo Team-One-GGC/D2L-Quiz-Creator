@@ -21,6 +21,7 @@ public class Assessment
     private String ident;
     
     private Rubric rubric;
+    private AssessmentControl assessmentControl;
     private PresentationMat presentationMat;
     
     public Assessment(){}
@@ -73,5 +74,16 @@ public class Assessment
     public void setPresentationMat(PresentationMat presentationMat)
     {
         this.presentationMat = presentationMat;
+    }
+
+    @XmlElement(name = "assessmentcontrol")
+    public AssessmentControl getAssessmentControl()
+    {
+        return assessmentControl;
+    }
+
+    public void setAssessmentControl(AssessmentControl assessmentControl)
+    {
+        this.assessmentControl = assessmentControl;
     }
 }

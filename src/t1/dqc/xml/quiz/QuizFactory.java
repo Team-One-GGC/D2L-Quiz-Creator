@@ -24,9 +24,9 @@ public class QuizFactory
     //Other methods go below
     //I can foresee this class getting very big as development goes on
     
-    public static void getTextType(Quiz quiz)
+    public static void test(Quiz quiz)
     {
-        PresentationMat m = quiz.getAssessment().getPresentationMat();
-        System.out.println(m.getFlow_mat().get(1).getLabel());
+        AssessmentControl c = quiz.getAssessment().getAssessmentControl();
+        System.out.println(c.getFeedbackswitch());
     }
 }

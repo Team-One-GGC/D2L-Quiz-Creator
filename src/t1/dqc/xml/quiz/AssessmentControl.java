@@ -6,9 +6,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "assessmentcontrol")
 public class AssessmentControl
 {
-	private String feedbackswitch;
-	private String solutionswitch;
-	private String hintswitch;
+	private String feedbackswitch = "no";
+	private String solutionswitch = "no";
+	private String hintswitch = "no";
 	
 	@XmlAttribute(name = "feedbackswitch")
 	public String getFeedbackswitch()
