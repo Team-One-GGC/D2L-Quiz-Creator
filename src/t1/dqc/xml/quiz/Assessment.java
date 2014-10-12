@@ -1,13 +1,15 @@
 package t1.dqc.xml.quiz;
 
 import javax.xml.bind.annotation.XmlAttribute;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
+import t1.dqc.xml.quiz.options.AssessFeedback;
+import t1.dqc.xml.quiz.options.AssessmentControl;
+import t1.dqc.xml.quiz.options.Procextension;
 import t1.dqc.xml.quiz.presentation.PresentationMat;
 import t1.dqc.xml.quiz.presentation.Rubric;
-import t1.dqc.xml.quiz.options.AssessmentControl;
 
 /**
  * This class represents the contents of the <assessment> element within the D2L quiz Xml.
@@ -16,6 +18,7 @@ import t1.dqc.xml.quiz.options.AssessmentControl;
  *
  */
 @XmlRootElement(name = "assessment")
+@XmlType(propOrder = {"rubric", "assessmentControl", "presentationMat", "extension", "feedback"})
 public class Assessment
 {
     private String id;
@@ -25,6 +28,8 @@ public class Assessment
     private Rubric rubric;
     private AssessmentControl assessmentControl;
     private PresentationMat presentationMat;
+    private Procextension extension;
+    private AssessFeedback feedback;
     
     public Assessment(){}
     
@@ -87,5 +92,27 @@ public class Assessment
     public void setAssessmentControl(AssessmentControl assessmentControl)
     {
         this.assessmentControl = assessmentControl;
+    }
+
+    @XmlElement(name = "assess_procextension")
+    public Procextension getExtension()
+    {
+        return extension;
+    }
+
+    public void setExtension(Procextension extension)
+    {
+        this.extension = extension;
+    }
+
+    @XmlElement(name = "assessfeedback")
+    public AssessFeedback getFeedback()
+    {
+        return feedback;
+    }
+
+    public void setFeedback(AssessFeedback feedback)
+    {
+        this.feedback = feedback;
     }
 }
