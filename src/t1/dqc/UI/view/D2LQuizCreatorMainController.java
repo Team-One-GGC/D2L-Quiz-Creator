@@ -68,12 +68,15 @@ public class D2LQuizCreatorMainController {
         fileChooser.setTitle("Open D2L Zip File");
         zipFile = fileChooser.showOpenDialog(null);
         //Passes zip file to Zip file reader/ manifest reader
-        ZipReader<Manifest> reader = new ZipReader<>(zipFile,Manifest.class);
-        Manifest manifest = reader.getObjectFromXML(Manifest.FILE_NAME);
-        //sets quiz title to tester label
-        String quizTitle = manifest.getResources().get(0).getTitle();
-        tester.setText(quizTitle);
-        reader.closeStreams();
+         if(zipFile != null){
+             ZipReader<Manifest> reader = new ZipReader<>(zipFile,Manifest.class);
+             Manifest manifest = reader.getObjectFromXML(Manifest.FILE_NAME);
+             //sets quiz title to tester label
+             String quizTitle = manifest.getResources().get(0).getTitle();
+             tester.setText(quizTitle);
+             reader.closeStreams();
+         }
+       
     }
   
 }

@@ -55,7 +55,7 @@ public class MainQuizCreator extends Application {
     }
     
     /**
-     * Shows the person overview inside the root layout.
+     * Shows the Quiz creator main menu inside the root layout.
      */
     public void showD2LQuizCreatorMain() {
         try {
