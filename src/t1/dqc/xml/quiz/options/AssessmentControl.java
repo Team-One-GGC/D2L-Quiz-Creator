@@ -1,4 +1,4 @@
-package t1.dqc.xml.quiz;
+package t1.dqc.xml.quiz.options;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
