@@ -3,10 +3,13 @@ package t1.dqc.xml.quiz.options;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
 import t1.dqc.xml.quiz.presentation.Rubric;
 
 @XmlRootElement(name="assessfeedback")
+@XmlType(propOrder={"rubric", "duration", "responseDisplayTypeId", "showCorrectAnswers",
+		"submissionRestrictIp", "showClassAverage", "showScoreDistribution"})
 public class AssessFeedback
 {
 	private String title="";
@@ -38,7 +41,7 @@ public class AssessFeedback
 		this.rubric = rubric;
 	}
 	
-	@XmlAttribute(name="d2l_2p0:duration")
+	@XmlElement(name="d2l_2p0:duration")
 	public int getDuration()
 	{
 		return duration;
@@ -48,7 +51,7 @@ public class AssessFeedback
 		this.duration = duration;
 	}
 	
-	@XmlAttribute(name="d2l_2p0:response_display_type_id")
+	@XmlElement(name="d2l_2p0:response_display_type_id")
 	public int getResponseDisplayTypeId()
 	{
 		return responseDisplayTypeId;
@@ -58,7 +61,7 @@ public class AssessFeedback
 		this.responseDisplayTypeId = responseDisplayTypeId;
 	}
 	
-	@XmlAttribute(name="d2l_2p0:show_correct_answers")
+	@XmlElement(name="d2l_2p0:show_correct_answers")
 	public String getShowCorrectAnswers()
 	{
 		return showCorrectAnswers;
@@ -68,7 +71,7 @@ public class AssessFeedback
 		this.showCorrectAnswers = showCorrectAnswers;
 	}
 	
-	@XmlAttribute(name="d2l_2p0:submission_restrictip")
+	@XmlElement(name="d2l_2p0:submission_restrictip")
 	public String getSubmissionRestrictIp()
 	{
 		return submissionRestrictIp;
@@ -78,7 +81,7 @@ public class AssessFeedback
 		this.submissionRestrictIp = submissionRestrictIp;
 	}
 	
-	@XmlAttribute(name="d2l_2p0:show_class_average")
+	@XmlElement(name="d2l_2p0:show_class_average")
 	public String getShowClassAverage()
 	{
 		return showClassAverage;
@@ -88,7 +91,7 @@ public class AssessFeedback
 		this.showClassAverage = showClassAverage;
 	}
 	
-	@XmlAttribute(name="d2l_2p0:show_score_distribution")
+	@XmlElement(name="d2l_2p0:show_score_distribution")
 	public String getShowScoreDistribution()
 	{
 		return showScoreDistribution;
