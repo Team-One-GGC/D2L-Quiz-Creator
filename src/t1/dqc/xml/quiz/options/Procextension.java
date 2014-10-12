@@ -16,4 +16,8 @@ public class Procextension
     private String isAttemptRldb = "no";
     private String isSubviewRldb = "no";
     private int timeLimit;
+    private String showClock;
+    private String gracePeriod;
+    private int lateLimit = 0;
+    private int lateLimitData = 0;
 }
