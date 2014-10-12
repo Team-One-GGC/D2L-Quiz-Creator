@@ -1,5 +1,6 @@
 package t1.dqc.xml.quiz;
 
+import t1.dqc.xml.quiz.options.AssessFeedback;
 import t1.dqc.xml.quiz.options.AssessmentControl;
 
 /**
@@ -26,7 +27,7 @@ public class QuizFactory
     
     public static void test(Quiz quiz)
     {
-        AssessmentControl c = quiz.getAssessment().getAssessmentControl();
-        System.out.println(c.getFeedbackswitch());
+        AssessFeedback a = quiz.getAssessment().getFeedback();
+        System.out.println(a.getShowClassAverage());
     }
 }
