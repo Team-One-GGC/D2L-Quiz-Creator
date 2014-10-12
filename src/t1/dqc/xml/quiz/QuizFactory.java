@@ -1,6 +1,5 @@
 package t1.dqc.xml.quiz;
 
-import t1.dqc.xml.quiz.presentation.PresentationMat;
 import t1.dqc.xml.quiz.options.AssessmentControl;
 
 /**
