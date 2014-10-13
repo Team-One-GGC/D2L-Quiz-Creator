@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.NewQuizDialogController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.NewQuizDialogController">
    <children>
       <BorderPane prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <content>
-                  <TextArea fx:id="testDisplay" editable="false" prefHeight="288.0" prefWidth="584.0" wrapText="true" />
+                  <TextArea fx:id="testDisplay" editable="false" prefHeight="288.0" prefWidth="584.0" stylesheets="@Theme.css" wrapText="true" />
                </content>
             </ScrollPane>
          </center>
