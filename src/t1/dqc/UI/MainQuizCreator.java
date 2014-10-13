@@ -3,11 +3,17 @@ package t1.dqc.UI;
 import java.io.IOException;
 
 
+
+
+
+import t1.dqc.UI.view.D2LQuizCreatorMainController;
+import t1.dqc.UI.view.NewQuizDialogController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MainQuizCreator extends Application {
@@ -63,7 +69,9 @@ public class MainQuizCreator extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainQuizCreator.class.getResource("view/D2LQuizCreatorMain.fxml"));
             AnchorPane D2LQuizCreatorMain = (AnchorPane) loader.load();
-
+            D2LQuizCreatorMainController controller;
+            controller = loader.getController();
+            controller.setMainQuizCreator(this);
             // Set person overview into the center of root layout.
             rootLayout.setCenter(D2LQuizCreatorMain);
         } catch (IOException e) {
@@ -73,5 +81,37 @@ public class MainQuizCreator extends Application {
     
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    /**
+     * Opens New Quiz dialog
+     */
+    public boolean showNewQuizDialog(){
+        try{
+           //Loads the fxml file and creates a new stage for the dialog popup
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainQuizCreator.class.getResource("view/NewQuizDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            
+            //Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("New Quiz");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            
+            //Set controller
+            NewQuizDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            
+            //Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+            
+            return controller.isConfirmClicked();
+        } catch (IOException e){
+            e.printStackTrace();
+            return false;
+        }
     }
 }

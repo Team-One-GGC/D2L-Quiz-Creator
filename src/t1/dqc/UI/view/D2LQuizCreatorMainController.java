@@ -48,13 +48,13 @@ public class D2LQuizCreatorMainController {
      * @param mainQuizCreator
      */
     public void setMainQuizCreator(MainQuizCreator mainQuizCreator){
-        this.mainQuizCreator = mainQuizCreator;   
+        this.mainQuizCreator = mainQuizCreator; 
     }
     
-    @FXML
-    private void createQuizHandler(){
-        tester.setText("Create Quiz Button Clicked");
-    }
+//    @FXML
+//    private void createQuizHandler(){
+//        tester.setText("Create Quiz Button Clicked");
+//    }
     
     @FXML
     private void editQuizHandler() throws NullPointerException{
@@ -76,7 +76,18 @@ public class D2LQuizCreatorMainController {
              tester.setText(quizTitle);
              reader.closeStreams();
          }
+<<<<<<< HEAD
        
+=======
+>>>>>>> origin/Test_Jared
     }
-  
+    
+    /**
+     * Called when the user clicks the create quiz quit on. Opens a dialog to test this function.
+     *
+     */
+  @FXML
+  private void createQuizHandler(){
+    mainQuizCreator.showNewQuizDialog();
+  }
 }
