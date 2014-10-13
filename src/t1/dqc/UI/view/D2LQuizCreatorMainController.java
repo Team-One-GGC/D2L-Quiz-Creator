@@ -76,10 +76,6 @@ public class D2LQuizCreatorMainController {
              tester.setText(quizTitle);
              reader.closeStreams();
          }
-<<<<<<< HEAD
-       
-=======
->>>>>>> origin/Test_Jared
     }
     
     /**
