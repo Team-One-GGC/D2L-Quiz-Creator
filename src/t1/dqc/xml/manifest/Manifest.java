@@ -38,7 +38,7 @@ public class Manifest extends D2LXmlFile
         return identifier;
     }
     
-    public void setIdentifer(String identifier)
+    public void setIdentifier(String identifier)
     {
         this.identifier = identifier;
     }
