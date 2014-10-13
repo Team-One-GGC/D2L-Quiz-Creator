@@ -3,19 +3,13 @@ package t1.dqc.xml.quiz.options;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAttribute;
-<<<<<<< HEAD
 import javax.xml.bind.annotation.XmlType;
-=======
->>>>>>> origin/Test_Jared
 
 import t1.dqc.xml.quiz.presentation.Rubric;
 
 @XmlRootElement(name="assessfeedback")
-<<<<<<< HEAD
 @XmlType(propOrder={"rubric", "duration", "responseDisplayTypeId", "showCorrectAnswers",
 		"submissionRestrictIp", "showClassAverage", "showScoreDistribution"})
-=======
->>>>>>> origin/Test_Jared
 public class AssessFeedback
 {
 	private String title="";
@@ -47,11 +41,7 @@ public class AssessFeedback
 		this.rubric = rubric;
 	}
 	
-<<<<<<< HEAD
 	@XmlElement(name="d2l_2p0:duration")
-=======
-	@XmlAttribute(name="d2l_2p0:duration")
->>>>>>> origin/Test_Jared
 	public int getDuration()
 	{
 		return duration;
@@ -61,11 +51,7 @@ public class AssessFeedback
 		this.duration = duration;
 	}
 	
-<<<<<<< HEAD
 	@XmlElement(name="d2l_2p0:response_display_type_id")
-=======
-	@XmlAttribute(name="d2l_2p0:response_display_type_id")
->>>>>>> origin/Test_Jared
 	public int getResponseDisplayTypeId()
 	{
 		return responseDisplayTypeId;
@@ -75,11 +61,7 @@ public class AssessFeedback
 		this.responseDisplayTypeId = responseDisplayTypeId;
 	}
 	
-<<<<<<< HEAD
 	@XmlElement(name="d2l_2p0:show_correct_answers")
-=======
-	@XmlAttribute(name="d2l_2p0:show_correct_answers")
->>>>>>> origin/Test_Jared
 	public String getShowCorrectAnswers()
 	{
 		return showCorrectAnswers;
@@ -89,11 +71,8 @@ public class AssessFeedback
 		this.showCorrectAnswers = showCorrectAnswers;
 	}
 	
-<<<<<<< HEAD
+
 	@XmlElement(name="d2l_2p0:submission_restrictip")
-=======
-	@XmlAttribute(name="d2l_2p0:submission_restrictip")
->>>>>>> origin/Test_Jared
 	public String getSubmissionRestrictIp()
 	{
 		return submissionRestrictIp;
@@ -103,11 +82,7 @@ public class AssessFeedback
 		this.submissionRestrictIp = submissionRestrictIp;
 	}
 	
-<<<<<<< HEAD
 	@XmlElement(name="d2l_2p0:show_class_average")
-=======
-	@XmlAttribute(name="d2l_2p0:show_class_average")
->>>>>>> origin/Test_Jared
 	public String getShowClassAverage()
 	{
 		return showClassAverage;
@@ -117,11 +92,7 @@ public class AssessFeedback
 		this.showClassAverage = showClassAverage;
 	}
 	
-<<<<<<< HEAD
 	@XmlElement(name="d2l_2p0:show_score_distribution")
-=======
-	@XmlAttribute(name="d2l_2p0:show_score_distribution")
->>>>>>> origin/Test_Jared
 	public String getShowScoreDistribution()
 	{
 		return showScoreDistribution;

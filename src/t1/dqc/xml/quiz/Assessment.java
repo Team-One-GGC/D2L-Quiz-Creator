@@ -1,10 +1,6 @@
 package t1.dqc.xml.quiz;
 
 import javax.xml.bind.annotation.XmlAttribute;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/Test_Jared
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -14,10 +10,6 @@ import t1.dqc.xml.quiz.options.AssessmentControl;
 import t1.dqc.xml.quiz.options.Procextension;
 import t1.dqc.xml.quiz.presentation.PresentationMat;
 import t1.dqc.xml.quiz.presentation.Rubric;
-
-import t1.dqc.xml.quiz.presentation.PresentationMat;
-import t1.dqc.xml.quiz.presentation.Rubric;
-import t1.dqc.xml.quiz.options.AssessmentControl;
 
 /**
  * This class represents the contents of the <assessment> element within the D2L quiz Xml.
@@ -36,11 +28,8 @@ public class Assessment
     private Rubric rubric;
     private AssessmentControl assessmentControl;
     private PresentationMat presentationMat;
-<<<<<<< HEAD
     private Procextension extension;
     private AssessFeedback feedback;
-=======
->>>>>>> origin/Test_Jared
     
     public Assessment(){}
     
@@ -104,7 +93,6 @@ public class Assessment
     {
         this.assessmentControl = assessmentControl;
     }
-<<<<<<< HEAD
 
     @XmlElement(name = "assess_procextension")
     public Procextension getExtension()
@@ -127,6 +115,4 @@ public class Assessment
     {
         this.feedback = feedback;
     }
-=======
->>>>>>> origin/Test_Jared
 }

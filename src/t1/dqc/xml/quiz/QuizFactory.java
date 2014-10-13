@@ -1,10 +1,5 @@
 package t1.dqc.xml.quiz;
 
-<<<<<<< HEAD
-import t1.dqc.xml.quiz.options.AssessFeedback;
-=======
-import t1.dqc.xml.quiz.presentation.PresentationMat;
->>>>>>> origin/Test_Jared
 import t1.dqc.xml.quiz.options.AssessmentControl;
 
 /**
@@ -31,12 +26,7 @@ public class QuizFactory
     
     public static void test(Quiz quiz)
     {
-<<<<<<< HEAD
-        AssessFeedback a = quiz.getAssessment().getFeedback();
-        System.out.println(a.getShowClassAverage());
-=======
         AssessmentControl c = quiz.getAssessment().getAssessmentControl();
         System.out.println(c.getFeedbackswitch());
->>>>>>> origin/Test_Jared
     }
 }
