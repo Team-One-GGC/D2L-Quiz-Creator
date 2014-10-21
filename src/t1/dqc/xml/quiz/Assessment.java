@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+import t1.dqc.xml.XmlNS;
 import t1.dqc.xml.quiz.options.AssessFeedback;
 import t1.dqc.xml.quiz.options.AssessmentControl;
 import t1.dqc.xml.quiz.options.Procextension;
@@ -33,7 +34,7 @@ public class Assessment
     
     public Assessment(){}
     
-    @XmlAttribute(name = "id", namespace = "http://desire2learn.com/xsd/d2lcp_v2p0")
+    @XmlAttribute(name = "id", namespace = XmlNS.D2L_NS)
     public String getId()
     {
         return id;

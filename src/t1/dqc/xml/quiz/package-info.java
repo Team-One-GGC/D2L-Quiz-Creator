@@ -1,6 +1,6 @@
 @XmlSchema(elementFormDefault = XmlNsForm.QUALIFIED,
            xmlns = {
-                        @XmlNs(prefix = "d2l_2p0", namespaceURI = "http://desire2learn.com/xsd/d2lcp_v2p0")
+                        @XmlNs(prefix = t1.dqc.xml.XmlNS.D2L_PREFIX, namespaceURI = t1.dqc.xml.XmlNS.D2L_NS)
                    }
           )
 package t1.dqc.xml.quiz;

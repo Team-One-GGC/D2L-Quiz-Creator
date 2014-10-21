@@ -3,6 +3,14 @@ package t1.dqc.xml.quiz.options;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import t1.dqc.xml.quiz.Assessment;
+
+/**
+ * The class representation of the <assessmentcontrol> Xml tag.
+ * This tag is found within the <assessment> tag see {@link Assessment}
+ * @author Derek
+ *
+ */
 @XmlRootElement(name = "assessmentcontrol")
 public class AssessmentControl
 {

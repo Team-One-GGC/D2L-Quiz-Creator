@@ -1,9 +1,9 @@
 @XmlSchema(elementFormDefault = XmlNsForm.QUALIFIED,
-		   namespace = "http://www.imsglobal.org/xsd/imscp_v1p1",
+		   namespace = t1.dqc.xml.XmlNS.DEFAULT_NS,
 		   xmlns = {
-						@XmlNs(prefix = "d2l_2p0", namespaceURI = "http://desire2learn.com/xsd/d2lcp_v2p0"),
-						@XmlNs(prefix = "scorm_1p2", namespaceURI = "http://www.adlnet.org/xsd/adlcp_rootv1p2"),
-						@XmlNs(prefix = "", namespaceURI = "http://www.imsglobal.org/xsd/imscp_v1p1")
+						@XmlNs(prefix = t1.dqc.xml.XmlNS.D2L_PREFIX, namespaceURI = t1.dqc.xml.XmlNS.D2L_NS),
+						@XmlNs(prefix = t1.dqc.xml.XmlNS.SCORM_PREFIX, namespaceURI = t1.dqc.xml.XmlNS.SCORM_NS),
+						@XmlNs(prefix = "", namespaceURI = t1.dqc.xml.XmlNS.DEFAULT_NS)
 				   }
 		  )
 package t1.dqc.xml.manifest;

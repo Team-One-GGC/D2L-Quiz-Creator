@@ -6,6 +6,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import t1.dqc.xml.quiz.Assessment;
+
+/**
+ * The class representation of the <presentation_material> Xml tag.
+ * This tag is found within the <assessment> tag see {@link Assessment}
+ * @author Derek
+ *
+ */
 @XmlRootElement(name = "presentation_material")
 public class PresentationMat
 {

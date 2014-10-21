@@ -4,6 +4,12 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * The class representation of the <material> Xml tag.
+ * This tag is found throughout the Xml and is associated with how things are presented on D2L.
+ * @author Derek
+ *
+ */
 @XmlRootElement(name = "material")
 public class Material
 {
