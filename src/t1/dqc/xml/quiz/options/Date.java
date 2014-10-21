@@ -6,6 +6,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import t1.dqc.xml.XmlNS;
+
 import com.sun.xml.internal.bind.XmlAccessorFactory;
 
 
@@ -22,7 +24,7 @@ public abstract class Date
 		private int minutes;
 		private int seconds;
 		
-		@XmlElement(name="d2l_2p0:month")
+		@XmlElement(name="month", namespace=XmlNS.D2L_NS)
 		public int getMonth()
 		{
 			return month;
@@ -32,7 +34,7 @@ public abstract class Date
 			this.month = month;
 		}
 		
-		@XmlElement(name="d2l_2p0:day")
+		@XmlElement(name="day", namespace=XmlNS.D2L_NS)
 		public int getDay()
 		{
 			return day;
@@ -42,7 +44,7 @@ public abstract class Date
 			this.day = day;
 		}
 		
-		@XmlElement(name="d2l_2p0:year")
+		@XmlElement(name="year", namespace=XmlNS.D2L_NS)
 		public int getYear()
 		{
 			return year;
@@ -52,7 +54,7 @@ public abstract class Date
 			this.year = year;
 		}
 		
-		@XmlElement(name="d2l_2p0:hour")
+		@XmlElement(name="hour", namespace=XmlNS.D2L_NS)
 		public int getHour()
 		{
 			return hour;
@@ -61,8 +63,7 @@ public abstract class Date
 		{
 			this.hour = hour;
 		}
-		//name="minutes", namespace="http://desire2learn.com/xsd/d2lcp_v2p0"
-		@XmlElement(name="d2l_2p0:minutes")
+		@XmlElement(name="minutes", namespace=XmlNS.D2L_NS)
 		public int getMinutes()
 		{
 			return minutes;
@@ -72,7 +73,7 @@ public abstract class Date
 			this.minutes = minutes;
 		}
 		
-		@XmlElement(name="d2l_2p0:seconds")
+		@XmlElement(name="seconds", namespace=XmlNS.D2L_NS)
 		public int getSeconds()
 		{
 			return seconds;
@@ -81,7 +82,5 @@ public abstract class Date
 		{
 			this.seconds = seconds;
 		}
-		
 	}
-	
 }

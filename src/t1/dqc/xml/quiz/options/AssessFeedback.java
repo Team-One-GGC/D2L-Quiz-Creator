@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
+import t1.dqc.xml.XmlNS;
 import t1.dqc.xml.quiz.presentation.Rubric;
 
 @XmlRootElement(name="assessfeedback")
@@ -41,7 +42,7 @@ public class AssessFeedback
 		this.rubric = rubric;
 	}
 	
-	@XmlElement(name="d2l_2p0:duration")
+	@XmlElement(name="duration", namespace=XmlNS.D2L_NS)
 	public int getDuration()
 	{
 		return duration;
@@ -51,7 +52,7 @@ public class AssessFeedback
 		this.duration = duration;
 	}
 	
-	@XmlElement(name="d2l_2p0:response_display_type_id")
+	@XmlElement(name="response_display_type_id", namespace=XmlNS.D2L_NS)
 	public int getResponseDisplayTypeId()
 	{
 		return responseDisplayTypeId;
@@ -61,7 +62,7 @@ public class AssessFeedback
 		this.responseDisplayTypeId = responseDisplayTypeId;
 	}
 	
-	@XmlElement(name="d2l_2p0:show_correct_answers")
+	@XmlElement(name="show_correct_answers", namespace=XmlNS.D2L_NS)
 	public String getShowCorrectAnswers()
 	{
 		return showCorrectAnswers;
@@ -72,7 +73,7 @@ public class AssessFeedback
 	}
 	
 
-	@XmlElement(name="d2l_2p0:submission_restrictip")
+	@XmlElement(name="submission_restrictip", namespace=XmlNS.D2L_NS)
 	public String getSubmissionRestrictIp()
 	{
 		return submissionRestrictIp;
@@ -82,7 +83,7 @@ public class AssessFeedback
 		this.submissionRestrictIp = submissionRestrictIp;
 	}
 	
-	@XmlElement(name="d2l_2p0:show_class_average")
+	@XmlElement(name="show_class_average", namespace=XmlNS.D2L_NS)
 	public String getShowClassAverage()
 	{
 		return showClassAverage;
@@ -92,7 +93,7 @@ public class AssessFeedback
 		this.showClassAverage = showClassAverage;
 	}
 	
-	@XmlElement(name="d2l_2p0:show_score_distribution")
+	@XmlElement(name="show_score_distribution", namespace=XmlNS.D2L_NS)
 	public String getShowScoreDistribution()
 	{
 		return showScoreDistribution;
