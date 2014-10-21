@@ -3,7 +3,15 @@ package t1.dqc.xml.quiz.options;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "intro_message", namespace = "http://desire2learn.com/xsd/d2lcp_v2p0")
+import t1.dqc.xml.XmlNS;
+
+/**
+ * Class representation of the <intro_message> Xml tag.
+ * This tag is found within the <assess_procextension> tag see {@link Procextension}
+ * @author Derek
+ *
+ */
+@XmlRootElement(name = "intro_message", namespace = XmlNS.D2L_NS)
 public class IntroMessage
 {
     private String isDisplayed;
@@ -11,7 +19,7 @@ public class IntroMessage
     
     public IntroMessage(){}
     
-    @XmlAttribute(name = "isdisplayed", namespace = "http://desire2learn.com/xsd/d2lcp_v2p0")
+    @XmlAttribute(name = "isdisplayed", namespace = XmlNS.D2L_NS)
     public String getIsDisplayed()
     {
         return isDisplayed;

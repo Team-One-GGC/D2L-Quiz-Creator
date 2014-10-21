@@ -6,6 +6,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import t1.dqc.xml.quiz.Assessment;
+import t1.dqc.xml.quiz.options.AssessFeedback;
+
+/**
+ * The class representation of the <rubric> tag.
+ * This tag in found within <assessment> and <assessfeedback> see {@link Assessment} and {@link AssessFeedback}
+ * @author Derek
+ *
+ */
 @XmlRootElement(name = "rubric")
 public class Rubric
 {

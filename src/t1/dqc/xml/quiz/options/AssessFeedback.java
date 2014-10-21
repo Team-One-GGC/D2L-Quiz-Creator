@@ -71,6 +71,7 @@ public class AssessFeedback
 		this.showCorrectAnswers = showCorrectAnswers;
 	}
 	
+
 	@XmlElement(name="d2l_2p0:submission_restrictip")
 	public String getSubmissionRestrictIp()
 	{

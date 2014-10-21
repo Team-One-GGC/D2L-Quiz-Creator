@@ -3,6 +3,8 @@ package t1.dqc.xml.manifest;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import t1.dqc.xml.XmlNS;
+
 /**
  * Class representation of the "resource" element within the imsmanifest.xml file.
  * In the context of D2L Quiz Creator the only elements unique between instances of this class are identifier and href.
@@ -53,7 +55,7 @@ public class ManifestResource
         this.type = type;
     }
     
-    @XmlAttribute(name = "material_type", namespace = "http://desire2learn.com/xsd/d2lcp_v2p0")
+    @XmlAttribute(name = "material_type", namespace = XmlNS.D2L_NS)
     public String getMaterial_type()
     {
         return material_type;
@@ -64,7 +66,7 @@ public class ManifestResource
         this.material_type = material_type;
     }
     
-    @XmlAttribute(name = "link_target", namespace = "http://desire2learn.com/xsd/d2lcp_v2p0")
+    @XmlAttribute(name = "link_target", namespace = XmlNS.D2L_NS)
     public String getLink_target()
     {
         return link_target;

@@ -4,6 +4,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlValue;
 
+import t1.dqc.xml.XmlNS;
+
+/**
+ * The class representation of the <mattext> Xml tag.
+ * This tag is found throughout the Xml and is associated with how things are displayed.
+ * NOTE: some fields in this class are optional and might not be supplied in the Xml.
+ * @author Derek
+ *
+ */
 @XmlRootElement(name = "mattext")
 public class MatText
 {
@@ -26,7 +35,7 @@ public class MatText
         this.textType = textType;
     }
     
-    @XmlAttribute(name = "isdisplayed", namespace = "http://desire2learn.com/xsd/d2lcp_v2p0")
+    @XmlAttribute(name = "isdisplayed", namespace = XmlNS.D2L_NS)
     public String getIsDisplayed()
     {
         return isDisplayed;
