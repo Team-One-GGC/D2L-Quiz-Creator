@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <AnchorPane prefHeight="300.0" prefWidth="600.0">
+         <children>
+            <TabPane prefHeight="300.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="True/False" />
+              </tabs>
+            </TabPane>
+            <ScrollPane prefHeight="300.0" prefWidth="600.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="600.0">
+                     <children>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="600.0">
+                           <children>
+                              <Button layoutX="491.0" layoutY="402.0" mnemonicParsing="false" text="Save" />
+                              <ScrollBar layoutX="578.0" max="150.0" orientation="VERTICAL" prefHeight="255.0" prefWidth="22.0" />
+                              <Button layoutX="578.0" layoutY="402.0" mnemonicParsing="false" text="Cancel" />
+                              <VBox layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="150.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Title" />
+                                    <TextField prefHeight="7.0" prefWidth="145.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="14.0" layoutY="97.0" prefHeight="50.0" prefWidth="75.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Points*" />
+                                    <TextField text="1" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="14.0" layoutY="182.0" prefHeight="75.0" prefWidth="80.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Difficulty" />
+                                    <ChoiceBox prefHeight="40.0" prefWidth="60.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="14.0" layoutY="263.0" prefHeight="184.0" prefWidth="455.0">
+                                 <children>
+                                    <Label text="Question Text*" />
+                                    <TextArea prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
