@@ -19,7 +19,8 @@ public class Procextension
     private String disableRightClick = "no";
     private String disablePagerAccess = "no";
     private String isActive;
-    //Start Date goes here
+    private Date startDate;
+    private Date endDate;
     //End Date goes here    
     private String hasSceduleEvent = "no";
     private String password;
@@ -81,9 +82,29 @@ public class Procextension
     {
         this.isActive = isActive;
     }
-
-    //Date stuff goes here
     
+    @XmlElement(name = "date_start", namespace = XmlNS.D2L_NS)
+    public Date getStartDate()
+    {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate)
+    {
+        this.startDate = startDate;
+    }
+
+    @XmlElement(name = "date_end", namespace = XmlNS.D2L_NS)
+    public Date getEndDate()
+    {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate)
+    {
+        this.endDate = endDate;
+    }
+
     @XmlElement(name = "has_schedule_even", namespace = XmlNS.D2L_NS)
     public String getHasSceduleEvent()
     {
