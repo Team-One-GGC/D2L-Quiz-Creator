@@ -8,14 +8,24 @@ import javax.xml.bind.annotation.XmlType;
 
 import t1.dqc.xml.XmlNS;
 
-import com.sun.xml.internal.bind.XmlAccessorFactory;
-
-
-public abstract class Date
+public class Date
 {
-	@XmlRootElement(name="timestamp")
+    private Timestamp timeStamp;
+    
+    @XmlElement(name = "timestamp" , namespace = XmlNS.D2L_NS)
+    public Timestamp getTimeStamp()
+    {
+        return timeStamp;
+    }
+    
+    public void setTimeStamp(Timestamp timeStamp)
+    {
+        this.timeStamp = timeStamp;
+    }
+    
+	@XmlRootElement(name="timestamp", namespace = XmlNS.D2L_NS)
 	@XmlType(propOrder={"month", "day", "year", "hour", "minutes", "seconds"})
-	private abstract class Timestamp
+	public static class Timestamp
 	{
 		private int month;
 		private int day;

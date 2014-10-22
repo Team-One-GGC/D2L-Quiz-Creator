@@ -1,6 +1,9 @@
 package t1.dqc.xml.quiz;
 
 import t1.dqc.xml.quiz.options.AssessmentControl;
+import t1.dqc.xml.quiz.options.Date;
+import t1.dqc.xml.quiz.options.Date.Timestamp;
+import t1.dqc.xml.quiz.options.Procextension;
 
 /**
  * Utility class for getting various objects important to a Quiz object:
@@ -26,7 +29,12 @@ public class QuizFactory
     
     public static void test(Quiz quiz)
     {
-        AssessmentControl c = quiz.getAssessment().getAssessmentControl();
-        System.out.println(c.getFeedbackswitch());
+        Procextension p = quiz.getAssessment().getExtension();
+        Date d = p.getStartDate();
+        Timestamp t = d.getTimeStamp();
+        int month = t.getMonth();
+        int day = t.getDay();
+        
+        System.out.println("Month: " + month + " Day: " + day);
     }
 }
