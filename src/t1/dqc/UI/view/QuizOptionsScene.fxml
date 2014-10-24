@@ -1,60 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections ?>
 
-
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.QuizOptionsController">
    <children>
       <AnchorPane layoutX="3.0" layoutY="3.0" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="600.0">
          <children>
             <HBox layoutX="14.0" layoutY="14.0" spacing="5.0">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" text="Quiz Name:" />
-                  <TextField layoutX="83.0" layoutY="10.0" prefHeight="25.0" prefWidth="184.0" />
+                  <TextField fx:id="quizName" layoutX="83.0" layoutY="10.0" prefHeight="25.0" prefWidth="184.0" />
                </children>
             </HBox>
             <HBox layoutX="14.0" layoutY="56.0" spacing="5.0">
                <children>
                   <Label layoutX="12.0" layoutY="35.0" text="Staus:" />
-                  <ComboBox prefWidth="150.0" promptText="Select One" visibleRowCount="2" />
+                  <ComboBox fx:id="statusChoice" prefWidth="150.0" promptText="Select One" visibleRowCount="2">
+                  	<items>
+                  		<FXCollections fx:factory="observableArrayList">
+                  			<String fx:value="Enable" />
+                  			<String fx:value="Disable" />
+                  		</FXCollections>
+                  	</items>
+                  </ComboBox>
                </children>
             </HBox>
             <HBox layoutX="14.0" layoutY="100.0" spacing="5.0">
                <children>
                   <Label layoutX="12.0" layoutY="59.0" text="Start Date:" />
-                  <DatePicker layoutX="75.0" layoutY="55.0" showWeekNumbers="true" />
+                  <DatePicker fx:id="startDate" layoutX="75.0" layoutY="55.0" showWeekNumbers="true" />
                </children>
             </HBox>
             <HBox layoutX="14.0" layoutY="170.0" spacing="10.0">
                <children>
                   <Label layoutX="15.0" layoutY="83.0" text="End Date:" />
-                  <DatePicker layoutX="75.0" layoutY="84.0" />
+                  <DatePicker fx:id="endDate" layoutX="75.0" layoutY="84.0" />
                </children>
             </HBox>
             <HBox layoutX="300.0" layoutY="100.0" spacing="5.0">
                <children>
                   <Label layoutX="14.0" layoutY="107.0" text="Time Limit: " />
-                  <TextField layoutX="75.0" layoutY="103.0" />
+                  <TextField fx:id="timeLimit" layoutX="75.0" layoutY="103.0" />
                </children>
             </HBox>
             <HBox layoutX="300.0" layoutY="170.0" spacing="5.0">
                <children>
                   <Label layoutX="19.0" layoutY="169.0" text="Attempts:" />
-                  <TextField layoutX="82.0" layoutY="165.0" />
+                  <TextField fx:id="attemptLimit" layoutX="82.0" layoutY="165.0" />
                </children>
             </HBox>
-            <CheckBox layoutX="300.0" layoutY="51.0" mnemonicParsing="false" text="Password" />
+            <CheckBox fx:id="passwordEnable" layoutX="300.0" layoutY="51.0" mnemonicParsing="false" text="Password" />
             <HBox layoutX="300.0" layoutY="14.0" spacing="5.0">
                <children>
                   <Label layoutX="17.0" layoutY="219.0" text="Password: " />
-                  <TextField layoutX="75.0" layoutY="215.0" />
+                  <TextField fx:id="password" layoutX="75.0" layoutY="215.0" />
                </children>
             </HBox>
-            <CheckBox layoutX="300.0" layoutY="130.0" mnemonicParsing="false" text="Time Limit Enforced" />
+            <CheckBox fx:id="timeLimitEnabled" layoutX="300.0" layoutY="130.0" mnemonicParsing="false" text="Time Limit Enforced" />
             <HBox layoutX="465.0" layoutY="261.0" spacing="10.0">
                <children>
                   <Button layoutX="458.0" layoutY="220.0" mnemonicParsing="false" text="Confirm" />
@@ -64,17 +72,17 @@
             <HBox layoutX="14.0" layoutY="135.0" spacing="5.0">
                <children>
                   <Label layoutX="14.0" layoutY="130.0" text="Start Time:" />
-                  <TextField layoutX="71.0" layoutY="126.0" prefColumnCount="2" promptText="HH" />
+                  <TextField fx:id="startHour" layoutX="71.0" layoutY="126.0" prefColumnCount="2" promptText="HH" />
                   <Text layoutX="112.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
-                  <TextField layoutX="121.0" layoutY="126.0" prefColumnCount="2" promptText="MM" />
+                  <TextField fx:id="startMin" layoutX="121.0" layoutY="126.0" prefColumnCount="2" promptText="MM" />
                </children>
             </HBox>
             <HBox layoutX="14.0" layoutY="209.0" spacing="5.0">
                <children>
                   <Label layoutX="14.0" layoutY="130.0" text="End Time:" />
-                  <TextField layoutX="71.0" layoutY="126.0" prefColumnCount="2" promptText="HH" />
+                  <TextField fx:id="endHour" layoutX="71.0" layoutY="126.0" prefColumnCount="2" promptText="HH" />
                   <Text layoutX="112.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
-                  <TextField layoutX="121.0" layoutY="126.0" prefColumnCount="2" promptText="MM" />
+                  <TextField fx:id="endMin" layoutX="121.0" layoutY="126.0" prefColumnCount="2" promptText="MM" />
                </children>
             </HBox>
          </children>
