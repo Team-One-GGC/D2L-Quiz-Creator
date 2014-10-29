@@ -11,6 +11,7 @@ import t1.dqc.xml.quiz.options.AssessmentControl;
 import t1.dqc.xml.quiz.options.Procextension;
 import t1.dqc.xml.quiz.presentation.PresentationMat;
 import t1.dqc.xml.quiz.presentation.Rubric;
+import t1.dqc.xml.quiz.ques.QuestionContainer;
 
 /**
  * This class represents the contents of the <assessment> element within the D2L quiz Xml.
@@ -19,7 +20,7 @@ import t1.dqc.xml.quiz.presentation.Rubric;
  *
  */
 @XmlRootElement(name = "assessment")
-@XmlType(propOrder = {"rubric", "assessmentControl", "presentationMat", "extension", "feedback"})
+@XmlType(propOrder = {"rubric", "assessmentControl", "presentationMat", "extension", "feedback", "container"})
 public class Assessment
 {
     private String id;
@@ -31,6 +32,7 @@ public class Assessment
     private PresentationMat presentationMat;
     private Procextension extension;
     private AssessFeedback feedback;
+    private QuestionContainer container;
     
     public Assessment(){}
     
@@ -115,5 +117,16 @@ public class Assessment
     public void setFeedback(AssessFeedback feedback)
     {
         this.feedback = feedback;
+    }
+
+    @XmlElement(name = "section")
+    public QuestionContainer getContainer()
+    {
+        return container;
+    }
+
+    public void setContainer(QuestionContainer container)
+    {
+        this.container = container;
     }
 }

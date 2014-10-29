@@ -2,6 +2,7 @@ package t1.dqc.xml.quiz.options;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 import t1.dqc.xml.XmlNS;
 import t1.dqc.xml.quiz.Assessment;
@@ -13,6 +14,10 @@ import t1.dqc.xml.quiz.Assessment;
  *
  */
 @XmlRootElement(name = "assess_procextension")
+@XmlType(propOrder={"message", "disableRightClick", "disablePagerAccess", "isActive", "startDate", "endDate",
+                    "hasScheduleEvent", "password", "isAttemptRldb", "isSubviewRldb", "timeLimit", "showClock",
+                    "enforceTimeLimit", "gracePeriod", "lateLimit", "lateLimitData", "attemptsAllowed", "attemptRestrictions",
+                    "markCalculationType", "isForwardOnly"})
 public class Procextension
 {
     private IntroMessage message;
@@ -20,9 +25,8 @@ public class Procextension
     private String disablePagerAccess = "no";
     private String isActive;
     private Date startDate;
-    private Date endDate;
-    //End Date goes here    
-    private String hasSceduleEvent = "no";
+    private Date endDate;  
+    private String hasScheduleEvent = "no";
     private String password;
     private String isAttemptRldb = "no";
     private String isSubviewRldb = "no";
@@ -108,12 +112,12 @@ public class Procextension
     @XmlElement(name = "has_schedule_even", namespace = XmlNS.D2L_NS)
     public String getHasSceduleEvent()
     {
-        return hasSceduleEvent;
+        return hasScheduleEvent;
     }
 
     public void setHasSceduleEvent(String hasSceduleEvent)
     {
-        this.hasSceduleEvent = hasSceduleEvent;
+        this.hasScheduleEvent = hasSceduleEvent;
     }
 
     @XmlElement(name = "password", namespace = XmlNS.D2L_NS)
