@@ -32,7 +32,7 @@ public class Date
 		private int year;
 		private int hour;
 		private int minutes;
-		private int seconds;
+		private int seconds = 0;
 		
 		@XmlElement(name="month", namespace=XmlNS.D2L_NS)
 		public int getMonth()
