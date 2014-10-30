@@ -9,13 +9,26 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "itemmetadata")
 public class ItemMetadata
 {
+	@XmlElementWrapper(name = "qtimetadata")
+	@XmlElement(name = "qtimetadatafield")
+	public List<QtiMetadataField> getList()
+	{
+		return list;
+	}
+
+	public void setList(List<QtiMetadataField> list)
+	{
+		this.list = list;
+	}
+
+	private List<QtiMetadataField> list;
+	
 	/**
 	 * @param list
 	 */
-    public ItemMetadata(List<QtiMetadataField> list)
+    public ItemMetadata()
     {
-	    super();
-	    this.list = list;
+	   /* super();
 	    QtiMetadataField item1 = new QtiMetadataField();
 	    item1.setFieldlabel("qmd_computerscored");
 	    item1.setFieldentry("yes");
@@ -29,12 +42,8 @@ public class ItemMetadata
 	    QtiMetadataField item3 = new QtiMetadataField();
 	    item1.setFieldlabel("qmd_weighting");
 	    item1.setFieldentry("1");
-	    list.add(item3);
+	    list.add(item3);*/
     }
-
-	@XmlElementWrapper(name = "qtimetadata")
-	@XmlElement(name = "qtimetadatafield")
-	private List<QtiMetadataField> list;
 }
 
 

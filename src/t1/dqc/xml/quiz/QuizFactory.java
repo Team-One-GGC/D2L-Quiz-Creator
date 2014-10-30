@@ -1,9 +1,14 @@
 package t1.dqc.xml.quiz;
 
+import java.util.List;
+
 import t1.dqc.xml.quiz.options.AssessmentControl;
 import t1.dqc.xml.quiz.options.Date;
 import t1.dqc.xml.quiz.options.Date.Timestamp;
 import t1.dqc.xml.quiz.options.Procextension;
+import t1.dqc.xml.quiz.ques.ItemMetadata;
+import t1.dqc.xml.quiz.ques.QtiMetadataField;
+import t1.dqc.xml.quiz.ques.Question;
 
 /**
  * Utility class for getting various objects important to a Quiz object:
@@ -34,6 +39,14 @@ public class QuizFactory
         Timestamp t = d.getTimeStamp();
         int month = t.getMonth();
         int day = t.getDay();
+        
+      List<Question> questions = quiz.getAssessment().getContainer().getQuestions();
+      System.out.println(questions.get(0).getTitle());
+     /* ItemMetadata data = questions.get(0).getItemMetadata();
+      QtiMetadataField qtiMetadataField = data.getList().get(0);
+      System.out.print(qtiMetadataField.getFieldlabel());
+      System.out.print(qtiMetadataField.getFieldentry());*/
+      
         
         System.out.println("Month: " + month + " Day: " + day);
     }

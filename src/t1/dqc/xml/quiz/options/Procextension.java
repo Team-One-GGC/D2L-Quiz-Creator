@@ -110,14 +110,14 @@ public class Procextension
     }
 
     @XmlElement(name = "has_schedule_even", namespace = XmlNS.D2L_NS)
-    public String getHasSceduleEvent()
+    public String getHasScheduleEvent()
     {
         return hasScheduleEvent;
     }
 
-    public void setHasSceduleEvent(String hasSceduleEvent)
+    public void setHasScheduleEvent(String hasScheduleEvent)
     {
-        this.hasScheduleEvent = hasSceduleEvent;
+        this.hasScheduleEvent = hasScheduleEvent;
     }
 
     @XmlElement(name = "password", namespace = XmlNS.D2L_NS)
