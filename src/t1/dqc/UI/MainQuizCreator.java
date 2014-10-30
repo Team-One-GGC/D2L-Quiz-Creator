@@ -6,8 +6,10 @@ import java.io.IOException;
 
 
 
+
 import t1.dqc.UI.view.D2LQuizCreatorMainController;
 import t1.dqc.UI.view.NewQuizDialogController;
+import t1.dqc.UI.view.QuizOptionsController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -84,34 +86,21 @@ public class MainQuizCreator extends Application {
     }
     
     /**
-     * Opens New Quiz dialog
+     * Opens New Quiz Options
      */
-    public boolean showNewQuizDialog(){
-        try{
-           //Loads the fxml file and creates a new stage for the dialog popup
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainQuizCreator.class.getResource("view/NewQuizDialog.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
-            
-            //Create the dialog Stage.
-            Stage dialogStage = new Stage();
-            dialogStage.setTitle("New Quiz");
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(primaryStage);
-            Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
-            
-            //Set controller
-            NewQuizDialogController controller = loader.getController();
-            controller.setDialogStage(dialogStage);
-            
-            //Show the dialog and wait until the user closes it
-            dialogStage.showAndWait();
-            
-            return controller.isConfirmClicked();
-        } catch (IOException e){
-            e.printStackTrace();
-            return false;
-        }
+    public void showQuizOptions(){
+            try {
+                // Load person overview.
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(MainQuizCreator.class.getResource("view/QuizOptionsScene.fxml"));
+                AnchorPane QuizOptionsScene = (AnchorPane) loader.load();
+                QuizOptionsController controller;
+                controller = loader.getController();
+                controller.setMainQuizCreator(this);
+                // Set person overview into the center of root layout.
+                rootLayout.setCenter(QuizOptionsScene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
 }

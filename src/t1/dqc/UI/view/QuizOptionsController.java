@@ -1,5 +1,6 @@
 package t1.dqc.UI.view;
 
+import t1.dqc.UI.MainQuizCreator;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -7,6 +8,9 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 public class QuizOptionsController {
+    
+  //Reference to the main D2LQuizCreation application
+    private MainQuizCreator mainQuizCreator;
 
     //Quiz Name text field
     @FXML
@@ -77,11 +81,11 @@ public class QuizOptionsController {
         //Initialize logic for combo box
         statusChoice.getItems().clear();
         statusChoice.getItems().addAll("Enabled","Disabled");
-        startAMPM.getItems().clear();
-        startAMPM.getItems().addAll("AM", "PM");
-        endAMPM.getItems().clear();
-        endAMPM.getItems().addAll("AM", "PM");
-        setFields();
+        //startAMPM.getItems().clear();
+        //startAMPM.getItems().addAll("AM", "PM");
+        //endAMPM.getItems().clear();
+        //endAMPM.getItems().addAll("AM", "PM");
+        //setFields();
     }
     
     //Selecting Quiz Status
@@ -90,16 +94,16 @@ public class QuizOptionsController {
        System.out.println("Quiz status is " + quizStatus);
     }
     
-    //@FXML
+    @FXML
     //Limit Text in Time Fields
-   /* public void timeFieldLimiter(){
-        if (timeField.getText().length() >= LIMIT) {
+    public void timeFieldLimiter(){
+      //  if (timeField.getText().length() >= LIMIT) {
 
             // if it's 11th character then just setText to previous
             // one
-            timeField.setText(timeField.getText().substring(0, LIMIT));
-        }*/
-    //}
+          //  timeField.setText(timeField.getText().substring(0, LIMIT));
+        //}*/
+    }
     
     //Set fields to Quiz values
     @FXML
@@ -116,7 +120,11 @@ public class QuizOptionsController {
     //Cancel Changes and close stage
     @FXML
     public void cancelSaves(){
-        
+        mainQuizCreator.showD2LQuizCreatorMain();
+    }
+    
+    public void setMainQuizCreator(MainQuizCreator mainQuizCreator){
+        this.mainQuizCreator = mainQuizCreator;   
     }
     
 }

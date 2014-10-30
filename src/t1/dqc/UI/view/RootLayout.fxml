@@ -11,18 +11,9 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" text="New" />
-                  <MenuItem mnemonicParsing="false" text="Open" />
-                  <MenuItem mnemonicParsing="false" text="Save" />
-              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#handleFileClose" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-                  <MenuItem mnemonicParsing="false" text="Copy" />
-                  <MenuItem mnemonicParsing="false" text="Cut" />
-                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleNewMenuOption" text="New" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleEditMenuOption" text="Open" />
+              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#handleCloseMenuOption" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
