@@ -84,6 +84,6 @@ public class D2LQuizCreatorMainController {
      */
   @FXML
   private void createQuizHandler(){
-    mainQuizCreator.showNewQuizDialog();
+    mainQuizCreator.showQuizOptions();
   }
 }

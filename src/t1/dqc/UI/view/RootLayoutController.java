@@ -23,7 +23,7 @@ public class RootLayoutController {
     
     //Function to close program
     @FXML
-    private void handleFileClose(){
+    private void handleCloseMenuOption(){
        Platform.exit();
        System.exit(0);
     }
@@ -35,6 +35,14 @@ public class RootLayoutController {
      */
     public void setMainQuizCreator(MainQuizCreator mainQuizCreator){
         this.mainQuizCreator = mainQuizCreator;   
+    }
+    
+    public void handleNewMenuOption(){
+        mainQuizCreator.showQuizOptions();
+    }
+    
+    public void handleEditMenuOption(){
+        
     }
     
 }

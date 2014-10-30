@@ -21,11 +21,10 @@ public class NewQuizDialogController {
     private Button cancelButton;
     
     private Stage newQuizDialogStage;
-    private boolean confirmClicked = false;
     
     /**
      * Initialized the controller class. Method automatically
-     * called after teh fxml file is loaded.
+     * called after the fxml file is loaded.
      */
     @FXML
     private void initialize(){
@@ -41,21 +40,12 @@ public class NewQuizDialogController {
         this.newQuizDialogStage = newQuizDialogStage;
     }
     
-    /**
-     * Returns true if the user clicked OK, false otherwise.
-     * 
-     * @return
-     */
-    public boolean isConfirmClicked(){
-        return confirmClicked;
-    }
     
     /**
      * Called when the ok button is clicked
      */
     @FXML
     private void handleConfirm(){
-        confirmClicked = true;
         newQuizDialogStage.close();
     }
 }
