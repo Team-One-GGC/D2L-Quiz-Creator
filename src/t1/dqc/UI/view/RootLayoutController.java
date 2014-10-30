@@ -37,12 +37,14 @@ public class RootLayoutController {
         this.mainQuizCreator = mainQuizCreator;   
     }
     
+    //Shows quizOption scene
     public void handleNewMenuOption(){
-        mainQuizCreator.showQuizOptions();
+        mainQuizCreator.showQuizOptions(null);
     }
     
+    //Opens file chooser dialog and opens quiz options
     public void handleEditMenuOption(){
-        
+      mainQuizCreator.showEditQuiz();
     }
     
 }

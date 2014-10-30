@@ -68,12 +68,17 @@ public class QuizOptionsController {
     private String quizStatus;
     
     //Limit of time fields
-    private final int LIMIT = 2;
-    
+    private final int TIMELIMITER = 2;
+  
     
     //Constructor for Quiz Options Controller
     public QuizOptionsController(){
-        
+       
+    }
+    
+    //Set Quiz Name Text field
+    public void setQuizName(String quizName){
+        this.quizName.setText(quizName);
     }
     
     //Initialization
@@ -81,28 +86,21 @@ public class QuizOptionsController {
         //Initialize logic for combo box
         statusChoice.getItems().clear();
         statusChoice.getItems().addAll("Enabled","Disabled");
-        //startAMPM.getItems().clear();
-        //startAMPM.getItems().addAll("AM", "PM");
-        //endAMPM.getItems().clear();
-        //endAMPM.getItems().addAll("AM", "PM");
-        //setFields();
+        startAMPM.getItems().clear();
+        startAMPM.getItems().addAll("AM", "PM");
+        endAMPM.getItems().clear();
+        endAMPM.getItems().addAll("AM", "PM");
+        setFields();
+        startHour.lengthProperty().addListener(new TextLimiter(TIMELIMITER, startHour));
+        startMin.lengthProperty().addListener(new TextLimiter(TIMELIMITER, startMin));
+        endHour.lengthProperty().addListener(new TextLimiter(TIMELIMITER, endHour));
+        endMin.lengthProperty().addListener(new TextLimiter(TIMELIMITER, endMin));
     }
     
     //Selecting Quiz Status
     public void quizStatusSelect(){
        quizStatus = statusChoice.getValue();
        System.out.println("Quiz status is " + quizStatus);
-    }
-    
-    @FXML
-    //Limit Text in Time Fields
-    public void timeFieldLimiter(){
-      //  if (timeField.getText().length() >= LIMIT) {
-
-            // if it's 11th character then just setText to previous
-            // one
-          //  timeField.setText(timeField.getText().substring(0, LIMIT));
-        //}*/
     }
     
     //Set fields to Quiz values

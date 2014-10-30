@@ -1,20 +1,23 @@
 package t1.dqc.UI;
 
+import java.io.File;
 import java.io.IOException;
 
-
-
-
-
-
+import t1.dqc.zip.ZipReader;
+import t1.dqc.xml.manifest.Manifest;
+import javafx.stage.FileChooser;
 import t1.dqc.UI.view.D2LQuizCreatorMainController;
 import t1.dqc.UI.view.NewQuizDialogController;
 import t1.dqc.UI.view.QuizOptionsController;
+import t1.dqc.UI.view.RootLayoutController;
+import t1.dqc.xml.manifest.Manifest;
+import t1.dqc.zip.ZipReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -22,7 +25,10 @@ public class MainQuizCreator extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
-
+    //File chosen with file reader, filtered to zip files.
+    private File zipFile;
+    
+    
     // Constructor
     public MainQuizCreator() {
 
@@ -52,7 +58,8 @@ public class MainQuizCreator extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainQuizCreator.class.getResource("view/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
-
+            RootLayoutController rootController = loader.getController();
+            rootController.setMainQuizCreator(this);
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -88,7 +95,7 @@ public class MainQuizCreator extends Application {
     /**
      * Opens New Quiz Options
      */
-    public void showQuizOptions(){
+    public void showQuizOptions(String quizTitle){
             try {
                 // Load person overview.
                 FXMLLoader loader = new FXMLLoader();
@@ -97,10 +104,35 @@ public class MainQuizCreator extends Application {
                 QuizOptionsController controller;
                 controller = loader.getController();
                 controller.setMainQuizCreator(this);
+                //showing quiz title only for now
+                controller.setQuizName(quizTitle);
                 // Set person overview into the center of root layout.
                 rootLayout.setCenter(QuizOptionsScene);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+    }
+    
+    public void showEditQuiz() throws NullPointerException{
+        FileChooser fileChooser = new FileChooser();
+       
+        
+        //set zip file extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Zip files (*.zip)", "*.zip");
+        fileChooser.getExtensionFilters().add(extFilter);
+        //Opens zip file
+        fileChooser.setTitle("Open D2L Zip File");
+        zipFile = fileChooser.showOpenDialog(null);
+        //Passes zip file to Zip file reader/ manifest reader
+         if(zipFile != null){
+             ZipReader<Manifest> reader = new ZipReader<>(zipFile,Manifest.class);
+             Manifest manifest = reader.getObjectFromXML(Manifest.FILE_NAME);
+             //sets quiz title to tester label
+             String quizTitle = manifest.getResources().get(0).getTitle();
+             showQuizOptions(quizTitle);
+             reader.closeStreams();
+             
+             
+         }
     }
 }
