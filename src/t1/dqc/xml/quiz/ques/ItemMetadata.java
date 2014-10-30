@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ItemMetadata
 {
 	@XmlElementWrapper(name = "qtimetadata")
-	@XmlElement(name = "qtimetadatafield")
+	@XmlElement(name = "qti_metadatafield")
 	public List<QtiMetadataField> getList()
 	{
 		return list;
