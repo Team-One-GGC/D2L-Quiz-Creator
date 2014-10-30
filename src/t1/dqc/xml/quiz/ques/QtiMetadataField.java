@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 
 
 
-@XmlRootElement(name = "qtimetadatafield")
+@XmlRootElement(name = "qti_metadatafield")
 public class QtiMetadataField
 {
 	private String fieldlabel;

@@ -1,6 +1,7 @@
 package t1.dqc.xml.quiz.ques;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import t1.dqc.xml.XmlNS;
@@ -14,7 +15,17 @@ public class Question
 	private String ident = "OBJ_54021008";
 	private String label = "QUES_22668049_22912484";
 	private String page = "1";
+	private ItemMetadata itemMetadata = null;
 	
+	@XmlElement(name = "itemmetadata")
+	public ItemMetadata getItemMetadata()
+	{
+		return itemMetadata;
+	}
+	public void setItemMetadata(ItemMetadata itemMetadata)
+	{
+		this.itemMetadata = itemMetadata;
+	}
 	@XmlAttribute(name = "title")
 	public String getTitle()
 	{

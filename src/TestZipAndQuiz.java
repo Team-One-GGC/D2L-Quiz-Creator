@@ -3,6 +3,7 @@ import java.util.List;
 import t1.dqc.xml.manifest.Manifest;
 import t1.dqc.xml.manifest.ManifestResource;
 import t1.dqc.xml.quiz.Quiz;
+import t1.dqc.xml.quiz.QuizFactory;
 import t1.dqc.zip.ZipReader;
 
 /**
@@ -14,11 +15,11 @@ import t1.dqc.zip.ZipReader;
 public class TestZipAndQuiz
 {
     //TODO Change for your system
-    public static final String EXAMPLE_READ_ZIP = "C:/Users/Derek/Desktop/SoftDev/examples.zip";
+    public static final String EXAMPLE_READ_ZIP = "C:/Users/Jason/Downloads/D2LExport_622757_201410648.zip";
     
     public static void main(String[] args)
     {
-        
+        testReadQuizFromZip();
     }
     
     public static void testReadQuizFromZip()
@@ -40,6 +41,7 @@ public class TestZipAndQuiz
             quizzes[i] = quizReader.getObjectFromXML(quizFiles[i]);//Get an instance of the Quiz
             System.out.println("The title of Quiz " + (i + 1) + " is: " + quizzes[i].getAssessment().getTitle());//Print out the title of the Quiz
         }
+        QuizFactory.test(quizzes[0]);
         quizReader.closeStreams();//Make sure to close the streams
     }
 }
