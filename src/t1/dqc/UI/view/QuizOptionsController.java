@@ -116,8 +116,6 @@ public class QuizOptionsController {
         startDate.setValue(QuizFactory.getStartDate(quiz));
         endDate.setValue(QuizFactory.getEndDate(quiz));
         
-//        startHour.setText(value);
-        
         passwordEnable.setSelected(true);
         password.setText(QuizFactory.getPassword(quiz));
     }
