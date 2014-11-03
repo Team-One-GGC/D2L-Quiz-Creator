@@ -43,8 +43,5 @@ public class ItemprocExtension
 	public void setIsMandatory(String isMandatory)
 	{
 		this.isMandatory = isMandatory;
-	}
-	
-	
-	
+	}	
 }
