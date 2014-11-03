@@ -76,7 +76,7 @@ public class Procextension
         this.disablePagerAccess = disablePagerAccess;
     }
 
-    @XmlElement(name = "is_active", namespace = XmlNS.D2L_NS)
+    @XmlElement(name = "is_active")
     public String getIsActive()
     {
         return isActive;

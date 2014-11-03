@@ -29,11 +29,10 @@ public class QuizFactory
         return quiz.getAssessment().getTitle();
     }
     
-    //TODO Check the logic on this
     public static boolean isActive(Quiz quiz)
     {
         Procextension p = quiz.getAssessment().getExtension();
-        if(p.getIsActive() == "no") {
+        if(p.getIsActive().equals("no")) {
             return false;
         }
         else

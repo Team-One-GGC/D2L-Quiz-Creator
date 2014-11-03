@@ -112,7 +112,8 @@ public class QuizOptionsController {
             statusChoice.setValue("Enabled");
         }
         else
-        statusChoice.setValue("Disabled");
+            statusChoice.setValue("Disabled");
+        
         passwordEnable.setSelected(true);
         password.setText(QuizFactory.getPassword(quiz));
     }
