@@ -7,7 +7,7 @@ import t1.dqc.zip.ZipReader;
 import t1.dqc.xml.manifest.Manifest;
 import javafx.stage.FileChooser;
 import t1.dqc.UI.view.D2LQuizCreatorMainController;
-import t1.dqc.UI.view.NewQuizDialogController;
+import t1.dqc.UI.view.AboutUsDialogController;
 import t1.dqc.UI.view.QuizOptionsController;
 import t1.dqc.UI.view.RootLayoutController;
 import t1.dqc.xml.manifest.Manifest;
@@ -116,6 +116,28 @@ public class MainQuizCreator extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+    }
+    
+    public void showAboutUsDialog(){
+        try{
+            FXMLLoader loader = new FXMLLoader(MainQuizCreator.class.getResource("view/AboutUsDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("About Us");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            
+            AboutUsDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            
+            dialogStage.showAndWait();
+            
+    
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
     
     public void showEditQuiz() throws NullPointerException{

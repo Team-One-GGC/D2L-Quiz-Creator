@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  * @author Jared Marquez
  *
  */
-public class NewQuizDialogController {
+public class AboutUsDialogController {
 
     @FXML
     private TextArea testDisplay;

@@ -78,17 +78,17 @@
             <HBox layoutX="323.0" layoutY="13.0" spacing="5.0">
                <children>
                   <Label layoutX="17.0" layoutY="219.0" text="Password: " />
-                  <TextField fx:id="password" layoutX="75.0" layoutY="215.0" />
+                  <TextField fx:id="password" disable="true" editable="false" layoutX="75.0" layoutY="215.0" />
                </children>
             </HBox>
-            <CheckBox fx:id="passwordEnable" layoutX="323.0" layoutY="47.0" mnemonicParsing="false" text="Password" />
+            <CheckBox fx:id="passwordEnable" layoutX="323.0" layoutY="47.0" mnemonicParsing="false" onAction="#disableEnablePassword" text="Password" />
             <HBox layoutX="321.0" layoutY="80.0" spacing="5.0">
                <children>
                   <Label layoutX="14.0" layoutY="107.0" text="Time Limit: " />
-                  <TextField fx:id="timeLimit" layoutX="75.0" layoutY="103.0" />
+                  <TextField fx:id="timeLimit" disable="true" editable="false" layoutX="75.0" layoutY="103.0" />
                </children>
             </HBox>
-            <CheckBox fx:id="timeLimitEnabled" layoutX="323.0" layoutY="126.0" mnemonicParsing="false" text="Time Limit Enforced" />
+            <CheckBox fx:id="timeLimitEnabled" layoutX="323.0" layoutY="126.0" mnemonicParsing="false" onAction="#disableEnableTimeLimit" text="Time Limit Enforced" />
             <HBox layoutX="326.0" layoutY="157.0" spacing="5.0">
                <children>
                   <Label layoutX="19.0" layoutY="169.0" text="Attempts:" />
