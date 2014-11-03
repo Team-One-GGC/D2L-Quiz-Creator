@@ -1,6 +1,8 @@
 package t1.dqc.UI.view;
 
 import t1.dqc.UI.MainQuizCreator;
+import t1.dqc.xml.quiz.Quiz;
+import t1.dqc.xml.quiz.QuizFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -90,7 +92,7 @@ public class QuizOptionsController {
         startAMPM.getItems().addAll("AM", "PM");
         endAMPM.getItems().clear();
         endAMPM.getItems().addAll("AM", "PM");
-        setFields();
+//        setFields(null);
         startHour.lengthProperty().addListener(new TextLimiter(TIMELIMITER, startHour));
         startMin.lengthProperty().addListener(new TextLimiter(TIMELIMITER, startMin));
         endHour.lengthProperty().addListener(new TextLimiter(TIMELIMITER, endHour));
@@ -105,8 +107,14 @@ public class QuizOptionsController {
     
     //Set fields to Quiz values
     @FXML
-    public void setFields(){
-    
+    public void setFields(Quiz quiz){
+        if(QuizFactory.isActive(quiz)) {
+            statusChoice.setValue("Enabled");
+        }
+        else
+            statusChoice.setValue("Disabled");
+        passwordEnable.setSelected(true);
+        password.setText(QuizFactory.getPassword(quiz));
     }
     
     //Save values to Quiz Object

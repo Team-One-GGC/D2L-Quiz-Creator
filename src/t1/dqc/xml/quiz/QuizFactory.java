@@ -29,6 +29,23 @@ public class QuizFactory
         return quiz.getAssessment().getTitle();
     }
     
+    //TODO Check the logic on this
+    public static boolean isActive(Quiz quiz)
+    {
+        Procextension p = quiz.getAssessment().getExtension();
+        if(p.getIsActive() == "no") {
+            return false;
+        }
+        else
+            return true;
+    }
+    
+    public static String getPassword(Quiz quiz)
+    {
+        Procextension p = quiz.getAssessment().getExtension();
+        return p.getPassword();
+    }
+    
     //Other methods go below
     //I can foresee this class getting very big as development goes on
     

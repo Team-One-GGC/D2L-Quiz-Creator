@@ -11,6 +11,8 @@ import t1.dqc.UI.view.NewQuizDialogController;
 import t1.dqc.UI.view.QuizOptionsController;
 import t1.dqc.UI.view.RootLayoutController;
 import t1.dqc.xml.manifest.Manifest;
+import t1.dqc.xml.quiz.Quiz;
+import t1.dqc.xml.quiz.QuizFactory;
 import t1.dqc.zip.ZipReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -95,7 +97,7 @@ public class MainQuizCreator extends Application {
     /**
      * Opens New Quiz Options
      */
-    public void showQuizOptions(String quizTitle){
+    public void showQuizOptions(Quiz quiz){
             try {
                 // Load person overview.
                 FXMLLoader loader = new FXMLLoader();
@@ -104,8 +106,11 @@ public class MainQuizCreator extends Application {
                 QuizOptionsController controller;
                 controller = loader.getController();
                 controller.setMainQuizCreator(this);
-                //showing quiz title only for now
-                controller.setQuizName(quizTitle);
+                if(quiz != null) {
+                    //showing quiz title only for now
+                    controller.setQuizName(QuizFactory.getQuizTitle(quiz));
+                    controller.setFields(quiz);
+                }
                 // Set person overview into the center of root layout.
                 rootLayout.setCenter(QuizOptionsScene);
             } catch (IOException e) {
@@ -122,17 +127,19 @@ public class MainQuizCreator extends Application {
         fileChooser.getExtensionFilters().add(extFilter);
         //Opens zip file
         fileChooser.setTitle("Open D2L Zip File");
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
         zipFile = fileChooser.showOpenDialog(null);
         //Passes zip file to Zip file reader/ manifest reader
          if(zipFile != null){
              ZipReader<Manifest> reader = new ZipReader<>(zipFile,Manifest.class);
              Manifest manifest = reader.getObjectFromXML(Manifest.FILE_NAME);
-             //sets quiz title to tester label
+             String quizFile = manifest.getResources().get(0).getHref();
              String quizTitle = manifest.getResources().get(0).getTitle();
-             showQuizOptions(quizTitle);
-             reader.closeStreams();
+             reader.closeStreams();//TODO must be deleted later
              
-             
+             ZipReader<Quiz> quizReader = new ZipReader<>(zipFile, Quiz.class);
+             Quiz quiz = quizReader.getObjectFromXML(quizFile);
+             showQuizOptions(quiz);
          }
     }
 }
