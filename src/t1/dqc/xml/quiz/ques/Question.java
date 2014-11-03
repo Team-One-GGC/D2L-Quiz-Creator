@@ -16,6 +16,17 @@ public class Question
 	private String label = "QUES_22668049_22912484";
 	private String page = "1";
 	private ItemMetadata itemMetadata = null;
+	private ItemprocExtension itemprocExtension = null;
+	
+	@XmlElement(name = "itemproc_extension")
+	public ItemprocExtension getItemprocExtension()
+	{
+		return itemprocExtension;
+	}
+	public void setItemprocExtension(ItemprocExtension itemprocExtension)
+	{
+		this.itemprocExtension = itemprocExtension;
+	}
 	
 	@XmlElement(name = "itemmetadata")
 	public ItemMetadata getItemMetadata()
