@@ -1,5 +1,6 @@
 package t1.dqc.xml.quiz;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import t1.dqc.xml.quiz.options.AssessmentControl;
@@ -29,14 +30,44 @@ public class QuizFactory
         return quiz.getAssessment().getTitle();
     }
     
-    public static boolean isActive(Quiz quiz)
+    /**
+     * 
+     * @param quiz The Quiz instance
+     * @return whether the quiz is active 
+     */
+    public static String isActive(Quiz quiz)
     {
         Procextension p = quiz.getAssessment().getExtension();
         if(p.getIsActive().equals("no")) {
-            return false;
+            return "Disabled";
         }
         else
-            return true;
+            return "Enabled";
+    }
+    
+    public static LocalDate getStartDate(Quiz quiz)
+    {
+        Date d = quiz.getAssessment().getExtension().getStartDate();
+        int year = d.getTimeStamp().getYear();
+        int month = d.getTimeStamp().getMonth();
+        int day = d.getTimeStamp().getDay();
+        return LocalDate.of(year, month, day);
+    }
+    
+    public static String getStartHour(Quiz quiz)
+    {
+        Date d = quiz.getAssessment().getExtension().getStartDate();
+        int hour = d.getTimeStamp().getHour();
+        return Integer.toString(hour);
+    }
+    
+    public static LocalDate getEndDate(Quiz quiz)
+    {
+        Date d = quiz.getAssessment().getExtension().getEndDate();
+        int year = d.getTimeStamp().getYear();
+        int month = d.getTimeStamp().getMonth();
+        int day = d.getTimeStamp().getDay();
+        return LocalDate.of(year, month, day);
     }
     
     public static String getPassword(Quiz quiz)
