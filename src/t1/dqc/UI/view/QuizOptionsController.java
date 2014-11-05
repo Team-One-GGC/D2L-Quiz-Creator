@@ -115,6 +115,9 @@ public class QuizOptionsController {
         //TODO needs to be able to handle quizzes with no dates specified
         startDate.setValue(QuizFactory.getStartDate(quiz));
         endDate.setValue(QuizFactory.getEndDate(quiz));
+
+        
+//        startHour.setText(value);
         
         passwordEnable.setSelected(true);
         password.setText(QuizFactory.getPassword(quiz));
