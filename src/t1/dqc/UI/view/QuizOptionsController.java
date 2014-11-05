@@ -1,5 +1,8 @@
 package t1.dqc.UI.view;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 import t1.dqc.UI.MainQuizCreator;
 import t1.dqc.xml.quiz.Quiz;
 import t1.dqc.xml.quiz.QuizFactory;
@@ -106,13 +109,14 @@ public class QuizOptionsController {
     }
     
     //Set fields to Quiz values
-    @FXML
     public void setFields(Quiz quiz){
-        if(QuizFactory.isActive(quiz)) {
-            statusChoice.setValue("Enabled");
-        }
-        else
-            statusChoice.setValue("Disabled");
+        statusChoice.setValue(QuizFactory.isActive(quiz));
+        
+        //TODO needs to be able to handle quizzes with no dates specified
+        startDate.setValue(QuizFactory.getStartDate(quiz));
+        endDate.setValue(QuizFactory.getEndDate(quiz));
+        
+//        startHour.setText(value);
         
         passwordEnable.setSelected(true);
         password.setText(QuizFactory.getPassword(quiz));
