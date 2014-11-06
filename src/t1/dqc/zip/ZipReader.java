@@ -74,6 +74,8 @@ public class ZipReader<T extends D2LXmlFile>
             result.setFileName(fileName);
         } catch(JAXBException | IOException e) {
             e.printStackTrace();
+        } finally {
+            closeStreams();
         }
         return result;
     }
@@ -102,7 +104,7 @@ public class ZipReader<T extends D2LXmlFile>
     /**
      * Closes the ZipFile
      */
-    public void closeStreams()
+    private void closeStreams()
     {
         try {
             zip.close();
