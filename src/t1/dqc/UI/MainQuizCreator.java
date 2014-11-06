@@ -105,7 +105,7 @@ public class MainQuizCreator extends Application {
             try {
                 // Load person overview.
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(MainQuizCreator.class.getResource("view/QuizOptionsScene.fxml"));
+                loader.setLocation(MainQuizCreator.class.getResource("view/Options2.fxml"));
                 AnchorPane QuizOptionsScene = (AnchorPane) loader.load();
                 QuizOptionsController controller;
                 controller = loader.getController();
