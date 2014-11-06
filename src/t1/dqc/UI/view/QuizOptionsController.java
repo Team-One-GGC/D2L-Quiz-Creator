@@ -112,7 +112,7 @@ public class QuizOptionsController {
             statusChoice.setValue("Enabled");
         }
         else
-            statusChoice.setValue("Disabled");
+        statusChoice.setValue("Disabled");
         passwordEnable.setSelected(true);
         password.setText(QuizFactory.getPassword(quiz));
     }
@@ -131,6 +131,22 @@ public class QuizOptionsController {
     
     public void setMainQuizCreator(MainQuizCreator mainQuizCreator){
         this.mainQuizCreator = mainQuizCreator;   
+    }
+    
+    //Disable password text field if password check box is off
+    @FXML
+    public void disableEnablePassword(){
+        boolean passCheck = passwordEnable.isSelected();
+        password.setEditable(passCheck);
+        password.setDisable(!passCheck);
+    }
+    
+    //Disable time limit text field if password check box is off
+    @FXML
+    public void disableEnableTimeLimit(){
+        boolean timeCheck = timeLimitEnabled.isSelected();
+        timeLimit.setEditable(timeCheck);
+        timeLimit.setDisable(!timeCheck);
     }
     
 }

@@ -47,4 +47,9 @@ public class RootLayoutController {
       mainQuizCreator.showEditQuiz();
     }
     
+    //Opens About Us Dialog Box
+    public void showAboutUs(){
+       mainQuizCreator.showAboutUsDialog();
+    }
+    
 }
