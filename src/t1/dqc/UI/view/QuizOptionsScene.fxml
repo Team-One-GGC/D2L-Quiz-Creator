@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.collections.FXCollections ?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.QuizOptionsController">
+<AnchorPane minHeight="300.0" minWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.QuizOptionsController">
    <children>
-      <AnchorPane layoutY="1.0" prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css">
+      <AnchorPane layoutY="1.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox layoutX="12.0" layoutY="14.0" spacing="5.0">
                <children>
@@ -75,27 +75,27 @@
                   </ComboBox>
                </children>
             </HBox>
-            <HBox layoutX="323.0" layoutY="13.0" spacing="5.0">
+            <HBox layoutX="323.0" layoutY="13.0" spacing="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="13.0">
                <children>
                   <Label layoutX="17.0" layoutY="219.0" text="Password: " />
                   <TextField fx:id="password" layoutX="75.0" layoutY="215.0" />
                </children>
             </HBox>
-            <CheckBox fx:id="passwordEnable" layoutX="323.0" layoutY="47.0" mnemonicParsing="false" text="Password" />
-            <HBox layoutX="321.0" layoutY="80.0" spacing="5.0">
+            <CheckBox fx:id="passwordEnable" layoutX="323.0" layoutY="47.0" mnemonicParsing="false" text="Password" AnchorPane.rightAnchor="209.0" AnchorPane.topAnchor="47.0" />
+            <HBox layoutX="321.0" layoutY="80.0" spacing="5.0" AnchorPane.bottomAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
                <children>
                   <Label layoutX="14.0" layoutY="107.0" text="Time Limit: " />
                   <TextField fx:id="timeLimit" layoutX="75.0" layoutY="103.0" />
                </children>
             </HBox>
-            <CheckBox fx:id="timeLimitEnabled" layoutX="323.0" layoutY="126.0" mnemonicParsing="false" text="Time Limit Enforced" />
-            <HBox layoutX="326.0" layoutY="157.0" spacing="5.0">
+            <CheckBox fx:id="timeLimitEnabled" layoutX="323.0" layoutY="126.0" mnemonicParsing="false" text="Time Limit Enforced" AnchorPane.bottomAnchor="156.0" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="126.0" />
+            <HBox layoutX="326.0" layoutY="157.0" spacing="5.0" AnchorPane.bottomAnchor="118.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="157.0">
                <children>
                   <Label layoutX="19.0" layoutY="169.0" text="Attempts:" />
                   <TextField fx:id="attemptLimit" layoutX="82.0" layoutY="165.0" />
                </children>
             </HBox>
-            <HBox layoutX="465.0" layoutY="261.0" spacing="10.0">
+            <HBox layoutX="465.0" layoutY="261.0" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="14.0">
                <children>
                   <Button layoutX="458.0" layoutY="220.0" mnemonicParsing="false" text="Confirm" />
                   <Button layoutX="515.0" layoutY="220.0" mnemonicParsing="false" onAction="#cancelSaves" text="Cancel" />

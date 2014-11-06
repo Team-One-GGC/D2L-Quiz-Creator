@@ -21,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class MainQuizCreator extends Application {
@@ -29,6 +30,9 @@ public class MainQuizCreator extends Application {
     private BorderPane rootLayout;
     //File chosen with file reader, filtered to zip files.
     private File zipFile;
+    
+    private static double WIDTH = Screen.getPrimary().getVisualBounds().getWidth() / 2;
+    private static double HEIGHT = WIDTH * (9.0 / 16.0);
     
     
     // Constructor
@@ -63,7 +67,7 @@ public class MainQuizCreator extends Application {
             RootLayoutController rootController = loader.getController();
             rootController.setMainQuizCreator(this);
             // Show the scene containing the root layout.
-            Scene scene = new Scene(rootLayout);
+            Scene scene = new Scene(rootLayout, WIDTH, HEIGHT);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
