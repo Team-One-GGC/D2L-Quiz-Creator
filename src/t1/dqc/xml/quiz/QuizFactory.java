@@ -54,11 +54,12 @@ public class QuizFactory
         return LocalDate.of(year, month, day);
     }
     
-    public static String getStartHour(Quiz quiz)
+    public static String getStartTime(Quiz quiz)
     {
         Date d = quiz.getAssessment().getExtension().getStartDate();
         int hour = d.getTimeStamp().getHour();
-        return Integer.toString(hour);
+        int min = d.getTimeStamp().getMinutes();
+        return Integer.toString(hour) +":" + Integer.toString(min);
     }
     
     public static LocalDate getEndDate(Quiz quiz)
@@ -70,10 +71,30 @@ public class QuizFactory
         return LocalDate.of(year, month, day);
     }
     
+    public static String getEndTime(Quiz quiz)
+    {
+        Date d = quiz.getAssessment().getExtension().getEndDate();
+        int hour = d.getTimeStamp().getHour();
+        int min = d.getTimeStamp().getMinutes();
+        return Integer.toString(hour) +":" + Integer.toString(min);
+    }
+    
     public static String getPassword(Quiz quiz)
     {
         Procextension p = quiz.getAssessment().getExtension();
         return p.getPassword();
+    }
+    
+    public static String getTimeLimit(Quiz quiz)
+    {
+        Procextension p = quiz.getAssessment().getExtension();
+        return Integer.toString(p.getTimeLimit());
+    }
+    
+    public static boolean isTimeEnforced(Quiz quiz)
+    {
+        Procextension p = quiz.getAssessment().getExtension();        
+        return (p.getEnforceTimeLimit().equals("no"))? false : true;
     }
     
     //Other methods go below
