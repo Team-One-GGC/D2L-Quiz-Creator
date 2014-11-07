@@ -1,23 +1,43 @@
 package t1.dqc.xml.quiz.ques;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import t1.dqc.xml.quiz.presentation.MatText;
 import t1.dqc.xml.quiz.presentation.Material;
 
 @XmlRootElement(name="flow")
 public class Flow
 {
-	Material material = null;
-
-	@XmlElement(name="material")
-	public Material getMaterial()
+	Material material;
+	MatText matText;
+	ResponseExtension responseExtension;
+	
+	
+	@XmlElementWrapper(name="material")
+	@XmlElement(name="mattext")
+	public MatText getMatText()
 	{
-		return material;
+		return matText;
 	}
 
-	public void setMaterial(Material material)
+	public void setMatText(MatText matText)
 	{
-		this.material = material;
+		this.matText = matText;
 	}
+	
+	@XmlElementWrapper(name="material")
+	@XmlElement(name="response_extension")
+	public ResponseExtension getResponseExtension()
+	{
+		return responseExtension;
+	}
+
+	public void setResponseExtension(ResponseExtension responseExtension)
+	{
+		this.responseExtension = responseExtension;
+	}
+	
+	
 }
