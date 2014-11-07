@@ -81,14 +81,14 @@
                   <TextField fx:id="password" disable="true" editable="false" layoutX="75.0" layoutY="215.0" />
                </children>
             </HBox>
-            <CheckBox fx:id="passwordEnable" layoutX="323.0" layoutY="47.0" mnemonicParsing="false" text="Password" AnchorPane.rightAnchor="209.0" AnchorPane.topAnchor="47.0" />
+            <CheckBox fx:id="passwordEnable" layoutX="323.0" layoutY="47.0" mnemonicParsing="false" onAction="#disableEnablePassword" text="Password" AnchorPane.rightAnchor="209.0" AnchorPane.topAnchor="47.0" />
             <HBox layoutX="321.0" layoutY="80.0" spacing="5.0" AnchorPane.bottomAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
                <children>
                   <Label layoutX="14.0" layoutY="107.0" text="Time Limit: " />
                   <TextField fx:id="timeLimit" disable="true" editable="false" layoutX="75.0" layoutY="103.0" />
                </children>
             </HBox>
-            <CheckBox fx:id="timeLimitEnabled" layoutX="323.0" layoutY="126.0" mnemonicParsing="false" text="Time Limit Enforced" AnchorPane.bottomAnchor="156.0" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="126.0" />
+            <CheckBox fx:id="timeLimitEnabled" layoutX="323.0" layoutY="126.0" mnemonicParsing="false" onAction="#disableEnableTimeLimit" text="Time Limit Enforced" AnchorPane.bottomAnchor="156.0" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="126.0" />
             <HBox layoutX="326.0" layoutY="157.0" spacing="5.0" AnchorPane.bottomAnchor="118.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="157.0">
                <children>
                   <Label layoutX="19.0" layoutY="169.0" text="Attempts:" />

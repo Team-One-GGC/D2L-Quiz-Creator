@@ -127,7 +127,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </HBox>
-                        <CheckBox fx:id="passwordEnable" mnemonicParsing="false" text="Password">
+                        <CheckBox fx:id="passwordEnable" mnemonicParsing="false" onAction="#disableEnablePassword" text="Password">
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
@@ -141,7 +141,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </HBox>
-                        <CheckBox fx:id="timeLimitEnabled" mnemonicParsing="false" text="Time Limit Enforced">
+                        <CheckBox fx:id="timeLimitEnabled" mnemonicParsing="false" onAction="#disableEnableTimeLimit" text="Time Limit Enforced">
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
