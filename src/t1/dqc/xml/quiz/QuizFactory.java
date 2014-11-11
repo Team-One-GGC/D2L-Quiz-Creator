@@ -10,6 +10,7 @@ import t1.dqc.xml.quiz.options.Procextension;
 import t1.dqc.xml.quiz.ques.ItemMetadata;
 import t1.dqc.xml.quiz.ques.QtiMetadataField;
 import t1.dqc.xml.quiz.ques.Question;
+import t1.dqc.xml.quiz.ques.QuestionContainer;
 
 /**
  * Utility class for getting various objects important to a Quiz object:
@@ -31,11 +32,11 @@ public class QuizFactory
     }
     
     /**
-     * 
+     * Returns "Enabled" is quiz is active, "Disabled" otherwise.
      * @param quiz The Quiz instance
      * @return whether the quiz is active 
      */
-    public static String isActive(Quiz quiz)
+    public static String getActive(Quiz quiz)
     {
         Procextension p = quiz.getAssessment().getExtension();
         if(p.getIsActive().equals("no")) {
@@ -44,8 +45,13 @@ public class QuizFactory
         else
             return "Enabled";
     }
-    
-    public static LocalDate getStartDate(Quiz quiz)
+  
+    /**
+     * Returns the start date of the quiz.
+     * @param quiz the Quiz instance
+     * @return LocalDate representing the year, month, day
+     */
+    public static LocalDate getStartDate(Quiz quiz)//TODO handle no dates
     {
         Date d = quiz.getAssessment().getExtension().getStartDate();
         int year = d.getTimeStamp().getYear();
@@ -54,7 +60,12 @@ public class QuizFactory
         return LocalDate.of(year, month, day);
     }
     
-    public static String getStartTime(Quiz quiz)
+    /**
+     * 
+     * @param quiz
+     * @return
+     */
+    public static String getStartTime(Quiz quiz)//TODO handle no date
     {
         Date d = quiz.getAssessment().getExtension().getStartDate();
         int hour = d.getTimeStamp().getHour();
@@ -62,7 +73,7 @@ public class QuizFactory
         return Integer.toString(hour) +":" + Integer.toString(min);
     }
     
-    public static LocalDate getEndDate(Quiz quiz)
+    public static LocalDate getEndDate(Quiz quiz)//TODO handle no date
     {
         Date d = quiz.getAssessment().getExtension().getEndDate();
         int year = d.getTimeStamp().getYear();
@@ -71,7 +82,7 @@ public class QuizFactory
         return LocalDate.of(year, month, day);
     }
     
-    public static String getEndTime(Quiz quiz)
+    public static String getEndTime(Quiz quiz)//TODO handle no date
     {
         Date d = quiz.getAssessment().getExtension().getEndDate();
         int hour = d.getTimeStamp().getHour();
@@ -97,25 +108,33 @@ public class QuizFactory
         return (p.getEnforceTimeLimit().equals("no"))? false : true;
     }
     
+    public static String getAttempsAllowed(Quiz quiz)
+    {
+        Procextension p = quiz.getAssessment().getExtension();
+        return Integer.toString(p.getAttemptsAllowed());
+    }
+    
+    
+    /**
+     * Returns a List of all the questions
+     * @param quiz
+     * @return a List of all the quizzes
+     */
+    public static List<Question> getQuestions(Quiz quiz)
+    {
+        return quiz.getAssessment().getContainer().getQuestions();
+    }
+    
     //Other methods go below
     //I can foresee this class getting very big as development goes on
     
     public static void test(Quiz quiz)
-    {
-        Procextension p = quiz.getAssessment().getExtension();
-        Date d = p.getStartDate();
-        Timestamp t = d.getTimeStamp();
-        int month = t.getMonth();
-        int day = t.getDay();
-        
-      List<Question> questions = quiz.getAssessment().getContainer().getQuestions();
-      System.out.println(questions.get(0).getTitle());
-     /* ItemMetadata data = questions.get(0).getItemMetadata();
-      QtiMetadataField qtiMetadataField = data.getList().get(0);
-      System.out.print(qtiMetadataField.getFieldlabel());
-      System.out.print(qtiMetadataField.getFieldentry());*/
-      
-        
-        System.out.println("Month: " + month + " Day: " + day);
+    {//Print out all question text
+        List<Question> list = getQuestions(quiz);
+        for(Question q : list)
+        {
+            String ques = q.getPresentation().getFlow().getMaterial().getMatText().getValue();
+            System.out.println(ques);
+        }
     }
 }

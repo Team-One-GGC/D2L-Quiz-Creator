@@ -1,7 +1,6 @@
 package t1.dqc.UI.view;
 
 import java.time.LocalDate;
-import java.time.Month;
 
 import t1.dqc.UI.MainQuizCreator;
 import t1.dqc.xml.quiz.Quiz;
@@ -110,7 +109,7 @@ public class QuizOptionsController {
     
     //Set fields to Quiz values
     public void setFields(Quiz quiz){
-        statusChoice.setValue(QuizFactory.isActive(quiz));
+        statusChoice.setValue(QuizFactory.getActive(quiz));
         
         LocalDate start = QuizFactory.getStartDate(quiz);
         LocalDate end = QuizFactory.getEndDate(quiz);
@@ -126,6 +125,8 @@ public class QuizOptionsController {
         timeConversion(startTime, endTime);
         
         timeLimit.setText(QuizFactory.getTimeLimit(quiz));
+        
+        attemptLimit.setText(QuizFactory.getAttempsAllowed(quiz));
         
         passwordEnable.setSelected(true);
         password.setEditable(true);
