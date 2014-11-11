@@ -17,6 +17,7 @@ public class Question
 	private String page = "1";
 	private ItemMetadata itemMetadata = null;
 	private ItemprocExtension itemprocExtension = null;
+	private Presentation presentation = null;
 	
 	@XmlElement(name = "itemproc_extension")
 	public ItemprocExtension getItemprocExtension()
@@ -75,5 +76,15 @@ public class Question
 	public void setPage(String page)
 	{
 		this.page = page;
+	}
+	
+	@XmlElement(name = "presentation")
+	public Presentation getPresentation()
+	{
+	    return presentation;
+	}
+	public void setPresentation(Presentation presentation)
+	{
+	    this.presentation = presentation;
 	}
 }
