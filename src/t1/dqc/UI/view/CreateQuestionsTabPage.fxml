@@ -204,6 +204,29 @@
                         </ScrollPane>
                      </content>
                   </Tab>
+                  <Tab text="Long Answer">
+                     <content>
+                        <ScrollPane prefHeight="300.0" prefWidth="600.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="700.0">
+                                 <children>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="700.0">
+                                       <children>
+                                          <VBox layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="395.0">
+                                             <children>
+                                                <Label text="Title" />
+                                                <TextField />
+                                                <Label text="Points*" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
               </tabs>
             </TabPane>
          </children>
