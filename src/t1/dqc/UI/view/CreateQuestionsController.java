@@ -12,21 +12,53 @@ public class CreateQuestionsController
 	//Reference to the main D2LQuizCreation application
 	private MainQuizCreator mainQuizCreator;
 	
-	//Title Name text field
+	//Title Name True False text field
 	@FXML
-    private TextField titleName;
+    private TextField titleNameTF;
 	
-	//Points text field
+	//Title Name Multiple Choice text field
 	@FXML
-	private TextField points;
+	private TextField titleNameMC;
 	
-	//Difficulty Amount choice box
+	//Title Name Long Answer text field
 	@FXML
-	private ChoiceBox difficultyAmt;
+	private TextField titleNameLA;
 	
-	//Question Area text area
+	//Points True False text field
 	@FXML
-	private TextArea questionArea1;
+	private TextField pointsTF;
+	
+	//Points Multiple Choice text field
+	@FXML
+	private TextField pointsMC;
+	
+	//Points Long Answer text field
+	@FXML
+	private TextField pointsLA;
+	
+	//Difficulty Amount True False choice box
+	@FXML
+	private ChoiceBox<String> difficultyAmtTF;
+	
+	//Difficulty Amount Multiple Choice choice box
+	@FXML
+	private ChoiceBox<String> difficultyAmtMC;
+	
+	//Difficulty Amount Long Answer choice box
+	@FXML
+	private ChoiceBox<String> difficultyAmtLA;
+	
+	//Question Area True False text area
+	@FXML
+	private TextArea questionTextTF;
+	
+	//Question Area Multiple Choice text area
+	@FXML
+	private TextArea questionTextMC;
+	
+	//Question Area Long Answer text area
+	@FXML
+	private TextArea questionTextLA;
 	
 	//True Answer radio button
 	@FXML
@@ -36,7 +68,63 @@ public class CreateQuestionsController
 	@FXML
 	private RadioButton falseAnswer;
 	
-	//
+	//Value Box 1 text area
+	@FXML
+	private TextArea valueOne;
+	
+	//Weight % Box 1 text field
+	@FXML
+	private TextField weightOne;
+	
+	//Feedback Box 1 text area
+	@FXML
+	private TextArea feedbackOne;
+	
+	//Value Box 2 text area
+	@FXML
+	private TextArea valueTwo;
+	
+	//Weight % Box 2 text field
+	@FXML
+	private TextField weightTwo;
+	
+	//Feedback Box 2 text area
+	@FXML
+	private TextArea feedbackTwo;
+	
+	//Value Box 3 text area
+	@FXML
+	private TextArea valueThree;
+	
+	//Weight % Box 3 text field
+	@FXML
+	private TextField weightThree;
+	
+	//Feedback Box 3 text area
+	@FXML
+	private TextArea feedbackThree;
+		
+	//Value Box 4 text area
+	@FXML
+	private TextArea valueFour;
+	
+	//Weight % Box 4 text field
+	@FXML
+	private TextField weightFour;
+	
+	//Feedback Box 4 text area
+	@FXML
+	private TextArea feedbackFour;
+	
+	//Answer text area
+	@FXML
+	private TextArea answer;
+	
+	//Constructor for Create Questions Controller
+	public CreateQuestionsController()
+	{
+		
+	}
 	
 	//Save values to Quiz Object
     @FXML

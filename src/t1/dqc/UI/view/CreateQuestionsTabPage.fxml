@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.CreateQuestionsController">
    <children>
       <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -25,32 +25,32 @@
                                           <VBox layoutX="19.0" layoutY="14.0" prefHeight="50.0" prefWidth="150.0" spacing="5.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Title" />
-                                                <TextField prefHeight="7.0" prefWidth="145.0" />
+                                                <TextField fx:id="titleNameTF" prefHeight="7.0" prefWidth="145.0" />
                                              </children>
                                           </VBox>
                                           <VBox layoutX="19.0" layoutY="91.0" prefHeight="50.0" prefWidth="75.0" spacing="5.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Points*" />
-                                                <TextField text="1" />
+                                                <TextField fx:id="pointsTF" />
                                              </children>
                                           </VBox>
                                           <VBox layoutX="19.0" layoutY="175.0" prefHeight="75.0" prefWidth="80.0" spacing="5.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Difficulty" />
-                                                <ChoiceBox prefHeight="40.0" prefWidth="60.0" />
+                                                <ChoiceBox fx:id="difficultyAmtTF" prefHeight="40.0" prefWidth="60.0" />
                                              </children>
                                           </VBox>
                                           <VBox layoutX="19.0" layoutY="263.0" prefHeight="184.0" prefWidth="455.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Question Text*" />
-                                                <TextArea prefHeight="200.0" prefWidth="200.0" />
+                                                <TextArea fx:id="questionTitleTF" prefHeight="200.0" prefWidth="200.0" />
                                              </children>
                                           </VBox>
                                           <VBox layoutX="224.0" layoutY="30.0" prefHeight="132.0" prefWidth="163.0" spacing="10.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Correct Answer" />
-                                                <RadioButton mnemonicParsing="false" text="True" />
-                                                <RadioButton mnemonicParsing="false" text="False" />
+                                                <RadioButton fx:id="trueAnswer" mnemonicParsing="false" text="True" />
+                                                <RadioButton fx:id="falseAnswer" mnemonicParsing="false" text="False" />
                                              </children>
                                           </VBox>
                                        </children>
@@ -72,7 +72,7 @@
                                           <VBox layoutX="14.0" layoutY="14.0" prefHeight="80.0" prefWidth="200.0" spacing="5.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Title" />
-                                                <TextField />
+                                                <TextField fx:id="titleNameMC" />
                                              </children>
                                           </VBox>
                                           <VBox layoutX="14.0" layoutY="94.0" prefHeight="85.0" prefWidth="62.0" spacing="5.0" stylesheets="@Theme.css">
@@ -89,7 +89,7 @@
                                           </VBox>
                                           <VBox layoutX="14.0" layoutY="263.0" prefHeight="200.0" prefWidth="278.0" stylesheets="@Theme.css">
                                              <children>
-                                                <Label text="Question*" />
+                                                <Label text="Question Text*" />
                                                 <TextArea prefHeight="200.0" prefWidth="200.0" />
                                              </children>
                                           </VBox>
@@ -215,7 +215,7 @@
                                           <VBox layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="395.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Title" />
-                                                <TextField />
+                                                <TextField fx:id="titleNameLA" />
                                                 <Label text="Points*" />
                                              </children>
                                           </VBox>
@@ -234,7 +234,7 @@
                                                 <ChoiceBox prefHeight="39.0" prefWidth="52.0" />
                                                 <Label text="Question Text*" />
                                                 <TextArea prefHeight="80.0" prefWidth="420.0" />
-                                                <Label text="Input" />
+                                                <Label text="Answer" />
                                                 <TextArea prefHeight="200.0" prefWidth="200.0" />
                                              </children>
                                           </VBox>
