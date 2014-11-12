@@ -2,13 +2,25 @@ package t1.dqc.xml.quiz.ques;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
 import t1.dqc.xml.quiz.presentation.Material;
 
 @XmlRootElement(name="flow")
 public class Flow
 {
-	Material material;
-	ResponseExtension responseExtension;
+	private Material material;
+	private ResponseExtension responseExtension;
+	private ResponseLid responseLid;
+	
+	@XmlElement(name="response_lid")
+	public ResponseLid getResponseLid()
+	{
+		return responseLid;
+	}
+	public void setResponseLid(ResponseLid responseLid)
+	{
+		this.responseLid = responseLid;
+	}
 	
 	
 	@XmlElement(name="material")
