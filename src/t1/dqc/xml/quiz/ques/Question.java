@@ -11,13 +11,23 @@ import t1.dqc.xml.XmlNS;
 @XmlRootElement(name = "item")
 public class Question
 {
-	private String title = "True/False Title";
-	private String ident = "OBJ_54021008";
-	private String label = "QUES_22668049_22912484";
-	private String page = "1";
-	private ItemMetadata itemMetadata = null;
-	private ItemprocExtension itemprocExtension = null;
+	private String title;
+	private String ident;
+	private String label;
+	private String page;
+	private ItemMetadata itemMetadata;
+	private ItemprocExtension itemprocExtension;
+	private ResponseLid responseLid;
 	
+	@XmlElement(name="response_lid")
+	public ResponseLid getResponseLid()
+	{
+		return responseLid;
+	}
+	public void setResponseLid(ResponseLid responseLid)
+	{
+		this.responseLid = responseLid;
+	}
 	@XmlElement(name = "itemproc_extension")
 	public ItemprocExtension getItemprocExtension()
 	{
