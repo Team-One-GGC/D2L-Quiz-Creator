@@ -3,7 +3,6 @@ package t1.dqc.UI.view;
 import java.io.IOException;
 
 import t1.dqc.UI.MainQuizCreator;
-import t1.dqc.xml.quiz.QuizFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -41,27 +40,12 @@ public class QuestionRootLayoutController {
     
     @FXML
     private ChoiceBox<String> questionPicker;
+
+    private MainQuizCreator mainQuizCreator;
     
     //Load question pane into view
     public void loadQuestionPane(){
-        try {
-            // Load quiz options view.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(QuestionRootLayoutController.class.getResource("view/CreateQuestionsTabPage.fxml"));
-            AnchorPane QuizOptionsScene = (AnchorPane) loader.load();
-            QuizOptionsController controller;
-            controller = loader.getController();
-            controller.setMainQuizCreator(this);
-            if(quiz != null) {
-                //showing quiz info
-                controller.setQuizName(QuizFactory.getQuizTitle(quiz));
-                controller.setFields(quiz);
-            }
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(QuizOptionsScene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+      
     }
     
     //Changes to the previous question in the quiz
@@ -81,7 +65,7 @@ public class QuestionRootLayoutController {
     
     //Quit question editor to main screen
     public void quitQuestionEditor(){
-        
+        mainQuizCreator.showD2LQuizCreatorMain();
     }
     
     //Moves on to next question
@@ -108,5 +92,10 @@ public class QuestionRootLayoutController {
     //Populates choice box with quiz question titles
     public void populateQuesionChoiceBox(){
         
+    }
+    
+    //Set main quiz creator call
+    public void setMainQuizCreator(MainQuizCreator mainQuizCreator){
+        this.mainQuizCreator = mainQuizCreator;   
     }
 }

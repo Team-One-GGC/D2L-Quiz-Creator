@@ -134,6 +134,13 @@ public class QuizOptionsController {
         mainQuizCreator.showD2LQuizCreatorMain();
     }
     
+    //Open question rootlayout
+    @FXML
+    public void openQuestions(){
+        saveValues();
+        mainQuizCreator.showQuizQuestionRoot();
+    }
+    
     public void setMainQuizCreator(MainQuizCreator mainQuizCreator){
         this.mainQuizCreator = mainQuizCreator;   
     }

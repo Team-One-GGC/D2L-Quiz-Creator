@@ -8,6 +8,7 @@ import t1.dqc.xml.manifest.Manifest;
 import javafx.stage.FileChooser;
 import t1.dqc.UI.view.D2LQuizCreatorMainController;
 import t1.dqc.UI.view.AboutUsDialogController;
+import t1.dqc.UI.view.QuestionRootLayoutController;
 import t1.dqc.UI.view.QuizOptionsController;
 import t1.dqc.UI.view.RootLayoutController;
 import t1.dqc.xml.manifest.Manifest;
@@ -103,15 +104,15 @@ public class MainQuizCreator extends Application {
      */
     public void showQuizOptions(Quiz quiz){
             try {
-                // Load person overview.
+                // Load quiz options view.
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(MainQuizCreator.class.getResource("view/Options2.fxml"));
+                loader.setLocation(MainQuizCreator.class.getResource("view/QuizOptionsScene.fxml"));
                 AnchorPane QuizOptionsScene = (AnchorPane) loader.load();
                 QuizOptionsController controller;
                 controller = loader.getController();
                 controller.setMainQuizCreator(this);
                 if(quiz != null) {
-                    //showing quiz title only for now
+                    //showing quiz private BorderPane rootLayout;
                     controller.setQuizName(QuizFactory.getQuizTitle(quiz));
                     controller.setFields(quiz);
                 }
@@ -166,5 +167,22 @@ public class MainQuizCreator extends Application {
              Quiz quiz = quizReader.getObjectFromXML(quizFile);
              showQuizOptions(quiz);
          }
+    }
+    
+    public void showQuizQuestionRoot(){
+        try {
+            // Load quiz options view.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainQuizCreator.class.getResource("view/QuestionRootLayout.fxml"));
+            AnchorPane QuestionRootLayout = (AnchorPane) loader.load();
+            QuestionRootLayoutController controller;
+            controller = loader.getController();
+            controller.setMainQuizCreator(this);
+         
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(QuestionRootLayout);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

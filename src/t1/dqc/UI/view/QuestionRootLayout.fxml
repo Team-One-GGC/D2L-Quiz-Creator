@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.QuestionRootLayoutController">
    <children>
       <BorderPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
@@ -15,8 +15,8 @@
                      <children>
                       <Button mnemonicParsing="false" text="Back" />
                         <Button mnemonicParsing="false" text="Clear " />
-                        <Button mnemonicParsing="false" text="Cancel and Quit" />
-                        <Button mnemonicParsing="false" text="Save and Quit" />
+                        <Button mnemonicParsing="false" onAction="#quitQuestionEditor" text="Cancel and Quit" />
+                        <Button mnemonicParsing="false" onAction="#quitQuestionEditor" text="Save and Quit" />
                         <Button mnemonicParsing="false" text="Save " />
                         <Button mnemonicParsing="false" text="Next" />
                      </children>
