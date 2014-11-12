@@ -14,9 +14,9 @@
          <top>
             <Label text="About Us" BorderPane.alignment="CENTER" />
          </top>
-         <center>
-            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="D2L Quiz Creator Application  (2014)&#10;&#10;Created By:&#10;&#10;Derick Coffer&#10;&#10;Jason James&#10;&#10;Jared Marquez&#10;&#10;Steven Spohn" wrapText="true" BorderPane.alignment="CENTER" />
-         </center>
+         <left>
+            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="D2L Quiz Creator Application  (2014)&#10;&#10;Created By:&#10;&#10;Derek Cofer&#10;&#10;Jason James&#10;&#10;Jared Marquez&#10;&#10;Steven Spohn" wrapText="true" BorderPane.alignment="CENTER" />
+         </left>
       </BorderPane>
    </children>
 </AnchorPane>
