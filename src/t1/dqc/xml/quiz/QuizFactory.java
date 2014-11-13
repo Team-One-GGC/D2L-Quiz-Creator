@@ -3,14 +3,10 @@ package t1.dqc.xml.quiz;
 import java.time.LocalDate;
 import java.util.List;
 
-import t1.dqc.xml.quiz.options.AssessmentControl;
 import t1.dqc.xml.quiz.options.Date;
 import t1.dqc.xml.quiz.options.Date.Timestamp;
 import t1.dqc.xml.quiz.options.Procextension;
-import t1.dqc.xml.quiz.ques.ItemMetadata;
-import t1.dqc.xml.quiz.ques.QtiMetadataField;
 import t1.dqc.xml.quiz.ques.Question;
-import t1.dqc.xml.quiz.ques.QuestionContainer;
 
 /**
  * Utility class for getting various objects important to a Quiz object:
@@ -45,50 +41,8 @@ public class QuizFactory
         else
             return "Enabled";
     }
-  
-    /**
-     * Returns the start date of the quiz.
-     * @param quiz the Quiz instance
-     * @return LocalDate representing the year, month, day
-     */
-    public static LocalDate getStartDate(Quiz quiz)//TODO handle no dates
-    {
-        Date d = quiz.getAssessment().getExtension().getStartDate();
-        int year = d.getTimeStamp().getYear();
-        int month = d.getTimeStamp().getMonth();
-        int day = d.getTimeStamp().getDay();
-        return LocalDate.of(year, month, day);
-    }
     
-    /**
-     * 
-     * @param quiz
-     * @return
-     */
-    public static String getStartTime(Quiz quiz)//TODO handle no date
-    {
-        Date d = quiz.getAssessment().getExtension().getStartDate();
-        int hour = d.getTimeStamp().getHour();
-        int min = d.getTimeStamp().getMinutes();
-        return Integer.toString(hour) +":" + Integer.toString(min);
-    }
-    
-    public static LocalDate getEndDate(Quiz quiz)//TODO handle no date
-    {
-        Date d = quiz.getAssessment().getExtension().getEndDate();
-        int year = d.getTimeStamp().getYear();
-        int month = d.getTimeStamp().getMonth();
-        int day = d.getTimeStamp().getDay();
-        return LocalDate.of(year, month, day);
-    }
-    
-    public static String getEndTime(Quiz quiz)//TODO handle no date
-    {
-        Date d = quiz.getAssessment().getExtension().getEndDate();
-        int hour = d.getTimeStamp().getHour();
-        int min = d.getTimeStamp().getMinutes();
-        return Integer.toString(hour) +":" + Integer.toString(min);
-    }
+    //TODO add time handling methods using new DateUtil class
     
     public static String getPassword(Quiz quiz)
     {

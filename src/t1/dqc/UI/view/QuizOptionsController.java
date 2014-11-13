@@ -114,7 +114,9 @@ public class QuizOptionsController {
         LocalDate start = QuizFactory.getStartDate(quiz);
         LocalDate end = QuizFactory.getEndDate(quiz);
         if(start != null)
+        {
             startDate.setValue(start);
+        }
         if(end != null)
             endDate.setValue(end);
         
