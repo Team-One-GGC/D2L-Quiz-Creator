@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 public class QuestionRootLayoutController {
 
@@ -42,6 +43,8 @@ public class QuestionRootLayoutController {
     private ChoiceBox<String> questionPicker;
 
     private MainQuizCreator mainQuizCreator;
+      
+    
     
     //Load question pane into view
     public void loadQuestionPane(){
@@ -75,7 +78,7 @@ public class QuestionRootLayoutController {
     
     //Opens Quiz option view
     public void openQuizOptions(){
-        
+        mainQuizCreator.showQuizOptions(null);
     }
     
     
@@ -98,4 +101,6 @@ public class QuestionRootLayoutController {
     public void setMainQuizCreator(MainQuizCreator mainQuizCreator){
         this.mainQuizCreator = mainQuizCreator;   
     }
+    
+   
 }

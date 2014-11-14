@@ -34,6 +34,7 @@ public class MainQuizCreator extends Application {
     
     private static double WIDTH = Screen.getPrimary().getVisualBounds().getWidth() / 2;
     private static double HEIGHT = WIDTH * (9.0 / 16.0);
+    private BorderPane questionRootLayout;
     
     
     // Constructor
@@ -90,6 +91,7 @@ public class MainQuizCreator extends Application {
             controller.setMainQuizCreator(this);
             // Set person overview into the center of root layout.
             rootLayout.setCenter(D2LQuizCreatorMain);
+            primaryStage.setMaximized(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -118,6 +120,7 @@ public class MainQuizCreator extends Application {
                 }
                 // Set person overview into the center of root layout.
                 rootLayout.setCenter(QuizOptionsScene);
+                primaryStage.setMaximized(false);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -174,13 +177,36 @@ public class MainQuizCreator extends Application {
             // Load quiz options view.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainQuizCreator.class.getResource("view/QuestionRootLayout.fxml"));
-            AnchorPane QuestionRootLayout = (AnchorPane) loader.load();
+            questionRootLayout = (BorderPane) loader.load();
             QuestionRootLayoutController controller;
             controller = loader.getController();
             controller.setMainQuizCreator(this);
-         
+            primaryStage.setMaximized(true);
+            
+           
+            
             // Set person overview into the center of root layout.
-            rootLayout.setCenter(QuestionRootLayout);
+            rootLayout.setCenter(questionRootLayout);
+            loadQuestionTabPane();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    //Load question tab pane
+    public void loadQuestionTabPane(){
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainQuizCreator.class.getResource("view/CreateQuestionsTabPage.fxml"));
+            AnchorPane QuestionTabPane = (AnchorPane) loader.load();
+            //D2LQuizCreatorMainController controller;
+            //controller = loader.getController();
+            //controller.setMainQuizCreator(this);
+            
+            
+            // Set person overview into the center of root layout.
+            questionRootLayout.setCenter(QuestionTabPane);
         } catch (IOException e) {
             e.printStackTrace();
         }
