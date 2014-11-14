@@ -12,12 +12,14 @@ public class DateUtil
     private int day;
     private int hour;
     private int min;
+    private String timeOfDay;
     
     public DateUtil(Timestamp timeStamp) throws NullPointerException
     {
         if(timeStamp == null) throw new NullPointerException("Timestamp cannot be null");
         this.timeStamp = timeStamp;
         convertTimestamp();
+        convert12Hour();
     }
     
     private void convertTimestamp()
@@ -29,18 +31,36 @@ public class DateUtil
         this.min = timeStamp.getMinutes();
     }
     
+    private void convert12Hour()
+    {
+        if(hour > 12)
+        {
+            timeOfDay = "PM";
+            hour -= 12;
+        }
+        else if(hour == 12)
+            timeOfDay = "PM";
+        else
+            timeOfDay = "AM";
+    }
+    
     public LocalDate getDate()
     {
         return LocalDate.of(year, month, day);
     }
 
-    public int getHour()
+    public String getHour()
     {
-        return hour;
+        return Integer.toString(hour);
     }
 
-    public int getMin()
+    public String getMin()
     {
-        return min;
+        return Integer.toString(min);
+    }
+    
+    public String getTimeOfDay()
+    {
+        return timeOfDay;
     }
 }

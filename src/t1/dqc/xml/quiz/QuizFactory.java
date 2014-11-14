@@ -7,6 +7,7 @@ import t1.dqc.xml.quiz.options.Date;
 import t1.dqc.xml.quiz.options.Date.Timestamp;
 import t1.dqc.xml.quiz.options.Procextension;
 import t1.dqc.xml.quiz.ques.Question;
+import t1.dqc.xml.util.DateUtil;
 
 /**
  * Utility class for getting various objects important to a Quiz object:
@@ -41,8 +42,34 @@ public class QuizFactory
         else
             return "Enabled";
     }
-    
     //TODO add time handling methods using new DateUtil class
+    public static DateUtil getStartDate(Quiz quiz)
+    {
+        Timestamp t = quiz.getAssessment().getExtension().getStartDate().getTimeStamp();
+        try
+        {
+            DateUtil d = new DateUtil(t);
+            return d;
+        } 
+        catch(NullPointerException e)
+        {
+            return null;
+        }
+    }
+    
+    public static DateUtil getEndDate(Quiz quiz)
+    {
+        Timestamp t = quiz.getAssessment().getExtension().getEndDate().getTimeStamp();
+        try
+        {
+            DateUtil d = new DateUtil(t);
+            return d;
+        } 
+        catch(NullPointerException e)
+        {
+            return null;
+        }
+    }
     
     public static String getPassword(Quiz quiz)
     {

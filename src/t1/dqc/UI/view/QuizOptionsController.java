@@ -1,15 +1,14 @@
 package t1.dqc.UI.view;
 
-import java.time.LocalDate;
-
-import t1.dqc.UI.MainQuizCreator;
-import t1.dqc.xml.quiz.Quiz;
-import t1.dqc.xml.quiz.QuizFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import t1.dqc.UI.MainQuizCreator;
+import t1.dqc.xml.quiz.Quiz;
+import t1.dqc.xml.quiz.QuizFactory;
+import t1.dqc.xml.util.DateUtil;
 
 public class QuizOptionsController {
     
@@ -111,21 +110,8 @@ public class QuizOptionsController {
     public void setFields(Quiz quiz){
         statusChoice.setValue(QuizFactory.getActive(quiz));
         
-        LocalDate start = QuizFactory.getStartDate(quiz);
-        LocalDate end = QuizFactory.getEndDate(quiz);
-        if(start != null)
-        {
-            startDate.setValue(start);
-        }
-        if(end != null)
-            endDate.setValue(end);
-        
-        //Returns military time ex. 17:30
-        //String must be split
-        String startTime = QuizFactory.getStartTime(quiz);
-        String endTime = QuizFactory.getEndTime(quiz);
-        timeConversion(startTime, endTime);
-        
+        setTimeFields(quiz);
+                
         timeLimit.setText(QuizFactory.getTimeLimit(quiz));
         
         attemptLimit.setText(QuizFactory.getAttempsAllowed(quiz));
@@ -136,38 +122,24 @@ public class QuizOptionsController {
         password.setText(QuizFactory.getPassword(quiz));
     }
     
-    private void timeConversion(String startTime, String endTime)
+    private void setTimeFields(Quiz quiz)
     {
-        int sHour = Integer.parseInt(startTime.split(":")[0]);
-        int sMin = Integer.parseInt(startTime.split(":")[1]);
-        
-        int eHour = Integer.parseInt(endTime.split(":")[0]);
-        int eMin = Integer.parseInt(endTime.split(":")[1]);
-        
-        if(sHour > 12)
+        DateUtil start = QuizFactory.getStartDate(quiz);
+        DateUtil end = QuizFactory.getEndDate(quiz);
+        if(start != null)
         {
-            startAMPM.setValue("PM");
-            sHour -= 12;
+            startDate.setValue(start.getDate());
+            startHour.setText(start.getHour());
+            startMin.setText(start.getMin());
+            startAMPM.setValue(start.getTimeOfDay());
         }
-        else if(sHour == 12)
-            startAMPM.setValue("PM");
-        else
-            startAMPM.setValue("AM");
-        
-        if(eHour > 12)
+        if(end != null)
         {
-            endAMPM.setValue("PM");
-            eHour -= 12;
+            endDate.setValue(end.getDate());
+            endHour.setText(end.getHour());
+            endMin.setText(end.getMin());
+            endAMPM.setValue(end.getTimeOfDay());
         }
-        else if(eHour == 12)
-            endAMPM.setValue("PM");
-        else
-            endAMPM.setValue("AM");
-        
-        this.startHour.setText(Integer.toString(sHour));
-        this.startMin.setText(Integer.toString(sMin));
-        this.endHour.setText(Integer.toString(eHour));
-        this.endMin.setText(Integer.toString(eMin));
     }
     
     //Save values to Quiz Object
