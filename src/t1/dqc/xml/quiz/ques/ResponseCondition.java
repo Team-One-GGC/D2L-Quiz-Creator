@@ -1,5 +1,8 @@
 package t1.dqc.xml.quiz.ques;
 
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -7,21 +10,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="respcondition")
 public class ResponseCondition
 {
-	private VarEqual varEqual;
+	private String title;
+	private List<VarEqual> conditionVar;
 	private SetVar setVar;
 	private DisplayFeedback displayFeedback;
 	
 	@XmlElementWrapper(name="conditionvar")
 	@XmlElement(name="varequal")
-	public VarEqual getVarEqual()
+	public List<VarEqual> getConditionVar()
 	{
-		return varEqual;
+		return conditionVar;
 	}
-	public void setVarEqual(VarEqual varEqual)
+	public void setConditionVar(List<VarEqual> conditionVar)
 	{
-		this.varEqual = varEqual;
+		this.conditionVar = conditionVar;
 	}
-	
 	@XmlElement(name="setvar")
 	public SetVar getSetVar()
 	{
@@ -40,6 +43,16 @@ public class ResponseCondition
 	public void setDisplayFeedback(DisplayFeedback displayFeedback)
 	{
 		this.displayFeedback = displayFeedback;
+	}
+	
+	@XmlAttribute(name="title")
+	public String getTitle()
+	{
+		return title;
+	}
+	public void setTitle(String title)
+	{
+		this.title = title;
 	}
 	
 	
