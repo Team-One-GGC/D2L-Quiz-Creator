@@ -18,6 +18,7 @@ public class Question
 	private String ident;
 	private String label;
 	private String page;
+	private Presentation presentation;
 	private ItemMetadata itemMetadata;
 	private ItemprocExtension itemprocExtension;
 	private List<ResponseCondition> responseConditions;
@@ -90,5 +91,15 @@ public class Question
 	public void setResponseConditions(List<ResponseCondition> responseConditions)
 	{
 		this.responseConditions = responseConditions;
+	}
+	
+	@XmlElement(name="presentation")
+	public Presentation getPresentation()
+	{
+		return presentation;
+	}
+	public void setPresentation(Presentation presentation)
+	{
+		this.presentation = presentation;
 	}
 }
