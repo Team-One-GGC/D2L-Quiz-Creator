@@ -122,6 +122,7 @@ public class QuizOptionsController {
         password.setText(QuizFactory.getPassword(quiz));
     }
     
+    
     private void setTimeFields(Quiz quiz)
     {
         DateUtil start = QuizFactory.getStartDate(quiz);
