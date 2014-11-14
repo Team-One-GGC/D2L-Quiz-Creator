@@ -112,14 +112,59 @@ public class QuizOptionsController {
     public void setFields(Quiz quiz){
         statusChoice.setValue(QuizFactory.isActive(quiz));
         
-        //TODO needs to be able to handle quizzes with no dates specified
-        startDate.setValue(QuizFactory.getStartDate(quiz));
-        endDate.setValue(QuizFactory.getEndDate(quiz));
+        LocalDate start = QuizFactory.getStartDate(quiz);
+        LocalDate end = QuizFactory.getEndDate(quiz);
+        if(start != null)
+            startDate.setValue(start);
+        if(end != null)
+            endDate.setValue(end);
         
-//        startHour.setText(value);
+        //Returns military time ex. 17:30
+        //String must be split
+        String startTime = QuizFactory.getStartTime(quiz);
+        String endTime = QuizFactory.getEndTime(quiz);
+        timeConversion(startTime, endTime);
+        
+        timeLimit.setText(QuizFactory.getTimeLimit(quiz));
         
         passwordEnable.setSelected(true);
+        password.setEditable(true);
+        password.setDisable(false);
         password.setText(QuizFactory.getPassword(quiz));
+    }
+    
+    private void timeConversion(String startTime, String endTime)
+    {
+        int sHour = Integer.parseInt(startTime.split(":")[0]);
+        int sMin = Integer.parseInt(startTime.split(":")[1]);
+        
+        int eHour = Integer.parseInt(endTime.split(":")[0]);
+        int eMin = Integer.parseInt(endTime.split(":")[1]);
+        
+        if(sHour > 12)
+        {
+            startAMPM.setValue("PM");
+            sHour -= 12;
+        }
+        else if(sHour == 12)
+            startAMPM.setValue("PM");
+        else
+            startAMPM.setValue("AM");
+        
+        if(eHour > 12)
+        {
+            endAMPM.setValue("PM");
+            eHour -= 12;
+        }
+        else if(eHour == 12)
+            endAMPM.setValue("PM");
+        else
+            endAMPM.setValue("AM");
+        
+        this.startHour.setText(Integer.toString(sHour));
+        this.startMin.setText(Integer.toString(sMin));
+        this.endHour.setText(Integer.toString(eHour));
+        this.endMin.setText(Integer.toString(eMin));
     }
     
     //Save values to Quiz Object
@@ -149,16 +194,26 @@ public class QuizOptionsController {
     @FXML
     public void disableEnablePassword(){
         boolean passCheck = passwordEnable.isSelected();
-        password.setEditable(passCheck);
-        password.setDisable(!passCheck);
+        changePassword(passCheck);
+    }
+    
+    private void changePassword(boolean check)
+    {
+        password.setEditable(check);
+        password.setDisable(!check);
     }
     
     //Disable time limit text field if password check box is off
     @FXML
     public void disableEnableTimeLimit(){
         boolean timeCheck = timeLimitEnabled.isSelected();
-        timeLimit.setEditable(timeCheck);
-        timeLimit.setDisable(!timeCheck);
+        changeTimeLimit(timeCheck);
+    }
+    
+    private void changeTimeLimit(boolean check)
+    {
+        timeLimit.setEditable(check);
+        timeLimit.setDisable(!check);
     }
     
 }

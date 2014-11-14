@@ -164,7 +164,6 @@ public class MainQuizCreator extends Application {
              ZipReader<Manifest> reader = new ZipReader<>(zipFile,Manifest.class);
              Manifest manifest = reader.getObjectFromXML(Manifest.FILE_NAME);
              String quizFile = manifest.getResources().get(0).getHref();
-             String quizTitle = manifest.getResources().get(0).getTitle();
              
              ZipReader<Quiz> quizReader = new ZipReader<>(zipFile, Quiz.class);
              Quiz quiz = quizReader.getObjectFromXML(quizFile);

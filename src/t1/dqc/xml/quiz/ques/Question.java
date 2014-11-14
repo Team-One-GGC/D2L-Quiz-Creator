@@ -1,7 +1,10 @@
 package t1.dqc.xml.quiz.ques;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import t1.dqc.xml.XmlNS;
@@ -11,12 +14,13 @@ import t1.dqc.xml.XmlNS;
 @XmlRootElement(name = "item")
 public class Question
 {
-	private String title = "True/False Title";
-	private String ident = "OBJ_54021008";
-	private String label = "QUES_22668049_22912484";
-	private String page = "1";
-	private ItemMetadata itemMetadata = null;
-	private ItemprocExtension itemprocExtension = null;
+	private String title;
+	private String ident;
+	private String label;
+	private String page;
+	private ItemMetadata itemMetadata;
+	private ItemprocExtension itemprocExtension;
+	private List<ResponseCondition> responseConditions;
 	
 	@XmlElement(name = "itemproc_extension")
 	public ItemprocExtension getItemprocExtension()
@@ -75,5 +79,16 @@ public class Question
 	public void setPage(String page)
 	{
 		this.page = page;
+	}
+	
+	@XmlElementWrapper(name="resprocessing")
+	@XmlElement(name="respcondition")
+	public List<ResponseCondition> getResponseConditions()
+	{
+		return responseConditions;
+	}
+	public void setResponseConditions(List<ResponseCondition> responseConditions)
+	{
+		this.responseConditions = responseConditions;
 	}
 }
