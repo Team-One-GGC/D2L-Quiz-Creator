@@ -1,5 +1,6 @@
 package t1.dqc.xml.util;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 
 import t1.dqc.xml.quiz.options.Date.Timestamp;
@@ -56,7 +57,8 @@ public class DateUtil
 
     public String getMin()
     {
-        return Integer.toString(min);
+        DecimalFormat decimalFormat = new DecimalFormat("00");
+        return decimalFormat.format(min);
     }
     
     public String getTimeOfDay()
