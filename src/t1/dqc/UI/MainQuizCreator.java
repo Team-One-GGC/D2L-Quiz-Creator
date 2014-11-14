@@ -8,6 +8,7 @@ import t1.dqc.xml.manifest.Manifest;
 import javafx.stage.FileChooser;
 import t1.dqc.UI.view.D2LQuizCreatorMainController;
 import t1.dqc.UI.view.AboutUsDialogController;
+import t1.dqc.UI.view.QuestionRootLayoutController;
 import t1.dqc.UI.view.QuizOptionsController;
 import t1.dqc.UI.view.RootLayoutController;
 import t1.dqc.xml.manifest.Manifest;
@@ -33,6 +34,7 @@ public class MainQuizCreator extends Application {
     
     private static double WIDTH = Screen.getPrimary().getVisualBounds().getWidth() / 2;
     private static double HEIGHT = WIDTH * (9.0 / 16.0);
+    private BorderPane questionRootLayout;
     
     
     // Constructor
@@ -89,6 +91,7 @@ public class MainQuizCreator extends Application {
             controller.setMainQuizCreator(this);
             // Set person overview into the center of root layout.
             rootLayout.setCenter(D2LQuizCreatorMain);
+            primaryStage.setMaximized(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -103,20 +106,21 @@ public class MainQuizCreator extends Application {
      */
     public void showQuizOptions(Quiz quiz){
             try {
-                // Load person overview.
+                // Load quiz options view.
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(MainQuizCreator.class.getResource("view/Options2.fxml"));
+                loader.setLocation(MainQuizCreator.class.getResource("view/QuizOptionsScene.fxml"));
                 AnchorPane QuizOptionsScene = (AnchorPane) loader.load();
                 QuizOptionsController controller;
                 controller = loader.getController();
                 controller.setMainQuizCreator(this);
                 if(quiz != null) {
-                    //showing quiz title only for now
+                    //showing quiz private BorderPane rootLayout;
                     controller.setQuizName(QuizFactory.getQuizTitle(quiz));
                     controller.setFields(quiz);
                 }
                 // Set person overview into the center of root layout.
                 rootLayout.setCenter(QuizOptionsScene);
+                primaryStage.setMaximized(false);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -166,5 +170,45 @@ public class MainQuizCreator extends Application {
              Quiz quiz = quizReader.getObjectFromXML(quizFile);
              showQuizOptions(quiz);
          }
+    }
+    
+    public void showQuizQuestionRoot(){
+        try {
+            // Load quiz options view.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainQuizCreator.class.getResource("view/QuestionRootLayout.fxml"));
+            questionRootLayout = (BorderPane) loader.load();
+            QuestionRootLayoutController controller;
+            controller = loader.getController();
+            controller.setMainQuizCreator(this);
+            primaryStage.setMaximized(true);
+            
+           
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(questionRootLayout);
+            loadQuestionTabPane();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    //Load question tab pane
+    public void loadQuestionTabPane(){
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainQuizCreator.class.getResource("view/CreateQuestionsTabPage.fxml"));
+            AnchorPane QuestionTabPane = (AnchorPane) loader.load();
+            //D2LQuizCreatorMainController controller;
+            //controller = loader.getController();
+            //controller.setMainQuizCreator(this);
+            
+            
+            // Set person overview into the center of root layout.
+            questionRootLayout.setCenter(QuestionTabPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

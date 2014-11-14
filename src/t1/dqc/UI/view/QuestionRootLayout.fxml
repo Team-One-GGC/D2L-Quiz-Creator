@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane fx:id="questionRootLayout" prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.QuestionRootLayoutController">
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="481.0" BorderPane.alignment="CENTER">
+         <items>
+            <HBox spacing="23.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#previousQuestion" text="Back" />
+                  <Button mnemonicParsing="false" onAction="#clearFields" text="Clear " />
+                  <Button mnemonicParsing="false" onAction="#quitQuestionEditor" text="Cancel and Quit" />
+                  <Button mnemonicParsing="false" onAction="#quitQuestionEditor" text="Save and Quit" />
+                  <Button mnemonicParsing="false" onAction="#saveQuestionEditor" text="Save " />
+                  <Button mnemonicParsing="false" onAction="#laterQuestion" text="Next" />
+               </children>
+            </HBox>
+         </items>
+      </ToolBar>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="253.0" prefWidth="137.0" BorderPane.alignment="CENTER">
+         <children>
+            <ChoiceBox layoutX="-1.0" prefHeight="60.0" prefWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <VBox alignment="CENTER" layoutY="60.0" prefHeight="196.0" prefWidth="137.0" spacing="10.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="137.0" mnemonicParsing="false" onAction="#createQuestion" prefHeight="50.0" prefWidth="110.0" text="Add New Question" textAlignment="CENTER" />
+                  <Button layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onAction="#removeQuestion" prefHeight="50.0" prefWidth="110.0" text="Remove Current Question" textAlignment="CENTER" wrapText="true" />
+                  <Button mnemonicParsing="false" onAction="#openQuizOptions" prefHeight="41.0" prefWidth="110.0" text="Change Quiz Options" textAlignment="CENTER" wrapText="true" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
