@@ -76,10 +76,6 @@ public class CreateQuestionsController
 	@FXML
 	private TextField weightOne;
 	
-	//Feedback Box 1 text area
-	@FXML
-	private TextArea feedbackOne;
-	
 	//Value Box 2 text area
 	@FXML
 	private TextArea valueTwo;
@@ -88,10 +84,6 @@ public class CreateQuestionsController
 	@FXML
 	private TextField weightTwo;
 	
-	//Feedback Box 2 text area
-	@FXML
-	private TextArea feedbackTwo;
-	
 	//Value Box 3 text area
 	@FXML
 	private TextArea valueThree;
@@ -99,10 +91,6 @@ public class CreateQuestionsController
 	//Weight % Box 3 text field
 	@FXML
 	private TextField weightThree;
-	
-	//Feedback Box 3 text area
-	@FXML
-	private TextArea feedbackThree;
 		
 	//Value Box 4 text area
 	@FXML
@@ -111,10 +99,6 @@ public class CreateQuestionsController
 	//Weight % Box 4 text field
 	@FXML
 	private TextField weightFour;
-	
-	//Feedback Box 4 text area
-	@FXML
-	private TextArea feedbackFour;
 	
 	//Answer text area
 	@FXML

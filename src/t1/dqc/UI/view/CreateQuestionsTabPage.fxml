@@ -95,7 +95,7 @@
                                           </VBox>
                                           <VBox layoutX="14.0" layoutY="486.0" prefHeight="510.0" prefWidth="670.0" spacing="8.0" stylesheets="@Theme.css">
                                              <children>
-                                                <Label prefHeight="27.0" prefWidth="670.0" text="#            Value                            Weight (%)               Feedback" />
+                                                <Label prefHeight="27.0" prefWidth="670.0" text="#            Value                            Weight (%)" />
                                                 <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
                                                    <children>
                                                       <VBox prefHeight="175.0" prefWidth="35.0" stylesheets="@Theme.css">
@@ -111,11 +111,6 @@
                                                       <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
                                                          <children>
                                                             <TextField fx:id="weightOne" prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea fx:id="feedbackOne" prefHeight="200.0" prefWidth="200.0" />
                                                          </children>
                                                       </VBox>
                                                    </children>
@@ -137,11 +132,6 @@
                                                             <TextField fx:id="weightTwo" prefHeight="39.0" prefWidth="31.0" />
                                                          </children>
                                                       </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea fx:id="feedbackTwo" prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
                                                    </children>
                                                 </HBox>
                                                 <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
@@ -161,11 +151,6 @@
                                                             <TextField fx:id="weightThree" prefHeight="39.0" prefWidth="31.0" />
                                                          </children>
                                                       </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea fx:id="feedbackThree" prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
                                                    </children>
                                                 </HBox>
                                                 <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
@@ -183,11 +168,6 @@
                                                       <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
                                                          <children>
                                                             <TextField fx:id="weightFour" prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea fx:id="feedbackFour" prefHeight="200.0" prefWidth="200.0" />
                                                          </children>
                                                       </VBox>
                                                    </children>
