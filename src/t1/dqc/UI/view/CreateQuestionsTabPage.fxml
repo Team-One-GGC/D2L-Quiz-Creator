@@ -76,11 +76,7 @@
                                           <VBox layoutX="14.0" layoutY="94.0" spacing="5.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Points*" />
-<<<<<<< HEAD
-                                                <TextField prefHeight="40.0" prefWidth="73.0" />
-=======
                                                 <TextField fx:id="pointsMC" prefHeight="40.0" prefWidth="58.0" />
->>>>>>> origin/Steven_Jared
                                              </children>
                                           </VBox>
                                           <VBox layoutX="14.0" layoutY="179.0" prefHeight="78.0" prefWidth="100.0" stylesheets="@Theme.css">
@@ -91,22 +87,13 @@
                                           </VBox>
                                           <VBox layoutX="14.0" layoutY="263.0" prefHeight="200.0" prefWidth="278.0" stylesheets="@Theme.css">
                                              <children>
-<<<<<<< HEAD
-                                                <Label text="Question*" />
-                                                <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" />
-=======
                                                 <Label text="Question Text*" />
-                                                <TextArea fx:id="questionTextMC" prefHeight="200.0" prefWidth="200.0" />
->>>>>>> origin/Steven_Jared
+                                                <TextArea fx:id="questionTextMC" prefHeight="200.0" prefWidth="200.0" wrapText="true"/>
                                              </children>
                                           </VBox>
                                           <VBox layoutX="14.0" layoutY="486.0" prefHeight="510.0" prefWidth="670.0" spacing="8.0" stylesheets="@Theme.css">
                                              <children>
-<<<<<<< HEAD
-                                                <Label prefHeight="27.0" prefWidth="670.0" text="#            Value                            Weight (%)  " />
-=======
                                                 <Label prefHeight="27.0" prefWidth="670.0" text="#            Value                            Weight (%)" />
->>>>>>> origin/Steven_Jared
                                                 <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
                                                    <children>
                                                       <VBox prefHeight="175.0" prefWidth="35.0" stylesheets="@Theme.css">
@@ -121,16 +108,9 @@
                                                       </VBox>
                                                       <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
                                                          <children>
-<<<<<<< HEAD
-                                                            <TextField prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css" />
-=======
                                                             <TextField fx:id="weightOne" prefHeight="39.0" prefWidth="31.0" />
                                                          </children>
                                                       </VBox>
->>>>>>> origin/Steven_Jared
                                                    </children>
                                                 </HBox>
                                                 <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
@@ -147,16 +127,9 @@
                                                       </VBox>
                                                       <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
                                                          <children>
-<<<<<<< HEAD
-                                                            <TextField prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css" />
-=======
                                                             <TextField fx:id="weightTwo" prefHeight="39.0" prefWidth="31.0" />
                                                          </children>
                                                       </VBox>
->>>>>>> origin/Steven_Jared
                                                    </children>
                                                 </HBox>
                                                 <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
@@ -173,16 +146,9 @@
                                                       </VBox>
                                                       <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
                                                          <children>
-<<<<<<< HEAD
-                                                            <TextField prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css" />
-=======
                                                             <TextField fx:id="weightThree" prefHeight="39.0" prefWidth="31.0" />
                                                          </children>
                                                       </VBox>
->>>>>>> origin/Steven_Jared
                                                    </children>
                                                 </HBox>
                                                 <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
@@ -199,16 +165,9 @@
                                                       </VBox>
                                                       <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
                                                          <children>
-<<<<<<< HEAD
-                                                            <TextField prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css" />
-=======
                                                             <TextField fx:id="weightFour" prefHeight="39.0" prefWidth="31.0" />
                                                          </children>
                                                       </VBox>
->>>>>>> origin/Steven_Jared
                                                    </children>
                                                 </HBox>
                                              </children>
