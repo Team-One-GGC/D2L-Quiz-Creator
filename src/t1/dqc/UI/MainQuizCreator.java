@@ -187,6 +187,7 @@ public class MainQuizCreator extends Application {
             // Set person overview into the center of root layout.
             rootLayout.setCenter(questionRootLayout);
             loadQuestionTabPane();
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
