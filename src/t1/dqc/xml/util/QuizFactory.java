@@ -1,13 +1,13 @@
-package t1.dqc.xml.quiz;
+package t1.dqc.xml.util;
 
 import java.time.LocalDate;
 import java.util.List;
 
+import t1.dqc.xml.quiz.Quiz;
 import t1.dqc.xml.quiz.options.Date;
 import t1.dqc.xml.quiz.options.Date.Timestamp;
 import t1.dqc.xml.quiz.options.Procextension;
 import t1.dqc.xml.quiz.ques.Question;
-import t1.dqc.xml.util.DateUtil;
 
 /**
  * Utility class for getting various objects important to a Quiz object:
@@ -114,8 +114,10 @@ public class QuizFactory
         List<Question> list = getQuestions(quiz);
         for(Question q : list)
         {
-            String ques = q.getPresentation().getFlow().getMaterial().getMatText().getValue();
-            System.out.println(ques);
+            String ques = QuestionFactory.getQuestionText(q);
+            String type = QuestionFactory.getQuestionType(q);
+            System.out.println("Question text: " + ques);
+            System.out.println("Question type: " + type);
         }
     }
 }

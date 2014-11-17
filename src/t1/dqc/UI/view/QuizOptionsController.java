@@ -7,8 +7,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import t1.dqc.UI.MainQuizCreator;
 import t1.dqc.xml.quiz.Quiz;
-import t1.dqc.xml.quiz.QuizFactory;
 import t1.dqc.xml.util.DateUtil;
+import t1.dqc.xml.util.QuizFactory;
 
 public class QuizOptionsController {
     

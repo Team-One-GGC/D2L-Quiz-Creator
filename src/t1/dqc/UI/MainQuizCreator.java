@@ -13,7 +13,7 @@ import t1.dqc.UI.view.QuizOptionsController;
 import t1.dqc.UI.view.RootLayoutController;
 import t1.dqc.xml.manifest.Manifest;
 import t1.dqc.xml.quiz.Quiz;
-import t1.dqc.xml.quiz.QuizFactory;
+import t1.dqc.xml.util.QuizFactory;
 import t1.dqc.zip.ZipReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
