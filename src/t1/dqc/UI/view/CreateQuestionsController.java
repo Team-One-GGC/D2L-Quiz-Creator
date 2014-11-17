@@ -110,20 +110,6 @@ public class CreateQuestionsController
 		
 	}
 	
-	//Save values to Quiz Object
-    @FXML
-    public void saveValues()
-    {
-        
-    }
-    
-    //Cancel Changes and close stage
-    @FXML
-    public void cancelSaves()
-    {
-        mainQuizCreator.showD2LQuizCreatorMain();
-    }
-	
     //Setter
 	public void setMainQuizCreator(MainQuizCreator mainQuizCreator)
 	{

@@ -20,8 +20,6 @@
                                  <children>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" stylesheets="@Theme.css">
                                        <children>
-                                          <Button layoutX="491.0" layoutY="402.0" mnemonicParsing="false" stylesheets="@Theme.css" text="Save" />
-                                          <Button layoutX="578.0" layoutY="402.0" mnemonicParsing="false" stylesheets="@Theme.css" text="Cancel" />
                                           <VBox layoutX="19.0" layoutY="14.0" prefHeight="50.0" prefWidth="150.0" spacing="5.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Title" />
@@ -174,8 +172,6 @@
                                                 </HBox>
                                              </children>
                                           </VBox>
-                                          <Button layoutX="468.0" layoutY="1005.0" mnemonicParsing="false" stylesheets="@Theme.css" text="Save" />
-                                          <Button layoutX="557.0" layoutY="1005.0" mnemonicParsing="false" stylesheets="@Theme.css" text="Cancel" />
                                        </children>
                                     </AnchorPane>
                                  </children>
@@ -218,8 +214,6 @@
                                                 <TextArea fx:id="answer" prefHeight="200.0" prefWidth="200.0" />
                                              </children>
                                           </VBox>
-                                          <Button layoutX="484.0" layoutY="538.0" mnemonicParsing="false" text="Save" />
-                                          <Button layoutX="569.0" layoutY="538.0" mnemonicParsing="false" text="Cancel" />
                                        </children>
                                     </AnchorPane>
                                  </children>
