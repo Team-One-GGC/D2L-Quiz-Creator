@@ -1,5 +1,8 @@
 package t1.dqc.xml.quiz.ques;
 
+/*
+ * This class represents the <flow_label> xml tag which is found in <response_lid>
+ */
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name="flow_label")
