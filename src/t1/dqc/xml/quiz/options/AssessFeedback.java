@@ -1,12 +1,17 @@
 package t1.dqc.xml.quiz.options;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
-
 import t1.dqc.xml.XmlNS;
 import t1.dqc.xml.quiz.presentation.Rubric;
+
+/**
+ * This class defines the <assessfeedback> xml tag
+ * which is found within the <assessment> section.
+ * @author Jason
+ *
+ */
 
 @XmlRootElement(name="assessfeedback")
 @XmlType(propOrder={"rubric", "duration", "responseDisplayTypeId", "showCorrectAnswers",

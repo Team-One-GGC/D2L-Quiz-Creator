@@ -1,3 +1,8 @@
+/**
+ * This class defines the namespaces under the
+ * t1.dqc.xml.manifest package.
+ */
+
 @XmlSchema(elementFormDefault = XmlNsForm.QUALIFIED,
 		   namespace = t1.dqc.xml.XmlNS.DEFAULT_NS,
 		   xmlns = {

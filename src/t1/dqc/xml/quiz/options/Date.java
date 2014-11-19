@@ -1,5 +1,4 @@
 package t1.dqc.xml.quiz.options;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -8,6 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 import t1.dqc.xml.XmlNS;
 
+/**
+ * This class defines the <timestamp> xml tag
+ * found within the <assess_procextension> section.
+ * @author Jason
+ *
+ */
 public class Date
 {
     private Timestamp timeStamp;
