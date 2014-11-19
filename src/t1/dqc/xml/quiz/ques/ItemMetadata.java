@@ -1,5 +1,8 @@
 package t1.dqc.xml.quiz.ques;
-
+/**
+ * This class defines the <itemmetadata> xml tag 
+ * which is found in the <item> section.
+ */
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;

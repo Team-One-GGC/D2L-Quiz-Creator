@@ -3,6 +3,13 @@ package t1.dqc.xml.quiz.ques;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * This class defines the <setvar> xml tag
+ * which is found within the <respcondition> section.
+ * @author Jason
+ *
+ */
+
 @XmlRootElement(name="setvar")
 public class SetVar
 {

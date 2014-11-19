@@ -1,7 +1,8 @@
 package t1.dqc.xml.quiz.ques;
 
-/*
- * This class defines the <displayfeedback> tag which is under <resprocessing> inside of each question item.
+/**
+ * This class defines the <displayfeedback> tag which is inside
+ *  the <resprocessing> section inside of each question item.
  */
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;

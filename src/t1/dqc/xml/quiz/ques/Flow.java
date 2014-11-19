@@ -1,7 +1,8 @@
 package t1.dqc.xml.quiz.ques;
 
-/*
- * This class defines the <flow> tag which is inside the <presentation> tag for each question item. 
+/**
+ * This class defines the <flow> tag which is inside
+ *  the <presentation> section for each question item. 
  */
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

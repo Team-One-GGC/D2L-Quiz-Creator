@@ -5,6 +5,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import t1.dqc.xml.XmlNS;
 
+/**
+ * This class defines the <response_extension> xml tag
+ * which is found within the <flow> tag inside of the 
+ * <presentation> section. 
+ * @author Jason
+ *
+ */
+
 @XmlRootElement(name="response_extension")
 public class ResponseExtension
 {

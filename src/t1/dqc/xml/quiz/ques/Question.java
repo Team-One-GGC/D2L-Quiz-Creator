@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import t1.dqc.xml.XmlNS;
 
-
+/**
+ * This class defines the <item> tag which is inside the <assessment> section.
+ * The <item> section contains all of the elements for each question.
+ */
 
 @XmlRootElement(name = "item")
 public class Question

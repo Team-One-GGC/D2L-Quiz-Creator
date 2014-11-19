@@ -7,6 +7,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * This class defines the <respcondition> xml tag
+ * which is found within the <resprocessing> section.
+ * @author Jason
+ *
+ */
+
 @XmlRootElement(name="respcondition")
 public class ResponseCondition
 {

@@ -1,7 +1,8 @@
 package t1.dqc.xml.quiz.ques;
 
-/*
- * This class represents the <flow_label> xml tag which is found in <response_lid>
+/**
+ * This class represents the <flow_label> xml tag
+ *  which is found in the <response_lid> section.
  */
 import javax.xml.bind.annotation.*;
 

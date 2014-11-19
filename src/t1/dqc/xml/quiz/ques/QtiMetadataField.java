@@ -3,7 +3,10 @@ package t1.dqc.xml.quiz.ques;
 import javax.xml.bind.annotation.*;
 
 
-
+/**
+ * This class defines the <qti_metadatafield> xml tag 
+ * which is inside the <qtimetadata> section.
+ */
 
 
 @XmlRootElement(name = "qti_metadatafield")

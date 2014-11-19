@@ -5,8 +5,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import t1.dqc.xml.XmlNS;
 
-/*
- * This class creates the XML representation of the itemproc_extension tag section
+/**
+ * This class defines the <itemproc_extension> xml tag 
+ * which is found in the <item> section.
  */
 @XmlRootElement(name="itemproc_extension")
 public class ItemprocExtension

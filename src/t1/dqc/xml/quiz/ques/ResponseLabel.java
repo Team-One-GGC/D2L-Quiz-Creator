@@ -4,6 +4,14 @@ import java.util.List;
 import t1.dqc.xml.quiz.presentation.*;
 import javax.xml.bind.annotation.*;
 
+
+/**
+ * This class defines the <response_label> xml tag
+ * which is found within the <flow_label> tag inside the
+ * <response_lid> section.
+ * @author Jason
+ *
+ */
 @XmlRootElement(name="response_label")
 public class ResponseLabel
 {

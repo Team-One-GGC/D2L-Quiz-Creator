@@ -4,6 +4,13 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlElement;
 
+
+/**
+ * This class defines the <response_lid> xml tag
+ * which is found within the <presentation> section.
+ * @author Jason
+ *
+ */
 @XmlRootElement(name="response_lid")
 public class ResponseLid
 {
