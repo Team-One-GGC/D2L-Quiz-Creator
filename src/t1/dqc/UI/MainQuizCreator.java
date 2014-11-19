@@ -3,18 +3,8 @@ package t1.dqc.UI;
 import java.io.File;
 import java.io.IOException;
 
-import t1.dqc.zip.ZipReader;
-import t1.dqc.xml.manifest.Manifest;
-import javafx.stage.FileChooser;
-import t1.dqc.UI.view.D2LQuizCreatorMainController;
-import t1.dqc.UI.view.AboutUsDialogController;
-import t1.dqc.UI.view.QuestionRootLayoutController;
-import t1.dqc.UI.view.QuizOptionsController;
-import t1.dqc.UI.view.RootLayoutController;
-import t1.dqc.xml.manifest.Manifest;
-import t1.dqc.xml.quiz.Quiz;
-import t1.dqc.xml.util.QuizFactory;
-import t1.dqc.zip.ZipReader;
+import javax.swing.JOptionPane;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,6 +14,15 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import t1.dqc.UI.view.AboutUsDialogController;
+import t1.dqc.UI.view.D2LQuizCreatorMainController;
+import t1.dqc.UI.view.QuestionRootLayoutController;
+import t1.dqc.UI.view.QuizOptionsController;
+import t1.dqc.UI.view.RootLayoutController;
+import t1.dqc.xml.manifest.Manifest;
+import t1.dqc.xml.quiz.Quiz;
+import t1.dqc.xml.util.QuizFactory;
+import t1.dqc.zip.ZipReader;
 
 public class MainQuizCreator extends Application {
 
@@ -98,7 +97,17 @@ public class MainQuizCreator extends Application {
     }
     
     public static void main(String[] args) {
+        checkJavaVersion();
         launch(args);
+    }
+    
+    private static void checkJavaVersion()
+    {
+        double version = Double.parseDouble(System.getProperty("java.specification.version"));
+        if(version < 1.8) {
+            JOptionPane.showMessageDialog(null, "Must have Java 8 installed", "Wrong Java version", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
     }
     
     /**
