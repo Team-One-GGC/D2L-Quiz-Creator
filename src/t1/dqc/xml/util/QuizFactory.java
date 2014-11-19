@@ -42,7 +42,13 @@ public class QuizFactory
         else
             return "Enabled";
     }
-    //TODO add time handling methods using new DateUtil class
+    
+    /**
+     * Returns a DateUtil object of the quiz's start date information.
+     * Returns null if no start date is found.
+     * @param quiz
+     * @return
+     */
     public static DateUtil getStartDate(Quiz quiz)
     {
         Timestamp t = quiz.getAssessment().getExtension().getStartDate().getTimeStamp();
@@ -57,6 +63,12 @@ public class QuizFactory
         }
     }
     
+    /**
+     * Returns DateUtil object of the quiz's end date information.
+     * Returns null if no end date is found.
+     * @param quiz
+     * @return
+     */
     public static DateUtil getEndDate(Quiz quiz)
     {
         Timestamp t = quiz.getAssessment().getExtension().getEndDate().getTimeStamp();
@@ -71,24 +83,34 @@ public class QuizFactory
         }
     }
     
+    /**
+     * Returns the password for the quiz.
+     * NOTE: no checking is done for whether a quiz has a password. This method can return a null object.
+     * @param quiz
+     * @return
+     */
     public static String getPassword(Quiz quiz)
     {
         Procextension p = quiz.getAssessment().getExtension();
         return p.getPassword();
     }
     
+    /**
+     * Returns the quiz's time limit.
+     * @param quiz
+     * @return
+     */
     public static String getTimeLimit(Quiz quiz)
     {
         Procextension p = quiz.getAssessment().getExtension();
         return Integer.toString(p.getTimeLimit());
     }
     
-    public static boolean isTimeEnforced(Quiz quiz)
-    {
-        Procextension p = quiz.getAssessment().getExtension();        
-        return (p.getEnforceTimeLimit().equals("no"))? false : true;
-    }
-    
+    /**
+     * Returns how many attempts are allowed for this quiz.
+     * @param quiz
+     * @return
+     */
     public static String getAttempsAllowed(Quiz quiz)
     {
         Procextension p = quiz.getAssessment().getExtension();
@@ -97,7 +119,7 @@ public class QuizFactory
     
     
     /**
-     * Returns a List of all the questions
+     * Returns a List of all the questions.
      * @param quiz
      * @return a List of all the quizzes
      */

@@ -106,24 +106,41 @@ public class QuizOptionsController {
        System.out.println("Quiz status is " + quizStatus);
     }
     
-    //Set fields to Quiz values
+    /**
+     * Sets the fields on this scene to the information inside of the Quiz.
+     * @param quiz
+     */
     public void setFields(Quiz quiz){
         statusChoice.setValue(QuizFactory.getActive(quiz));
         
-        setTimeFields(quiz);
-                
-        timeLimit.setText(QuizFactory.getTimeLimit(quiz));
+        setDateFields(quiz);
+        
+        //Set password field
+        String thePassword = QuizFactory.getPassword(quiz);
+        if(thePassword != null)
+        {
+            passwordEnable.setSelected(true);
+            changePasswordFieldEnabled(true);
+            password.setText(thePassword);
+        }
+        
+        //Set timeLimit field
+        String theTimeLimit = QuizFactory.getTimeLimit(quiz);
+        if(theTimeLimit != null)
+        {
+            timeLimitEnabled.setSelected(true);
+            changeTimeLimitFieldEnabled(true);
+            timeLimit.setText(theTimeLimit);   
+        }
         
         attemptLimit.setText(QuizFactory.getAttempsAllowed(quiz));
-        
-        passwordEnable.setSelected(true);
-        password.setEditable(true);
-        password.setDisable(false);
-        password.setText(QuizFactory.getPassword(quiz));
     }
     
-    
-    private void setTimeFields(Quiz quiz)
+    /**
+     * Set the values of the startDate and endDate fields.
+     * @param quiz
+     */
+    private void setDateFields(Quiz quiz)
     {
         DateUtil start = QuizFactory.getStartDate(quiz);
         DateUtil end = QuizFactory.getEndDate(quiz);
@@ -170,10 +187,10 @@ public class QuizOptionsController {
     @FXML
     public void disableEnablePassword(){
         boolean passCheck = passwordEnable.isSelected();
-        changePassword(passCheck);
+        changePasswordFieldEnabled(passCheck);
     }
     
-    private void changePassword(boolean check)
+    private void changePasswordFieldEnabled(boolean check)
     {
         password.setEditable(check);
         password.setDisable(!check);
@@ -183,10 +200,10 @@ public class QuizOptionsController {
     @FXML
     public void disableEnableTimeLimit(){
         boolean timeCheck = timeLimitEnabled.isSelected();
-        changeTimeLimit(timeCheck);
+        changeTimeLimitFieldEnabled(timeCheck);
     }
     
-    private void changeTimeLimit(boolean check)
+    private void changeTimeLimitFieldEnabled(boolean check)
     {
         timeLimit.setEditable(check);
         timeLimit.setDisable(!check);
