@@ -1,4 +1,8 @@
 package t1.dqc.xml.util;
+/**
+ * This class is used for converting start and end dates
+ * into usable text inside the GUI.
+ */
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
