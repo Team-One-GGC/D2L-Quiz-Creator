@@ -21,6 +21,11 @@
                       	<fx:include fx:id="multipleChoiceAPane" source="MultipleChoiceTab.fxml"/>
                      </content>
                   </Tab>
+                  <Tab text="Long Answer">
+                     <content>
+                      	<fx:include fx:id="longAnswerPane" source="LongAnswerTab.fxml"/>
+                     </content>
+                  </Tab>
             </TabPane>
          </children>
       </AnchorPane>
