@@ -62,7 +62,7 @@
                   </Tab>
                   <Tab text="Multiple Choice">
                      <content>
-                      	<fx:include fx:id="multipleChoiceTab" source="MultipleChoiceTab.fxml"/>
+                      	<fx:include fx:id="multipleChoiceAPane" source="MultipleChoiceTab.fxml"/>
                      </content>
                   </Tab>
             </TabPane>
