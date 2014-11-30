@@ -3,8 +3,6 @@ package t1.dqc.UI;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.JOptionPane;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +12,11 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+
+import javax.swing.JOptionPane;
+
 import t1.dqc.UI.view.AboutUsDialogController;
+import t1.dqc.UI.view.CreateQuestionsController;
 import t1.dqc.UI.view.D2LQuizCreatorMainController;
 import t1.dqc.UI.view.QuestionRootLayoutController;
 import t1.dqc.UI.view.QuizOptionsController;
@@ -34,6 +36,8 @@ public class MainQuizCreator extends Application {
     private static double WIDTH = Screen.getPrimary().getVisualBounds().getWidth() / 2;
     private static double HEIGHT = WIDTH * (9.0 / 16.0);
     private BorderPane questionRootLayout;
+    
+    private Quiz quiz;
     
     
     // Constructor
@@ -175,7 +179,7 @@ public class MainQuizCreator extends Application {
              String quizFile = manifest.getResources().get(0).getHref();
              
              ZipReader<Quiz> quizReader = new ZipReader<>(zipFile, Quiz.class);
-             Quiz quiz = quizReader.getObjectFromXML(quizFile);
+             quiz = quizReader.getObjectFromXML(quizFile);
              showQuizOptions(quiz);
          }
     }
@@ -189,6 +193,7 @@ public class MainQuizCreator extends Application {
             QuestionRootLayoutController controller;
             controller = loader.getController();
             controller.setMainQuizCreator(this);
+            controller.setFields(quiz);
             primaryStage.setMaximized(true);
             
            
@@ -212,6 +217,10 @@ public class MainQuizCreator extends Application {
             //D2LQuizCreatorMainController controller;
             //controller = loader.getController();
             //controller.setMainQuizCreator(this);
+            
+            CreateQuestionsController controller = loader.getController();
+            controller.setMainQuizCreator(this);
+            controller.setFields(quiz);
             
             
             // Set person overview into the center of root layout.

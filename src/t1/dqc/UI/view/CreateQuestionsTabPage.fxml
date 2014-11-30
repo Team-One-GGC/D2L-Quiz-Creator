@@ -16,7 +16,7 @@
                         <fx:include fx:id="trueFalsePane" source="TrueFalseTab.fxml"/>
                      </content>
                   </Tab>
-                  <Tab text="Multiple Choice">
+                 <!--  <Tab text="Multiple Choice">
                      <content>
                       	<fx:include fx:id="multipleChoiceAPane" source="MultipleChoiceTab.fxml"/>
                      </content>
@@ -25,7 +25,7 @@
                      <content>
                       	<fx:include fx:id="longAnswerPane" source="LongAnswerTab.fxml"/>
                      </content>
-                  </Tab>
+                  </Tab> -->
             </TabPane>
          </children>
       </AnchorPane>

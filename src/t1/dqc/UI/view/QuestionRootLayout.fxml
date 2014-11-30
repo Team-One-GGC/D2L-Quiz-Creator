@@ -25,7 +25,7 @@
    <right>
       <AnchorPane prefHeight="253.0" prefWidth="137.0" BorderPane.alignment="CENTER">
          <children>
-            <ChoiceBox layoutX="-1.0" prefHeight="60.0" prefWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <ChoiceBox fx:id="questionPicker" layoutX="-1.0" prefHeight="60.0" prefWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <VBox alignment="CENTER" layoutY="60.0" prefHeight="196.0" prefWidth="137.0" spacing="10.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <Button layoutX="14.0" layoutY="137.0" mnemonicParsing="false" onAction="#createQuestion" prefHeight="50.0" prefWidth="110.0" text="Add New Question" textAlignment="CENTER" />
