@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="700.0" stylesheets="@Theme.css">
+                     <children>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="700.0" stylesheets="@Theme.css">
+                           <children>
+                              <VBox layoutX="14.0" layoutY="14.0" prefHeight="102.0" prefWidth="394.0" stylesheets="@Theme.css">
+                                 <children>
+                                    <Label text="Title" />
+                                    <TextField />
+                                    <Label text="Points*" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="14.0" layoutY="116.0" prefHeight="53.0" prefWidth="55.0" stylesheets="@Theme.css">
+                                 <children>
+                                    <TextField prefHeight="39.0" prefWidth="68.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="14.0" layoutY="169.0" prefHeight="34.0" prefWidth="100.0" stylesheets="@Theme.css">
+                                 <children>
+                                    <Label text="Difficulty" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="14.0" layoutY="203.0" prefHeight="385.0" prefWidth="419.0" spacing="10.0" stylesheets="@Theme.css">
+                                 <children>
+                                    <ChoiceBox prefHeight="39.0" prefWidth="58.0" />
+                                    <Label text="Question Text*" />
+                                    <TextArea prefHeight="80.0" prefWidth="419.0" />
+                                    <Label text="Input" />
+                                    <TextArea prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </VBox>
+                              <HBox layoutX="465.0" layoutY="488.0" prefHeight="59.0" prefWidth="200.0" spacing="10.0" stylesheets="@Theme.css">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Save" />
+                                    <Button mnemonicParsing="false" text="Cancel" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
