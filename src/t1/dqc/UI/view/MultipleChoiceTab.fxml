@@ -140,8 +140,6 @@
                                     </HBox>
                                  </children>
                               </VBox>
-                              <Button layoutX="468.0" layoutY="1005.0" mnemonicParsing="false" stylesheets="@Theme.css" text="Save" />
-                              <Button layoutX="557.0" layoutY="1005.0" mnemonicParsing="false" stylesheets="@Theme.css" text="Cancel" />
                            </children>
                         </AnchorPane>
                      </children>
