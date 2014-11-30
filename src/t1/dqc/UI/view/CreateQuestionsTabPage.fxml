@@ -11,7 +11,6 @@
       <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <TabPane layoutX="-8.0" prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
-              <tabs>
                 <Tab text="True/False">
                      <content>
                         <ScrollPane prefHeight="300.0" prefWidth="600.0">
@@ -63,148 +62,9 @@
                   </Tab>
                   <Tab text="Multiple Choice">
                      <content>
-                        <ScrollPane prefHeight="300.0" prefWidth="600.0">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1100.0" prefWidth="700.0" stylesheets="@Theme.css">
-                                 <children>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1100.0" prefWidth="700.0" stylesheets="@Theme.css">
-                                       <children>
-                                          <VBox layoutX="14.0" layoutY="14.0" prefHeight="80.0" prefWidth="200.0" spacing="5.0" stylesheets="@Theme.css">
-                                             <children>
-                                                <Label text="Title" />
-                                                <TextField />
-                                             </children>
-                                          </VBox>
-                                          <VBox layoutX="14.0" layoutY="94.0" prefHeight="85.0" prefWidth="62.0" spacing="5.0" stylesheets="@Theme.css">
-                                             <children>
-                                                <Label text="Points*" />
-                                                <TextField prefHeight="40.0" prefWidth="58.0" />
-                                             </children>
-                                          </VBox>
-                                          <VBox layoutX="14.0" layoutY="179.0" prefHeight="78.0" prefWidth="100.0" stylesheets="@Theme.css">
-                                             <children>
-                                                <Label text="Difficulty" />
-                                                <ChoiceBox prefHeight="39.0" prefWidth="60.0" />
-                                             </children>
-                                          </VBox>
-                                          <VBox layoutX="14.0" layoutY="263.0" prefHeight="200.0" prefWidth="278.0" stylesheets="@Theme.css">
-                                             <children>
-                                                <Label text="Question*" />
-                                                <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                             </children>
-                                          </VBox>
-                                          <VBox layoutX="14.0" layoutY="486.0" prefHeight="510.0" prefWidth="670.0" spacing="8.0" stylesheets="@Theme.css">
-                                             <children>
-                                                <Label prefHeight="27.0" prefWidth="670.0" text="#            Value                            Weight (%)               Feedback" />
-                                                <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
-                                                   <children>
-                                                      <VBox prefHeight="175.0" prefWidth="35.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <Label text="1" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="211.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextField prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
-                                                   </children>
-                                                </HBox>
-                                                <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
-                                                   <children>
-                                                      <VBox prefHeight="175.0" prefWidth="35.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <Label text="2" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="211.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextField prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
-                                                   </children>
-                                                </HBox>
-                                                <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
-                                                   <children>
-                                                      <VBox prefHeight="175.0" prefWidth="35.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <Label stylesheets="@Theme.css" text="3" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="211.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextField prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
-                                                   </children>
-                                                </HBox>
-                                                <HBox prefHeight="135.0" prefWidth="670.0" spacing="5.0">
-                                                   <children>
-                                                      <VBox prefHeight="175.0" prefWidth="35.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <Label stylesheets="@Theme.css" text="4" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="211.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="87.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextField prefHeight="39.0" prefWidth="31.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox prefHeight="175.0" prefWidth="271.0" stylesheets="@Theme.css">
-                                                         <children>
-                                                            <TextArea prefHeight="200.0" prefWidth="200.0" />
-                                                         </children>
-                                                      </VBox>
-                                                   </children>
-                                                </HBox>
-                                             </children>
-                                          </VBox>
-                                          <Button layoutX="468.0" layoutY="1005.0" mnemonicParsing="false" stylesheets="@Theme.css" text="Save" />
-                                          <Button layoutX="557.0" layoutY="1005.0" mnemonicParsing="false" stylesheets="@Theme.css" text="Cancel" />
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </ScrollPane>
+                      	<fx:include fx:id="multipleChoiceTab" source="MultipleChoiceTab.fxml"/>
                      </content>
                   </Tab>
-              </tabs>
             </TabPane>
          </children>
       </AnchorPane>
