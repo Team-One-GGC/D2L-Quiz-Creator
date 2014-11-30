@@ -9,7 +9,7 @@
    <children>
       <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ScrollPane prefHeight="300.0" prefWidth="600.0">
+            <ScrollPane prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" stylesheets="@Theme.css">
                      <children>
