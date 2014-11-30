@@ -2,8 +2,12 @@ package t1.dqc.xml.util;
 
 import java.util.List;
 
+import t1.dqc.xml.quiz.ques.FlowLabel;
+import t1.dqc.xml.quiz.ques.ItemprocExtension;
 import t1.dqc.xml.quiz.ques.QtiMetadataField;
 import t1.dqc.xml.quiz.ques.Question;
+import t1.dqc.xml.quiz.ques.ResponseCondition;
+import t1.dqc.xml.quiz.ques.ResponseLabel;
 
 /**
  * Utility class for accessing various values from a question.
@@ -56,6 +60,49 @@ public class QuestionFactory
                 result = points.substring(0, points.indexOf("."));
             }
         }
+        return result;
+    }
+    
+    public static String getQuesitonDiff(Question ques)
+    {
+        ItemprocExtension itemExt = ques.getItemprocExtension();
+        return itemExt.getDifficulty();
+    }
+    
+    public static List<ResponseCondition> getReprocessing(Question ques)
+    {
+        return ques.getResponseConditions();
+    }
+    
+    public static boolean getTFAnswer(Question ques)
+    {
+        boolean result = false;
+        List<ResponseCondition> reprocessing = getReprocessing(ques);
+        String correctAnsID = "";
+        for(ResponseCondition cond : reprocessing)
+        {
+            String id = cond.getConditionVar().get(0).getValue();
+            double value = cond.getSetVar().getValue();
+            if(value > 0)
+                correctAnsID = id;
+        }
+        
+        List<FlowLabel> ansBlocks = ques.getPresentation().getFlow().getResponseLid().getRenderChoice().getFlowLabel();
+        String ansTxt = "";
+        for(FlowLabel lab : ansBlocks)
+        {
+            String ansId = lab.getResponseLabel().getIdent();
+            if(ansId.equals(correctAnsID))
+            {
+                ansTxt = lab.getResponseLabel().getFlow_mat().get(0).getMatText().getValue();
+            }
+        }
+        
+        if(ansTxt.equals("True"))
+            result = true;
+        else
+            result = false;
+        
         return result;
     }
 }

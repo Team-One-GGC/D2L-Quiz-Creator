@@ -30,7 +30,18 @@ public class CreateQuestionsController
 	{
 	    List<Question> questions = QuizFactory.getQuestions(quiz);
 	    titleNameTF.setText(QuestionFactory.getQuestionTitle(questions.get(0)));
-	    pointsTF.setText(QuestionFactory.getQuestionPoints(questions.get(0)));	    
+	    pointsTF.setText(QuestionFactory.getQuestionPoints(questions.get(0)));
+	    
+	    difficultyAmtTF.setValue(QuestionFactory.getQuesitonDiff(questions.get(0)));
+	    
+	    questionTextTF.setText(QuestionFactory.getQuestionText(questions.get(0)));
+	    
+	    boolean tfAns = QuestionFactory.getTFAnswer(questions.get(0));
+	    if(tfAns)
+	        trueAnswer.setSelected(true);
+	    else
+	        falseAnswer.setSelected(true);
+	        
 	}
 	
     //Setter
