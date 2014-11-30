@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.collections.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -35,7 +36,17 @@
                                           <VBox layoutX="19.0" layoutY="175.0" prefHeight="75.0" prefWidth="80.0" spacing="5.0" stylesheets="@Theme.css">
                                              <children>
                                                 <Label text="Difficulty" />
-                                                <ChoiceBox fx:id="difficultyAmtTF" prefHeight="40.0" prefWidth="60.0" />
+                                                <ChoiceBox fx:id="difficultyAmtTF" prefHeight="40.0" prefWidth="60.0">
+                                                	<items>
+                                                		<FXCollections fx:factory="observableArrayList">
+                                                			<String fx:value="1"/>
+                                                			<String fx:value="2"/>
+                                                			<String fx:value="3"/>
+                                                			<String fx:value="4"/>
+                                                			<String fx:value="5"/>
+                                                		</FXCollections>
+                                                	</items>
+                                               	</ChoiceBox>
                                              </children>
                                           </VBox>
                                           <VBox layoutX="19.0" layoutY="263.0" prefHeight="184.0" prefWidth="455.0" stylesheets="@Theme.css">
