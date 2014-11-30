@@ -23,6 +23,13 @@ public class QuestionFactory
         return txt;
     }
     
+    public static String getQuestionTitle(Question ques)
+    {
+        String title = ques.getTitle();
+        if(title != null) return title;
+        else return "";
+    }
+    
     public static String getQuestionType(Question ques)
     {
         String result = "";
@@ -32,6 +39,21 @@ public class QuestionFactory
             if(metaData.get(i).getFieldlabel().equals("qmd_questiontype"))
             {
                 result = metaData.get(i).getFieldentry();
+            }
+        }
+        return result;
+    }
+    
+    public static String getQuestionPoints(Question ques)
+    {
+        List<QtiMetadataField> metaData = ques.getItemMetadata().getList();
+        String result = "";
+        for(int i = 0; i < metaData.size(); i++)
+        {
+            if(metaData.get(i).getFieldlabel().equals("qmd_weighting"))
+            {
+                String points = metaData.get(i).getFieldentry();
+                result = points.substring(0, points.indexOf("."));
             }
         }
         return result;

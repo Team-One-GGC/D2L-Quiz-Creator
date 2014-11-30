@@ -45,10 +45,13 @@
                                              </children>
                                           </VBox>
                                           <VBox layoutX="224.0" layoutY="30.0" prefHeight="132.0" prefWidth="163.0" spacing="10.0" stylesheets="@Theme.css">
+                                          	<fx:define>
+                                          		<ToggleGroup fx:id="tfToggleGroup" />
+                                          	</fx:define>
                                              <children>
                                                 <Label text="Correct Answer" />
-                                                <RadioButton fx:id="trueAnswer" mnemonicParsing="false" text="True" />
-                                                <RadioButton fx:id="falseAnswer" mnemonicParsing="false" text="False" />
+                                                <RadioButton fx:id="trueAnswer" mnemonicParsing="false" text="True" toggleGroup="$tfToggleGroup" />
+                                                <RadioButton fx:id="falseAnswer" mnemonicParsing="false" text="False" toggleGroup="$tfToggleGroup" />
                                              </children>
                                           </VBox>
                                        </children>
@@ -59,7 +62,7 @@
                         </ScrollPane>
                      </content>
                   </Tab>
-                  <Tab text="Multiple Choice">
+                 <!--  <Tab text="Multiple Choice">
                      <content>
                         <ScrollPane prefHeight="300.0" prefWidth="600.0">
                            <content>
@@ -221,7 +224,7 @@
                           </content>
                         </ScrollPane>
                      </content>
-                  </Tab>
+                  </Tab> -->
               </tabs>
             </TabPane>
          </children>

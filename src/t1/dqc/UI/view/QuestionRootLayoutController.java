@@ -1,14 +1,16 @@
 package t1.dqc.UI.view;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import t1.dqc.UI.MainQuizCreator;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import t1.dqc.UI.MainQuizCreator;
+import t1.dqc.xml.quiz.Quiz;
+import t1.dqc.xml.quiz.ques.Question;
+import t1.dqc.xml.util.QuizFactory;
 
 public class QuestionRootLayoutController {
 
@@ -43,8 +45,17 @@ public class QuestionRootLayoutController {
     private ChoiceBox<String> questionPicker;
 
     private MainQuizCreator mainQuizCreator;
-      
-    
+        
+    public void setFields(Quiz quiz)
+    {
+//        List<Question> questions = QuizFactory.getQuestions(quiz);
+//        List<String> questionTitles = new ArrayList<String>();
+//        for(int i = 0; i < questions.size(); i++)
+//        {
+//            questionTitles.add("Q "+ (i + 1));
+//        }
+//        questionPicker.setItems(FXCollections.observableList(questionTitles));
+    }
     
     //Load question pane into view
     public void loadQuestionPane(){
