@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="trueFalsePane" prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.TrueFalseTabController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.TrueFalseTabController">
    <children>
       <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

@@ -7,26 +7,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.CreateQuestionsController">
    <children>
       <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <TabPane layoutX="-8.0" prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
-                <Tab text="True/False">
-                     <content>
-                        <fx:include fx:id="trueFalsePane" source="TrueFalseTab.fxml"/>
-                     </content>
-                  </Tab>
-                 <!--  <Tab text="Multiple Choice">
-                     <content>
-                      	<fx:include fx:id="multipleChoiceAPane" source="MultipleChoiceTab.fxml"/>
-                     </content>
-                  </Tab>
-                  <Tab text="Long Answer">
-                     <content>
-                      	<fx:include fx:id="longAnswerPane" source="LongAnswerTab.fxml"/>
-                     </content>
-                  </Tab> -->
+                <tabs>
+	                <Tab text="True/False">
+	                     <content>
+	                        <fx:include fx:id="trueFalsePane" source="TrueFalseTab.fxml" />
+	                     </content>
+	                  </Tab>
+	                 <!--  <Tab text="Multiple Choice">
+	                     <content>
+	                      	<fx:include fx:id="multipleChoiceAPane" source="MultipleChoiceTab.fxml"/>
+	                     </content>
+	                  </Tab>
+	                  <Tab text="Long Answer">
+	                     <content>
+	                      	<fx:include fx:id="longAnswerPane" source="LongAnswerTab.fxml"/>
+	                     </content>
+	                  </Tab> -->
+	             </tabs>
             </TabPane>
          </children>
       </AnchorPane>
