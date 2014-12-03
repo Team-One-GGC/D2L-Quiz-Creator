@@ -193,14 +193,16 @@ public class MainQuizCreator extends Application {
             QuestionRootLayoutController controller;
             controller = loader.getController();
             controller.setMainQuizCreator(this);
-            controller.setFields(quiz);
+            controller.setQuiz(quiz);
+            controller.setFields(0);
+            controller.addListener();
             primaryStage.setMaximized(true);
             
            
             
             // Set person overview into the center of root layout.
             rootLayout.setCenter(questionRootLayout);
-            loadQuestionTabPane();
+//            loadQuestionTabPane();//TODO delete this later
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -208,8 +210,8 @@ public class MainQuizCreator extends Application {
     }
     
     //Load question tab pane
-    public void loadQuestionTabPane(){
-        try {
+    public void loadQuestionTabPane(){//TODO delete this method
+        /*try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainQuizCreator.class.getResource("view/CreateQuestionsTabPage.fxml"));
@@ -227,6 +229,6 @@ public class MainQuizCreator extends Application {
             questionRootLayout.setCenter(QuestionTabPane);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

@@ -6,6 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <BorderPane fx:id="questionRootLayout" prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.QuestionRootLayoutController">
+   <center>
+      <fx:include fx:id="createQuestionPane" source="CreateQuestionsTabPage.fxml" />
+   </center>
    <bottom>
       <ToolBar prefHeight="40.0" prefWidth="481.0" BorderPane.alignment="CENTER">
          <items>

@@ -2,7 +2,7 @@ package t1.dqc.UI.view;
 
 import javafx.fxml.FXML;
 import t1.dqc.UI.MainQuizCreator;
-import t1.dqc.xml.quiz.Quiz;
+import t1.dqc.xml.quiz.ques.Question;
 
 public class CreateQuestionsController
 {
@@ -19,9 +19,9 @@ public class CreateQuestionsController
 		
 	}
 	
-	public void setFields(Quiz quiz)
+	public void setFields(Question ques)
 	{
-	    trueFalsePaneController.setFields(quiz);
+	    trueFalsePaneController.setFields(ques);
 	}
 		
     //Setter

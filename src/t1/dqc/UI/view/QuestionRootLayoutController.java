@@ -43,18 +43,32 @@ public class QuestionRootLayoutController {
     
     @FXML
     private ChoiceBox<String> questionPicker;
+    
+    @FXML
+    private CreateQuestionsController createQuestionPaneController;
 
     private MainQuizCreator mainQuizCreator;
-        
-    public void setFields(Quiz quiz)
+    
+    private Quiz quiz;
+    
+    private List<Question> questions;
+    public void addListener()
     {
-//        List<Question> questions = QuizFactory.getQuestions(quiz);
-//        List<String> questionTitles = new ArrayList<String>();
-//        for(int i = 0; i < questions.size(); i++)
-//        {
-//            questionTitles.add("Q "+ (i + 1));
-//        }
-//        questionPicker.setItems(FXCollections.observableList(questionTitles));
+        questionPicker.getSelectionModel().selectedIndexProperty().addListener((observable, oldNum, newNum) -> {
+            createQuestionPaneController.setFields(questions.get(newNum.intValue()));
+        });
+    }
+        
+    public void setFields(int index)
+    {
+        List<String> questionTitles = new ArrayList<String>();
+        for(int i = 0; i < questions.size(); i++)
+        {
+            questionTitles.add("Q "+ (i + 1));
+        }
+        questionPicker.setItems(FXCollections.observableList(questionTitles));
+        questionPicker.getSelectionModel().select(index);
+        createQuestionPaneController.setFields(questions.get(index));
     }
     
     //Load question pane into view
@@ -113,5 +127,9 @@ public class QuestionRootLayoutController {
         this.mainQuizCreator = mainQuizCreator;   
     }
     
-   
+    public void setQuiz(Quiz quiz)
+    {
+        this.quiz = quiz;
+        this.questions = QuizFactory.getQuestions(quiz);
+    }
 }

@@ -1,58 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="t1.dqc.UI.view.TrueFalseTabController">
-   <children>
-      <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <ScrollPane prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" stylesheets="@Theme.css">
-                     <children>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" stylesheets="@Theme.css">
-                           <children>
-                              <VBox layoutX="19.0" layoutY="14.0" prefHeight="50.0" prefWidth="150.0" spacing="5.0" stylesheets="@Theme.css">
-                                 <children>
-                                    <Label text="Title" />
-                                    <TextField fx:id="titleName" prefHeight="7.0" prefWidth="145.0" />
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="19.0" layoutY="91.0" prefHeight="50.0" prefWidth="75.0" spacing="5.0" stylesheets="@Theme.css">
-                                 <children>
-                                    <Label text="Points*" />
-                                    <TextField fx:id="points" text="1" />
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="19.0" layoutY="175.0" prefHeight="75.0" prefWidth="80.0" spacing="5.0" stylesheets="@Theme.css">
-                                 <children>
-                                    <Label text="Difficulty" />
-                                    <ChoiceBox fx:id="difficulty" prefHeight="40.0" prefWidth="60.0" />
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="19.0" layoutY="263.0" prefHeight="184.0" prefWidth="455.0" stylesheets="@Theme.css">
-                                 <children>
-                                    <Label text="Question Text*" />
-                                    <TextArea fx:id="questionText" prefHeight="200.0" prefWidth="200.0" />
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="224.0" layoutY="30.0" prefHeight="132.0" prefWidth="163.0" spacing="10.0" stylesheets="@Theme.css">
-                                 <children>
-                                    <Label text="Correct Answer" />
-                                    <RadioButton fx:id="trueAnswer" mnemonicParsing="false" text="True" />
-                                    <RadioButton fx:id="falseAnswer" mnemonicParsing="false" text="False" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </ScrollPane>
-         </children>
-      </AnchorPane>
-   </children>
+	<children>
+		<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@Theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<children>
+				<ScrollPane prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" stylesheets="@Theme.css">
+							<children>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" stylesheets="@Theme.css">
+									<children>
+										<VBox layoutX="19.0" layoutY="14.0" prefHeight="50.0" prefWidth="150.0" spacing="5.0" stylesheets="@Theme.css">
+											<children>
+												<Label text="Title" />
+												<TextField fx:id="titleName" prefHeight="7.0" prefWidth="145.0" />
+											</children>
+										</VBox>
+										<VBox layoutX="19.0" layoutY="91.0" prefHeight="50.0" prefWidth="75.0" spacing="5.0" stylesheets="@Theme.css">
+											<children>
+												<Label text="Points*" />
+												<TextField fx:id="points" text="1" />
+											</children>
+										</VBox>
+										<VBox layoutX="19.0" layoutY="175.0" prefHeight="75.0" prefWidth="80.0" spacing="5.0" stylesheets="@Theme.css">
+											<children>
+												<Label text="Difficulty" />
+												<ChoiceBox fx:id="difficulty" prefHeight="40.0" prefWidth="60.0">
+													<items>
+														<FXCollections fx:factory="observableArrayList">
+															<String fx:value="1" />
+															<String fx:value="2" />
+															<String fx:value="3" />
+															<String fx:value="4" />
+															<String fx:value="5" />
+														</FXCollections>
+													</items>
+												</ChoiceBox>
+											</children>
+										</VBox>
+										<VBox layoutX="19.0" layoutY="263.0" prefHeight="184.0" prefWidth="455.0" stylesheets="@Theme.css">
+											<children>
+												<Label text="Question Text*" />
+												<TextArea fx:id="questionText" prefHeight="200.0" prefWidth="200.0" />
+											</children>
+										</VBox>
+										<VBox layoutX="224.0" layoutY="30.0" prefHeight="132.0" prefWidth="163.0" spacing="10.0" stylesheets="@Theme.css">
+											<children>
+												<Label text="Correct Answer" />
+												<RadioButton fx:id="trueAnswer" mnemonicParsing="false" text="True" />
+												<RadioButton fx:id="falseAnswer" mnemonicParsing="false" text="False" />
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</children>
+						</AnchorPane>
+					</content>
+				</ScrollPane>
+			</children>
+		</AnchorPane>
+	</children>
 </AnchorPane>
