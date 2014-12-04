@@ -8,6 +8,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import t1.dqc.UI.MainQuizCreator;
 import t1.dqc.xml.quiz.Quiz;
@@ -48,6 +49,13 @@ public class TrueFalseTabController extends AnchorPane{
   //TrueFalse Question text    
     @FXML
     private TextArea questionText;
+    
+    public void initialize()
+    {
+        ToggleGroup group = new ToggleGroup();
+        trueAnswer.setToggleGroup(group);
+        falseAnswer.setToggleGroup(group);
+    }
     
     public void setFields(Question ques)
     {

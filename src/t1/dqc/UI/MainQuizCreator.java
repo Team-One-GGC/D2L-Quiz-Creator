@@ -193,9 +193,13 @@ public class MainQuizCreator extends Application {
             QuestionRootLayoutController controller;
             controller = loader.getController();
             controller.setMainQuizCreator(this);
-            controller.setQuiz(quiz);
-            controller.setFields(0);
-            controller.addListener();
+            if(quiz != null)
+            {
+                controller.setQuiz(quiz);
+                controller.setFields(0);
+                controller.addListener();
+            }
+            
             primaryStage.setMaximized(true);
             
            

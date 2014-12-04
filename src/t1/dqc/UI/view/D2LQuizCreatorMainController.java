@@ -53,6 +53,6 @@ public class D2LQuizCreatorMainController {
      */
   @FXML
   private void createQuizHandler(){
-//    mainQuizCreator.showQuizOptions(null);
+    mainQuizCreator.showQuizOptions(null);
   }
 }
